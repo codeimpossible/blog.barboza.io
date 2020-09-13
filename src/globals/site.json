@@ -1,0 +1,15 @@
+{
+  "name": "Byte by bite",
+  "description": "food, tech, and whatever else",
+  "url": "https://jaredbarboza.me",
+  "baseUrl": "/",
+  "locale": "en_US",
+  "author": {
+    "handle": "@codeimpossible",
+    "name": "Jared Barboza"
+  },
+  "images": {
+    "twitter": "twitter.jpg",
+    "og": "og.jpg"
+  }
+}

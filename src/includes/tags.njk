@@ -1,0 +1,5 @@
+<div class="grid grid-flow-row grid-cols-3 gap-4 mb-2">
+    {%- for tag in collections | keys | except("all", "post", "postsWithoutDrafts") %}
+        <a class="tag {{ tag }} mx-auto" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
+    {%- endfor %}
+</div>
