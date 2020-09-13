@@ -40,7 +40,7 @@ h1 {
 }
 
 h1.header-title {
-  font-family: 'Mogra';
+  font-family: 'Nunito Sans';
 }
 
 h2 {
@@ -176,4 +176,19 @@ hr {
 .caption {
   @apply text-center text-sm text-gray-500 w-3/4 pb-4 mx-auto w-full;
   margin: 0 auto;
+}
+
+.a11y-only, .sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px,1px,1px,1px);
+}
+
+.social_icon {
+    display: inline-block;
+    font-family: sans-serif;
+    line-height: 32px;
+    margin-left: .2em;
 }

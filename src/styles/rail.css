@@ -1,0 +1,85 @@
+.social {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .75em;
+}
+
+.rail .navigation {
+    margin: 0 0 .5em;
+}
+
+.rail {
+    padding: 1em 1em .5em;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid #dedede;
+    text-align: center;
+}
+
+.rail img {
+    width: 5.5em;
+    height: 5.5em;
+    margin-right: .5em;
+    border-radius: 50%;
+    background-color: #3c603c;
+    color: transparent;
+    margin-bottom: -2px;
+    float: left;
+}
+
+.rail h1 {
+    font-style: normal;
+    font-weight: 700;
+}
+
+.rail h1 {
+    font-size: 1.4em;
+    display: inline-block;
+    margin: 0 0 .1em 0;
+    vertical-align: bottom;
+}
+
+.rail .header {
+    display: block;
+    margin-bottom: .5em;
+    text-decoration: none;
+}
+
+.rail .header:visited {
+    color: #304f3e;
+}
+
+.tags.tags-rail {
+    white-space: normal;
+    margin-top: .5em;
+}
+
+@media (min-width: 60em) {
+    .rail {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 16em;
+        display: block;
+    }
+    .rail {
+        padding: 0;
+        border-bottom-width: 0;
+        margin-bottom: 0;
+        text-align: left;
+    }
+    .rail img {
+        width: 2.75em;
+        height: 2.75em;
+        float: left;
+        margin-right: .75em;
+        margin-top: 6px;
+    }
+    .rail h1 {
+        float: left;
+        width: 155px;
+    }
+    .rail .social {
+        margin-top: 1.5em;
+        margin-bottom: 1.3em;
+    }
+}

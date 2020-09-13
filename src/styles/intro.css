@@ -1,0 +1,43 @@
+.intro {
+    
+}
+
+.intro img {
+    position: relative;
+    top: 5px;
+    left: 0px;
+    margin-right: 6px;
+    height: 4em;
+    width: 4em;
+    float: left;
+}
+
+@media(min-width: 70em) {
+    .intro img {
+        position: absolute;
+        height: 300px;
+        width: 300px;
+        top: -48px;
+        left: -48px;
+        border: 16px solid #1e1e33;
+    }
+    .social_icon {
+        background-color: #fff;
+        border: 6px solid #1e1e33;
+        border-radius: 50px;
+        padding: 10px;
+        position: absolute;
+    }
+    .social .icon-github {
+        top: 126px;
+        left: 215px;
+    }
+    .social .icon-twitter {
+        top: 174px;
+        left: 184px;
+    }
+    .social .icon-rss {
+        top: 206px;
+        left: 135px;
+    }
+}
