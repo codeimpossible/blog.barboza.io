@@ -10,6 +10,44 @@ body {
   font-family: 'Work Sans', sans-serif;
 }
 
+code, pre {
+  font-family: 'Space Mono', Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace !important;
+}
+
+pre {
+  border-radius: 25px;
+  margin-top: 2em!important;
+  margin-bottom: 2em!important;
+}
+
+@media(max-width: 90em) {
+  .container {
+    @apply p-3;
+  }
+
+  pre {
+    @apply text-sm tracking-wider break-words;
+  } 
+}
+
+@media(min-width: 90em) {
+  html {
+    border: 16px solid #1e1e33;
+    padding: -16px;
+  }
+
+  .container {
+    @apply p-8;
+  }
+
+  pre {
+    @apply text-lg;
+    position: relative;
+    width: 200%;
+    left: -50%;
+  } 
+}
+
 h1,
 h2,
 h3,
@@ -35,6 +73,19 @@ a {
   @apply text-gray-700;
 }
 
+a {
+  @apply font-bold;
+}
+
+a:hover {
+  @apply underline;
+}
+
+.content a {
+  @apply font-normal;
+  text-decoration: underline;
+}
+
 h1 {
   @apply text-5xl;
 }
@@ -56,25 +107,10 @@ h4 {
   @apply text-xl;
 }
 
-a {
-  @apply font-bold;
-}
-
-a:hover {
-  @apply underline;
-}
-
 p {
-  @apply text-lg;
-}
-
-pre {
-  @apply my-2 text-sm tracking-wider break-words;
-  border-radius: 25px;
-}
-
-code, pre {
-  font-family: 'Space Mono', Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace !important;
+  @apply text-2xl;
+  line-height: 1.9em;
+  word-spacing: 0.1em;
 }
 
 hr {
@@ -122,7 +158,7 @@ hr {
 
 .excerpt {
   @apply pt-4 pb-4 pr-4 text-lg;
-  font-family: 'Josefin Sans';
+  font-style: italic;
 }
 
 .next-page,
@@ -191,4 +227,14 @@ hr {
     font-family: sans-serif;
     line-height: 32px;
     margin-left: .2em;
+}
+
+footer {
+  @apply p-10;
+  background-color: #1e1e33;
+  color: #eee;
+}
+
+footer a {
+  color: #ddd;
 }

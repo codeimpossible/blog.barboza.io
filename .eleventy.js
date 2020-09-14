@@ -3,7 +3,9 @@ const path = require('path');
 const siteSettings = require('./src/globals/site.json');
 
 module.exports = (config) => {
-  config.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'));
+  config.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'), {
+    templateFormats: ['md']
+  });
 
   const filters = fs.readdirSync(path.resolve(__dirname, './filters'))
     .filter(f => f.endsWith('.js'))

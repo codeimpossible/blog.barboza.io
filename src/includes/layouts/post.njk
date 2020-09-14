@@ -1,8 +1,10 @@
 ---
-permalink: "{% if path %}{{ path | slug }}{% else %}{{'/post/'}}{{ title | slug }}{% endif %}/index.html"
+permalink: "{% if path_prefix %}{{ path_prefix }}{% endif %}{% if path %}{{ path | slug }}{% else %}{{'/post/'}}{{ title | slug }}{% endif %}/index.html"
 ---
 
 {% extends 'page.njk' %}
+
+{%block bodyClass %}is-post{% endblock %}
 
 {% block body %}
     <div>
@@ -14,29 +16,29 @@ permalink: "{% if path %}{{ path | slug }}{% else %}{{'/post/'}}{{ title | slug 
 
         {% if date %}
             {% if updatedDate | string in date | string %}
-                <p class="text-sm">📆 <em>Created on
-                    <span datetime="{{ date }}">{{ date | dateDisplay }}</span>.</em></p>
+                <span class="text-sm">📆 <em>Created on
+                    <span datetime="{{ date }}">{{ date | dateDisplay }}</span>.</em></span>
             {% else %}
-                <p class="text-sm">📆 <em>Last updated on
+                <span class="text-sm">📆 <em>Last updated on
                     <span datetime="{{ date }}">{{ updatedDate | dateDisplay }}</span>. Created on
-                    <span datetime="{{ date }}">{{ date | dateDisplay }}</span>.</em></p>
+                    <span datetime="{{ date }}">{{ date | dateDisplay }}</span>.</em></span>
             {% endif %}
+        {% endif %}
+
+        {% if tags %}
+            <span class="pl-10 mb-2 tags">
+                <span>🔖</span>
+                {% for tag in tags %}
+                    {%- if tag !== "post" -%}
+                        <a class="tag tag-inline" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
+                    {%- endif -%}
+                {% endfor %}
+            </span>
         {% endif %}
 
         <div class="content post">
             {{ content | safe }}
         </div>
-
-        {% if tags %}
-            <div class="mb-2 tags">
-                <span>🔖</span>
-                {% for tag in tags %}
-                    {%- if tag !== "post" -%}
-                        <a class="tag" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
-                    {%- endif -%}
-                {% endfor %}
-            </div>
-        {% endif %}
 
         {%- set nextPost = collections['postsWithoutDrafts'] | getNextCollectionItem(page) %}
         {%- if nextPost %}
