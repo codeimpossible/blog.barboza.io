@@ -1,0 +1,14 @@
+---
+layout: post
+title: {{ title }}
+excerpt: {{ excerpt }}
+date: {{ publishDate }}
+updatedDate: {{ publishDate }}
+tags:
+  {% for tag in tags %}
+  - {{ tag }}
+  {% endfor %}
+path: {{ slug }}
+---
+
+{{ content }}
