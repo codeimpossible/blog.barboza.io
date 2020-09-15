@@ -17,7 +17,8 @@ jobs:
         - run: |
             npm install
             npm run build
-        - name: Checkout & Build
+        - name: Stage changes
+          id: stage
           uses: actions/checkout@v2
           with:
             token: ${{ secrets.PAT }}
@@ -33,7 +34,15 @@ jobs:
             count=$(git diff --cached --numstat | wc -l | xargs)
             if [[ "$count" != "0" ]]; then
                 git commit -m "automated site deploy. $count changes."
-                git push
+                echo "::set-output name=has_changes::$(echo 'true')"
             else
                 echo "Nothing to do. Exiting."
+                echo "::set-output name=has_changes::$(echo 'false')"
             fi
+        - name: Push changes
+          if: steps.stage.outputs.has_changes == 'true'
+          uses: ad-m/github-push-action@master
+          with:
+            github_token: ${{ secrets.PAT }}
+            branch: 'gh-pages'
+            directory: './gh-pages'
