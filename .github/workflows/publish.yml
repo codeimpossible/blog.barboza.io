@@ -33,6 +33,7 @@ jobs:
             git config user.email github-actions@github.com
             git add -A
             count=$(git diff --cached --numstat | wc -l | xargs)
+            echo "$count changes."
             if [[ "$count" != "0" ]]; then
                 git commit -m "automated site deploy. $count changes."
                 echo "::set-output name=has_changes::$(echo 'true')"
