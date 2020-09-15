@@ -1,6 +1,14 @@
 name: Publish Website
 on:
     workflow_dispatch:
+    push:
+      branches:
+        - master
+      paths-ignore:
+      - '.github/**'
+      - '.vscode/**'
+      - 'data/**'
+      - '.gitignore'
 
 jobs:
     publish:
