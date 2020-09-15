@@ -1,13 +1,54 @@
-/* Font (see https://fonts.google.com) */
-@import url('https://fonts.googleapis.com/css2?family=Mogra&Family=Josefin+Sans&family=Nunito&family=Nunito+Sans&family=Space+Mono&family=Work+Sans&display=swap');
-
 /* Prism Code Highlighting Theme (see https://prismjs.com) */
 @import url('https://cdn.jsdelivr.net/npm/prism-themes@1.4.0/themes/prism-dracula.css');
 
 html,
 body {
   @apply antialiased text-gray-800 bg-gray-300;
-  font-family: 'Work Sans', sans-serif;
+}
+
+pre {
+  border-radius: 25px;
+  margin-top: 2em!important;
+  margin-bottom: 2em!important;
+}
+
+code {
+  background-color: #1e1e33;
+  padding: 4px;
+  border-radius: 5px;
+  color: #ddd;
+}
+
+@media(max-width: 90em) {
+  .container {
+    @apply p-3;
+  }
+}
+
+@media(max-width: 120em) {
+  pre {
+    @apply text-sm tracking-wider break-words;
+  }
+}
+
+@media(min-width: 90em) {
+  html {
+    border: 16px solid #1e1e33;
+    padding: -16px;
+  }
+
+  .container {
+    @apply p-8;
+  }
+}
+
+@media(min-width: 120em) {
+  pre {
+    @apply text-lg;
+    position: relative;
+    width: 60em;
+    left: -12em;
+  }
 }
 
 h1,
@@ -35,16 +76,24 @@ a {
   @apply text-gray-700;
 }
 
+a {
+  @apply font-bold;
+}
+
+a:hover {
+  @apply underline;
+}
+
+.content a {
+  @apply font-normal;
+  text-decoration: underline;
+}
+
 h1 {
   @apply text-5xl;
 }
 
-h1.header-title {
-  font-family: 'Nunito Sans';
-}
-
 h2 {
-  font-family: 'Nunito Sans', 'Nunito';
   @apply text-3xl;
 }
 
@@ -56,25 +105,10 @@ h4 {
   @apply text-xl;
 }
 
-a {
-  @apply font-bold;
-}
-
-a:hover {
-  @apply underline;
-}
-
 p {
-  @apply text-lg;
-}
-
-pre {
-  @apply my-2 text-sm tracking-wider break-words;
-  border-radius: 25px;
-}
-
-code, pre {
-  font-family: 'Space Mono', Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace !important;
+  @apply text-2xl;
+  line-height: 1.9em;
+  word-spacing: 0.1em;
 }
 
 hr {
@@ -121,8 +155,7 @@ hr {
 }
 
 .excerpt {
-  @apply pt-4 pb-4 pr-4 text-lg;
-  font-family: 'Josefin Sans';
+  @apply pt-4 pb-4 pr-4;
 }
 
 .next-page,
@@ -191,4 +224,14 @@ hr {
     font-family: sans-serif;
     line-height: 32px;
     margin-left: .2em;
+}
+
+footer {
+  @apply p-10;
+  background-color: #1e1e33;
+  color: #eee;
+}
+
+footer a {
+  color: #ddd;
 }

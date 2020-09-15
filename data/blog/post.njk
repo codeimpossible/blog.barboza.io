@@ -1,0 +1,14 @@
+---
+layout: post
+title: "{{ title | safe }}"
+excerpt: "{{ excerpt | safe }}"
+date: {{ publishDate }}
+updatedDate: {{ publishDate }}
+path: {{ path }}
+path_prefix: {{ path_prefix }}
+tags:
+{% for tag in tags %}  - {{ tag }}
+{% endfor %}
+---
+
+{{ content | safe }}

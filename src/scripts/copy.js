@@ -11,7 +11,7 @@ const handleCodeCopying = () => {
       if (!isPrismClass(preTags[i])) continue;
       preTags[
         i
-      ].innerHTML = `<div class="copy">copy</div><code class="${preTags[i].className}">${preTags[i].innerHTML}</code>`;
+      ].innerHTML = `<div class="copy">copy</div>${preTags[i].innerHTML}`;
     }
   }
 

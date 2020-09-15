@@ -1,7 +1,7 @@
 {
   "name": "jaredbarboza.me",
   "description": "🍕 P I Z Z A is life",
-  "url": "https://jaredbarboza.me",
+  "url": "http://jaredbarboza.me",
   "baseUrl": "/",
   "locale": "en_US",
   "author": {
@@ -9,7 +9,7 @@
     "name": "Jared Barboza"
   },
   "images": {
-    "twitter": "twitter.jpg",
-    "og": "og.jpg"
+    "twitter": "social-header.png",
+    "og": "social-header-lg.png"
   }
 }
