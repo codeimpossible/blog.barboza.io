@@ -10,14 +10,15 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: '14'
-        - name: Checkout & Build
+        - name: Checkout
           uses: actions/checkout@v2
           with:
             token: ${{ secrets.PAT }}
-        - run: |
+        - name: Build
+          run: |
             npm install
             npm run build
-        - name: Stage changes
+        - name: Checkout gh-pages branch
           id: stage
           uses: actions/checkout@v2
           with:
@@ -26,7 +27,8 @@ jobs:
             ref: 'refs/heads/gh-pages'
             fetch-depth: 0
             persist-credentials: false
-        - run: |
+        - name: Stage changes
+          run: |
             cp -R ./dist/. ./gh-pages/
             cd gh-pages
             git config user.name github-actions
@@ -35,11 +37,8 @@ jobs:
             count=$(git diff --cached --numstat | wc -l | xargs)
             echo "$count changes."
             if [[ "$count" != "0" ]]; then
-                git commit -m "automated site deploy. $count changes."
                 echo "::set-output name=has_changes::$(echo 'true')"
-            else
-                echo "Nothing to do. Exiting."
-                echo "::set-output name=has_changes::$(echo 'false')"
+                git commit -m "automated site deploy. $count changes."
             fi
         - name: Push changes
           if: ${{ steps.stage.outputs.has_changes == 'true' }}
