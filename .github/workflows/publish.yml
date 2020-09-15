@@ -42,7 +42,7 @@ jobs:
                 echo "::set-output name=has_changes::$(echo 'false')"
             fi
         - name: Push changes
-          if: steps.stage.outputs.has_changes == 'true'
+          if: ${{ steps.stage.outputs.has_changes == 'true' }}
           uses: ad-m/github-push-action@master
           with:
             github_token: ${{ secrets.PAT }}
