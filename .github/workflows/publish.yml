@@ -24,6 +24,6 @@ jobs:
             git add -A
             count=$(git diff --cached --numstat | wc -l | xargs)
             if [[ "$count" != "0" ]]; then
-                git commit -m 'automatic deploy'
+                git commit -m 'automated site deploy'
                 git push
             fi

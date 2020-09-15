@@ -31,15 +31,9 @@ You can use stock to braise meats, as a brine for turkey, inject them into chick
 Ingredients
 
 - about 1-1 1/2 lbs of left-over vegetable parts (the ends you usually would throw out)
-
 - Onions, Leeks, Tomatoes, Asparagus, Peppers, Potatoes, Mushrooms, etc
-
-
 - protein scraps (optional)
-
 - the leftovers from a steak dinner or a rotisserie chicken carcass are great here
-
-
 - 2-3 quarts of water
 - Salt and Pepper to taste (and whatever other seasonings you want to use)
 

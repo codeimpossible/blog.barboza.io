@@ -20,11 +20,11 @@ Refering to Pho as a "noodle soup" should be a punishable offense. In american c
 ## The Key Points
 
 Even tho pho can vary from kitchen to kitchen, there are a few things that make a bowl of Pho legit for me.
-<ol>
-- *Broth:* The broth has to be *packed* with flavor: star anise, garlic, ginger, cinnamon, cloves...you should want to drink the broth with nothing else.
-- *Accoutrements:* sliced jalapeno, fresh basil, plum sauce, cliantro, bean sprouts and the ubiquitous bottle of Sriracha. Allowing people to customize their bowl is part of the fun of pho.
-- *Noodles:* I'm avoiding carbs nowadays but the noodles can't be overlooked here. Udon, Vietnamese flat noodles, ramen noodles, whatever you want to use, your pho should have noodles or your missing out.
-</ol>
+
+- **Broth**: The broth has to be *packed* with flavor: star anise, garlic, ginger, cinnamon, cloves...you should want to drink the broth with nothing else.
+- **Accoutrements**: sliced jalapeno, fresh basil, plum sauce, cliantro, bean sprouts and the ubiquitous bottle of Sriracha. Allowing people to customize their bowl is part of the fun of pho.
+- **Noodles**: I'm avoiding carbs nowadays but the noodles can't be overlooked here. Udon, Vietnamese flat noodles, ramen noodles, whatever you want to use, your pho should have noodles or your missing out.
+
 ## The Perfect Pho Ga
 
 This is admittedly a very american take on pho. The addition of the carrots and celery are a throw back to the memories of my mothers chicken noodle soup and even beef stew.

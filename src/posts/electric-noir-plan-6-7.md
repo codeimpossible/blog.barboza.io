@@ -55,7 +55,7 @@ A blog post I read recently had some info about using runtime variables in scrip
 
 
 
-```text
+```csharp
 public class FloatVariable :
   ScriptableObject, ISerializationCallbackReceiver {
 

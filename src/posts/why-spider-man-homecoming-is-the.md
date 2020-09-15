@@ -51,15 +51,16 @@ But he's not. He's just a super-powered kid in a powerful costume. And this is m
 https://www.youtube.com/watch?v=CJUWAr0wcbE
 
 In case the video doesn't load, the exchange goes down like this:
-<blockquote>Tony: What if somebody had died?
+> Tony: What if somebody had died?
+> 
+> Peter: I was just trying to be like you!
+> 
+> Tony: I wanted you to be better! I'm going to need the suit back.
+> 
+> Peter: But I'm nothing without this suit.
+> 
+> Tony: If you're nothing without this suit, _then you shouldn't **have** it_.
 
-Peter: I was just trying to be like you!
-
-Tony: I wanted you to be better! I'm going to need the suit back.
-
-Peter: But I'm nothing without this suit.
-
-Tony: If you're nothing without this suit, then you shouldn't have it.</blockquote>
 This was a really powerful exchange between Tony and Peter. Seriously, I got chills. I immediately thought back to Iron Man 3, when Tony had to spend most of the movie without his suit - or using a really limited version of it. Again, that world-building coming back into play.
 
 By the end of the movie you can see Peter's growth, because he no longer worries about the suit, rushing off to face The Vulture with his old, tattered hoodie-based costume.

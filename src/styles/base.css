@@ -1,17 +1,9 @@
-/* Font (see https://fonts.google.com) */
-@import url('https://fonts.googleapis.com/css2?family=Mogra&Family=Josefin+Sans&family=Nunito&family=Nunito+Sans&family=Space+Mono&family=Work+Sans&display=swap');
-
 /* Prism Code Highlighting Theme (see https://prismjs.com) */
 @import url('https://cdn.jsdelivr.net/npm/prism-themes@1.4.0/themes/prism-dracula.css');
 
 html,
 body {
   @apply antialiased text-gray-800 bg-gray-300;
-  font-family: 'Work Sans', sans-serif;
-}
-
-code, pre {
-  font-family: 'Space Mono', Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace !important;
 }
 
 pre {
@@ -20,14 +12,23 @@ pre {
   margin-bottom: 2em!important;
 }
 
+code {
+  background-color: #1e1e33;
+  padding: 4px;
+  border-radius: 5px;
+  color: #ddd;
+}
+
 @media(max-width: 90em) {
   .container {
     @apply p-3;
   }
+}
 
+@media(max-width: 120em) {
   pre {
     @apply text-sm tracking-wider break-words;
-  } 
+  }
 }
 
 @media(min-width: 90em) {
@@ -39,13 +40,15 @@ pre {
   .container {
     @apply p-8;
   }
+}
 
+@media(min-width: 120em) {
   pre {
     @apply text-lg;
     position: relative;
-    width: 200%;
-    left: -50%;
-  } 
+    width: 60em;
+    left: -12em;
+  }
 }
 
 h1,
@@ -90,12 +93,7 @@ h1 {
   @apply text-5xl;
 }
 
-h1.header-title {
-  font-family: 'Nunito Sans';
-}
-
 h2 {
-  font-family: 'Nunito Sans', 'Nunito';
   @apply text-3xl;
 }
 
@@ -157,8 +155,7 @@ hr {
 }
 
 .excerpt {
-  @apply pt-4 pb-4 pr-4 text-lg;
-  font-style: italic;
+  @apply pt-4 pb-4 pr-4;
 }
 
 .next-page,

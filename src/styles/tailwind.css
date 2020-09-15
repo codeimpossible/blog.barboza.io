@@ -5,6 +5,7 @@
 @import './tags.css';
 @import './rail.css';
 @import './intro.css';
+@import './type.css';
 /* purgecss end ignore */
 
 @import 'tailwindcss/components';
