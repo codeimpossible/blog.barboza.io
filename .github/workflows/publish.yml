@@ -10,11 +10,15 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: '14'
-        - name: Checkout
+        - name: Checkout & Build
           uses: actions/checkout@v2
+            with:
+              token: '${{ secrets.PAT }}'
         - run: |
             npm install
             npm run build
+        - name: Deploy site
+          run: |
             git config user.name github-actions
             git config user.email github-actions@github.com
 
