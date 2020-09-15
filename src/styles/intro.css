@@ -2,9 +2,17 @@
     
 }
 
+.is-fourohfour .intro-greeting {
+    display: none;
+}
+
 @media(max-width: 90em) {
     .is-post .intro-greeting h1 {
         @apply text-2xl pt-2;
+    }
+
+    .is-fourohfour .intro {
+        display: none;
     }
 
     .is-post .intro-greeting h2 {
