@@ -106,9 +106,13 @@ h4 {
 }
 
 p {
-  @apply text-2xl;
-  line-height: 1.9em;
+  @apply text-2xl pt-10 pb-5;
+  line-height: 1.5em;
   word-spacing: 0.1em;
+}
+
+.content h2 {
+  @apply pt-5 pb-4;
 }
 
 hr {
