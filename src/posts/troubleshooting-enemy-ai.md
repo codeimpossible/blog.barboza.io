@@ -10,7 +10,7 @@ tags:
 excerpt: "Spending time to get better debugging tools isn't usually wasted time."
 ---
 
-I've been having a lot of difficulty troubleshooting enemy AI routines. The process sucks a lot currently, it basically requires me to toggle a few different compiler flags to enable/disable logging calls, play the game to try to produce the behavior(s) I'm looking for and then dig through logs that can be a few hundred lines per second of gameplay.
+I've been having a lot of difficulty debugging enemy AI routines. The process sucks a lot currently, it basically requires me to toggle a few different compiler flags to enable/disable logging calls, play the game to try to produce the behavior(s) I'm looking for and then dig through logs that can be a few hundred lines per second of gameplay.
 
 It's not great. It's not even good.
 
@@ -45,22 +45,22 @@ First step was to update the `EnemyEntity` class with some helper functions and 
 
 ```csharp
 #if UNITY_EDITOR
-        [ShowInInspector]
-        [MultiLineProperty(20)]
-        [HideLabel]
-        [InfoBox("This box displays diagnostic logs from the Enemy AI routines.")]
-        [PropertyOrder(-2)]
-        public string EnemyDecisionLog { get; private set; }
+[ShowInInspector]
+[MultiLineProperty(20)]
+[HideLabel]
+[InfoBox("This box displays diagnostic logs from the Enemy AI routines.")]
+[PropertyOrder(-2)]
+public string EnemyDecisionLog { get; private set; }
 
-        [Button("Copy Decision Log")]
-        [PropertyOrder(-1)]
-        public void CopyDecisionLog() {
-            UnityEditor.EditorGUIUtility.systemCopyBuffer = EnemyDecisionLog;
-        }
+[Button("Copy Decision Log")]
+[PropertyOrder(-1)]
+public void CopyDecisionLog() {
+    UnityEditor.EditorGUIUtility.systemCopyBuffer = EnemyDecisionLog;
+}
 
-        public void LogDecision(string decision) {
-            EnemyDecisionLog += $"{decision}\n";
-        }
+public void LogDecision(string decision) {
+    EnemyDecisionLog += $"{decision}\n";
+}
 #endif
 ```
 
@@ -81,31 +81,31 @@ I had a few more types, but in the end I got rid of a few that weren't very help
 - Decision: An outcome, usually a state change
 
 ```csharp
-    protected void LogQuestion(string question, bool result) {
-        Enemy.LogDecision($"QUESTION: {question} :: [{result.ToString().ToUpper()}]");
-    }
-    protected void LogFilter(string filter) {
-        Enemy.LogDecision($"FILTER: {filter}");
-    }
-    protected void LogDecision(string decision) {
-        Enemy.LogDecision($"DECISION: {decision}");
-    }
+protected void LogQuestion(string question, bool result) {
+    Enemy.LogDecision($"QUESTION: {question} :: [{result.ToString().ToUpper()}]");
+}
+protected void LogFilter(string filter) {
+    Enemy.LogDecision($"FILTER: {filter}");
+}
+protected void LogDecision(string decision) {
+    Enemy.LogDecision($"DECISION: {decision}");
+}
 
-    // ... and this is how they're used
+// ... and this is how they're used
 
-    protected bool IsNearTarget() {
-        var distance = DistanceToTarget;
-        var result = distance <= Enemy.AI.TargetDistanceMax && distance >= Enemy.AI.TargetDistanceMin;
-        LogQuestion("Am I near my target?", result);
-        return result;
-    }
+protected bool IsNearTarget() {
+    var distance = DistanceToTarget;
+    var result = distance <= Enemy.AI.TargetDistanceMax && distance >= Enemy.AI.TargetDistanceMin;
+    LogQuestion("Am I near my target?", result);
+    return result;
+}
 ```
 
-All I needed to do at this point was decorate the other helper methods within the state base classes with the relevant logging calls to get the decision log filled out.
+All I needed to do at this point was add the relevant logging calls to the other helper methods within the state base classes with and the decision log would get filled out while I played the game. Then when an enemy AI gets into a state that it shouldn't be in I can pause the game and copy their AI log out to see the issue.
 
-Now I can play the game (or better yet create a player AI that plays the game) and when an enemy AI gets into a state that it shouldn't be in I can pause the game and copy their AI log out to see the issue.
+Here's a real-world example: During one play-test last week I noticed that some enemies were playing their walk animation but not moving. There was no collision in their path so there must have been another issue at play.
 
-Example: During on play-test I noticed that some enemies were playing their walk animation but not moving. Using this system I was able to figure out that it only happened when they had been hit by an attack with only horizontal knockback. This led me to the bug: the object that is responsible for moving the enemy according to physics was being disabled for the knockback, but never re-enabled if the knockback had no vertical movement.
+Using this system I was able to figure out that it only happened when they had been hit by an attack with only horizontal knockback. This led me to the bug: the object that is responsible for moving the enemy according to physics was being disabled for the knockback, but never re-enabled if the knockback had no vertical movement.
 
 Here's an example of one of the AI Decision Logs from that play-test:
 
@@ -148,3 +148,10 @@ QUESTION: Am I near my destination? :: [FALSE]
 The log is lacking the knockback force (something I need to add later), but the `Animation_Player-PunchLeftJab` attack only includes horizontal knockback.
 
 Also you can see the `FILTER: stuckFrames=11, moverEnabled=False` filter log, which will be used later on to help the AI re-enable it's movement object if/when it gets stuck in the future.
+
+## Future Improvements
+- I'd like to trim the logs. Currently they retain every bit of data written to them, it'd be nice to trim them to maybe the last 200 or 300 entries?
+- I know I said no writing to disk, but it might be a nice feature to write something out to disk if I click a button in the editor.
+- Some way to see the AI logs during a debug build, when the game is running without the editor.
+
+Using this system has made figuring out what steps an AI is performing much easier which will hopefully help me track down more complicated bugs as I continue play testing and building Electric Noir.
