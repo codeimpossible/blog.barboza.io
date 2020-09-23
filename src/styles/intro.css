@@ -1,6 +1,4 @@
-.intro {
-    
-}
+.intro {}
 
 .is-fourohfour .intro-greeting {
     display: none;
@@ -10,19 +8,12 @@
     .is-post .intro-greeting h1 {
         @apply text-2xl pt-2;
     }
-
     .is-fourohfour .intro {
         display: none;
     }
-
     .is-post .intro-greeting h2 {
         @apply text-xl;
     }
-
-    .is-post .intro {
-        opacity: 0.7;
-    }
-
     .intro img {
         position: relative;
         top: 5px;
@@ -38,11 +29,9 @@
     .intro-greeting h1 {
         @apply text-5xl;
     }
-    
-    .intro-greeting h2 { 
+    .intro-greeting h2 {
         @apply text-3xl;
     }
-
     .is-post .intro-greeting {
         position: absolute;
         top: 260px;
@@ -50,15 +39,12 @@
         width: 300px;
         padding-top: 10px;
     }
-
     .is-post .intro-greeting h1 {
         @apply text-2xl;
     }
-
     .is-post .intro-greeting h2 {
         @apply text-xl;
     }
-
     .intro img {
         position: absolute;
         height: 300px;
