@@ -23,6 +23,9 @@ permalink: "{% if path_prefix %}{{ path_prefix }}{% endif %}{% if path %}{{ path
                     <span datetime="{{ date }}">{{ updatedDate | dateDisplay }}</span>. Created on
                     <span datetime="{{ date }}">{{ date | dateDisplay }}</span>.</em></span>
             {% endif %}
+        {% else %}
+            <span class="text-sm">📆 <em>Created on
+                    <span datetime="{{ page.date }}">{{ page.date | dateDisplay }}</span>.</em></span>
         {% endif %}
 
         {% if tags %}
