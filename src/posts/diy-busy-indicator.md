@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Building my own busy indicator"
-date: 2020-09-28 03:49:00
 tags:
 - post
 - making-stuff
