@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     
-    <meta itemprop="name" content="batman | jaredbarboza.me">
+    <meta itemprop="name" content="Weird inverted image data in Unity | jaredbarboza.me">
     <meta itemprop="description" content="🍕 P I Z Z A is life">
 
     
-    <meta name="twitter:title" content="batman | jaredbarboza.me">
+    <meta name="twitter:title" content="Weird inverted image data in Unity | jaredbarboza.me">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="🍕 P I Z Z A is life">
     <meta name="twitter:site" content="@codeimpossible">
@@ -18,7 +18,7 @@
     <meta name="twitter:image:src" content="http://jaredbarboza.me/social-header.png">
 
     
-    <meta name="og:title" content="batman | jaredbarboza.me">
+    <meta name="og:title" content="Weird inverted image data in Unity | jaredbarboza.me">
     <meta name="og:description" content="🍕 P I Z Z A is life">
     <meta name="og:image" content="http://jaredbarboza.me/social-header-lg.png">
     <meta name="og:url" content="http://jaredbarboza.me/">
@@ -28,13 +28,13 @@
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    <title>batman—jaredbarboza.me</title>
+    <title>Weird inverted image data in Unity—jaredbarboza.me</title>
 
     <link rel="stylesheet" href="/assets/main.bundle.css">
 
     
   </head>
-  <body class="flex flex-col min-h-screen ">
+  <body class="flex flex-col min-h-screen is-post">
     <!-- <p class="top-notice">
     Include a notice here!
 </p> -->
@@ -97,53 +97,50 @@
   </nav>
 </header>-->
       
-  <p class="text-center text-sm italic mb-6">(Posts filtered by <strong>batman</strong>.)</p>
+    <div>
+        <h1>Weird inverted image data in Unity</h1>
 
-  
+        
 
-  <div>
-    <h2>Newest</h2>
-    <ol class="border-dotted border-t border-gray-800 pt-4 mt-4">
         
             
-                <li class="mb-4 text-2xl">
-                    <a href="/post/fiction-friday-batman-lost-knigh/">Fiction Friday: Batman - Lost Knight</a>
-                    <span class="tags">
-                    <a class="tag" href="/tag/batman">batman</a><a class="tag" href="/tag/fiction">fiction</a><a class="tag" href="/tag/writing">writing</a>
-                    </span>
-                </li>
+                <span class="text-sm">📆 <em>Created on
+                    <span datetime="Wed Apr 07 2021 00:00:00 GMT+0000 (Coordinated Universal Time)">April 7, 2021</span>.</em></span>
             
         
-    </ol>
-</div>
 
-  <div class="grid grid-flow-row grid-cols-3 gap-4 mb-10 mt-10">
-        <a class="tag Meta mx-auto" href="/tag/Meta">Meta</a>
-        <a class="tag batman mx-auto" href="/tag/batman">batman</a>
-        <a class="tag bbq mx-auto" href="/tag/bbq">bbq</a>
-        <a class="tag behind-the-scenes mx-auto" href="/tag/behind-the-scenes">behind-the-scenes</a>
-        <a class="tag breakfast mx-auto" href="/tag/breakfast">breakfast</a>
-        <a class="tag cooking mx-auto" href="/tag/cooking">cooking</a>
-        <a class="tag csharp mx-auto" href="/tag/csharp">csharp</a>
-        <a class="tag dotnet mx-auto" href="/tag/dotnet">dotnet</a>
-        <a class="tag eggs mx-auto" href="/tag/eggs">eggs</a>
-        <a class="tag electric-noir mx-auto" href="/tag/electric-noir">electric-noir</a>
-        <a class="tag fiction mx-auto" href="/tag/fiction">fiction</a>
-        <a class="tag fish mx-auto" href="/tag/fish">fish</a>
-        <a class="tag mcu mx-auto" href="/tag/mcu">mcu</a>
-        <a class="tag pixel-art mx-auto" href="/tag/pixel-art">pixel-art</a>
-        <a class="tag pro-tips mx-auto" href="/tag/pro-tips">pro-tips</a>
-        <a class="tag programming mx-auto" href="/tag/programming">programming</a>
-        <a class="tag recipes mx-auto" href="/tag/recipes">recipes</a>
-        <a class="tag reviews mx-auto" href="/tag/reviews">reviews</a>
-        <a class="tag soups mx-auto" href="/tag/soups">soups</a>
-        <a class="tag spider-man mx-auto" href="/tag/spider-man">spider-man</a>
-        <a class="tag steak mx-auto" href="/tag/steak">steak</a>
-        <a class="tag stocks mx-auto" href="/tag/stocks">stocks</a>
-        <a class="tag unity3d mx-auto" href="/tag/unity3d">unity3d</a>
-        <a class="tag writing mx-auto" href="/tag/writing">writing</a>
-</div>
+        
+            <span class="pl-10 mb-2 tags">
+                <span>🔖</span>
+                <a class="tag tag-inline" href="/tag/csharp">csharp</a><a class="tag tag-inline" href="/tag/dotnet">dotnet</a><a class="tag tag-inline" href="/tag/unity3d">unity3d</a>
+            </span>
+        
 
+        <div class="content post">
+            <p>I've been working on some pipeline tools this weekend and came across an issue when moving some code out from unity into a netcore project. I have code written to process <code>*.aseprite</code> files directly, so I can read their image data without having to generate PNG files, and in Unity I use this code to create textures and sprites for each aseprite file automatically and it works without issue. I started out by porting some of the code from https://github.com/martinhodler/unity-aseprite-importer over into my own project.</p>
+<p>I am also converting some of this aseprite code to netcore so I can do some extra processing outside of unity (eventually I'll add it back in, but I have a lot of files to process and don't want to do it all in Unity for the first go around) and I noticed that when I was writing the aseprite image data the images were all vertically inverted.</p>
+<p>Now, this doesn't happen when I run the code in Unity and the code that reads the pixel data from the aseprite file is unchanged between the two environments. After thinking it through for a bit and reading through the image data code I found this section:</p>
+<pre class="language-csharp"><code class="language-csharp"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> y <span class="token operator">=</span> cel<span class="token punctuation">.</span>Y<span class="token punctuation">;</span> y <span class="token operator">&lt;</span> celYEnd<span class="token punctuation">;</span> y<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>	<span class="token keyword">if</span> <span class="token punctuation">(</span>y <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> y <span class="token operator">>=</span> canvasHeight<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>		pixelIndex <span class="token operator">+=</span> cel<span class="token punctuation">.</span>Width<span class="token punctuation">;</span><br>		<span class="token keyword">continue</span><span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br>	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> x <span class="token operator">=</span> cel<span class="token punctuation">.</span>X<span class="token punctuation">;</span> x <span class="token operator">&lt;</span> celXEnd<span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>		<span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> canvasWidth<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>			<span class="token class-name"><span class="token keyword">int</span></span> index <span class="token operator">=</span> <span class="token punctuation">(</span>canvasHeight <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> y<span class="token punctuation">)</span> <span class="token operator">*</span> canvasWidth <span class="token operator">+</span> x<span class="token punctuation">;</span><br>			colors<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> cel<span class="token punctuation">.</span>RawPixelData<span class="token punctuation">[</span>pixelIndex<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">GetColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>		<span class="token punctuation">}</span><br>		<span class="token operator">++</span>pixelIndex<span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>This code is looping through a <code>Cel</code> struct within the aseprite file, which is defined as</p>
+<blockquote>
+<p>A cel (from celluloid) is one image in a specific frame and layer, at a specific xy-coordinate in the canvas.</p>
+</blockquote>
+<p>So it's essentially a sub-region of a layer within a frame inside an aseprite file. It has a offset, in <code>cel.X</code> and <code>cel.Y</code> and a height and width <code>celYEnd</code> and <code>celXEnd</code>.</p>
+<p>When writing color data to an image, the batch version of <code>SetPixel()</code> only accepts a single dimension array of color data, so there is some math done to convert a two dimensional coordinate to a single dimension. Normally, this looks like <code>I = Y * Height + X</code> where <code>X</code> and <code>Y</code> are the pixel coordinates in image space, because <code>Y</code> increases as you travel further into the image data.</p>
+<p>However, this code is using <code>int index = (canvasHeight - 1 - y) * canvasWidth + x;</code> which is almost the same, but it <strong>decreases</strong> <code>Y</code> as you travel further into the image data. This was pretty surprising to me, but I confirmed it with the Unity docs: https://docs.unity3d.com/ScriptReference/Texture2D.SetPixels.html</p>
+<blockquote>
+<p>The colors array is a flattened 2D array, where pixels are laid out left to right, bottom to top (i.e. row after row).</p>
+</blockquote>
+<p>So once again, Unity behaves in a way that is completely unique and how a user might expect by default.</p>
+
+        </div>
+            <p class="uppercase text-xs mt-6">Previous</p>
+
+            <p class="font-bold">
+                <a href="/post/toubleshooting-enemy-ai/">Toubleshooting Enemy AI</a>
+            </p>
+        
+    </div>
 
     </main>
     <footer>
