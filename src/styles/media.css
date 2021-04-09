@@ -1,0 +1,7 @@
+.content>img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 1rem;
+    max-width: 100%;
+    min-width: 100px;
+  }
