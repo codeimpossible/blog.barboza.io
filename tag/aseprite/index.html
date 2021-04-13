@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     
-    <meta itemprop="name" content="Electric Noir .plan #2-3 | jaredbarboza.me">
+    <meta itemprop="name" content="aseprite | jaredbarboza.me">
     <meta itemprop="description" content="🍕 P I Z Z A is life">
 
     
-    <meta name="twitter:title" content="Electric Noir .plan #2-3 | jaredbarboza.me">
+    <meta name="twitter:title" content="aseprite | jaredbarboza.me">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="🍕 P I Z Z A is life">
     <meta name="twitter:site" content="@codeimpossible">
@@ -18,7 +18,7 @@
     <meta name="twitter:image:src" content="http://jaredbarboza.me/social-header.png">
 
     
-    <meta name="og:title" content="Electric Noir .plan #2-3 | jaredbarboza.me">
+    <meta name="og:title" content="aseprite | jaredbarboza.me">
     <meta name="og:description" content="🍕 P I Z Z A is life">
     <meta name="og:image" content="http://jaredbarboza.me/social-header-lg.png">
     <meta name="og:url" content="http://jaredbarboza.me/">
@@ -28,13 +28,13 @@
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    <title>Electric Noir .plan #2-3—jaredbarboza.me</title>
+    <title>aseprite—jaredbarboza.me</title>
 
     <link rel="stylesheet" href="/assets/main.bundle.css">
 
     
   </head>
-  <body class="flex flex-col min-h-screen is-post">
+  <body class="flex flex-col min-h-screen ">
     <!-- <p class="top-notice">
     Include a notice here!
 </p> -->
@@ -97,62 +97,54 @@
   </nav>
 </header>-->
       
-    <div>
-        <h1>Electric Noir .plan #2-3</h1>
+  <p class="text-center text-sm italic mb-6">(Posts filtered by <strong>aseprite</strong>.)</p>
 
-        
+  
 
+  <div>
+    <h2>Newest</h2>
+    <ol class="border-dotted border-t border-gray-800 pt-4 mt-4">
         
             
-                <span class="text-sm">📆 <em>Created on
-                    <span datetime="Mon Jun 18 2018 16:00:57 GMT+0000 (Coordinated Universal Time)">June 18, 2018</span>.</em></span>
+                <li class="mb-4 text-2xl">
+                    <a href="/post/pipeline-update:-normal-maps-and-rim-lighting-masks-for-sprites/">Pipeline update: Normal maps and rim lighting masks for sprites</a>
+                    <span class="tags">
+                    <a class="tag" href="/tag/aseprite">aseprite</a><a class="tag" href="/tag/unity3d">unity3d</a>
+                    </span>
+                </li>
             
         
+    </ol>
+</div>
 
-        
-            <span class="pl-10 mb-2 tags">
-                <span>🔖</span>
-                <a class="tag tag-inline" href="/tag/Meta">Meta</a><a class="tag tag-inline" href="/tag/unity3d">unity3d</a>
-            </span>
-        
+  <div class="grid grid-flow-row grid-cols-3 gap-4 mb-10 mt-10">
+        <a class="tag Meta mx-auto" href="/tag/Meta">Meta</a>
+        <a class="tag aseprite mx-auto" href="/tag/aseprite">aseprite</a>
+        <a class="tag batman mx-auto" href="/tag/batman">batman</a>
+        <a class="tag bbq mx-auto" href="/tag/bbq">bbq</a>
+        <a class="tag behind-the-scenes mx-auto" href="/tag/behind-the-scenes">behind-the-scenes</a>
+        <a class="tag breakfast mx-auto" href="/tag/breakfast">breakfast</a>
+        <a class="tag cooking mx-auto" href="/tag/cooking">cooking</a>
+        <a class="tag csharp mx-auto" href="/tag/csharp">csharp</a>
+        <a class="tag dotnet mx-auto" href="/tag/dotnet">dotnet</a>
+        <a class="tag eggs mx-auto" href="/tag/eggs">eggs</a>
+        <a class="tag electric-noir mx-auto" href="/tag/electric-noir">electric-noir</a>
+        <a class="tag fiction mx-auto" href="/tag/fiction">fiction</a>
+        <a class="tag fish mx-auto" href="/tag/fish">fish</a>
+        <a class="tag mcu mx-auto" href="/tag/mcu">mcu</a>
+        <a class="tag pixel-art mx-auto" href="/tag/pixel-art">pixel-art</a>
+        <a class="tag pro-tips mx-auto" href="/tag/pro-tips">pro-tips</a>
+        <a class="tag programming mx-auto" href="/tag/programming">programming</a>
+        <a class="tag recipes mx-auto" href="/tag/recipes">recipes</a>
+        <a class="tag reviews mx-auto" href="/tag/reviews">reviews</a>
+        <a class="tag soups mx-auto" href="/tag/soups">soups</a>
+        <a class="tag spider-man mx-auto" href="/tag/spider-man">spider-man</a>
+        <a class="tag steak mx-auto" href="/tag/steak">steak</a>
+        <a class="tag stocks mx-auto" href="/tag/stocks">stocks</a>
+        <a class="tag unity3d mx-auto" href="/tag/unity3d">unity3d</a>
+        <a class="tag writing mx-auto" href="/tag/writing">writing</a>
+</div>
 
-        <div class="content post">
-            <p><em>Electric Noir is a game that I am building in my spare time. It’s a classic turn-based RPG set in a post-apocalyptic, cyberpunk future with a focus on noir-style story telling. Think fallout meets blade runner.</em></p>
-<p><em>This set of posts is going to be a raw dump from my <a href="https://www.scribd.com/doc/14192/John-Carmack-Archive-plan-1998">plan file</a> for the game. I’m not going to edit these much, and they are going to mostly be for me to share some updates about the games progress to more than just myself, and also hopefully track how much stuff I actually get done (because some days it can feel like I haven’t done anything).</em></p>
-<p><em>Originally written on 5/20/18:</em> Alright, spent the afternoon and some of the night working on the game.</p>
-<h3>Stuff I Did</h3>
-<ul>
-<li>Merged the UIState with the GameState object. There will be only one state object from now on, which should make future work a lot easier.</li>
-<li>Refactored the event manager so that events are codified as an Enum, instead of just passing strings around. Makes it easier to have event-bound behaviours and i dont have to store strings in memory.</li>
-<li>updated the UI for the equipped items so that it's fixed, and not a normal inventory list</li>
-</ul>
-<p>Since this is a small entry, I'll post another entry as well.</p>
-<p><em>Originally written on 5/21/18:</em></p>
-<h3>Stuff I Did</h3>
-<ul>
-<li>Started work on codifying the new equipped items window</li>
-<li>uhhh, i finished the equipped items window - for the most part</li>
-<li>there's a weird bug where items are getting duplicated into the inventory after they get removed from the equipped items</li>
-<li>i started working on the equipped weapons toggle window, changing weapons works</li>
-</ul>
-<h3>Next Up</h3>
-<ul>
-<li>combat action chooser</li>
-</ul>
-
-        </div>
-            <p class="uppercase text-xs mt-6">Next</p>
-            <p class="font-bold mb-2">
-                <a href="/post/electric-noir-plan-4/">Electric Noir .plan #4</a>
-            </p>
-        
-            <p class="uppercase text-xs mt-6">Previous</p>
-
-            <p class="font-bold">
-                <a href="/post/electric-noir-plan-1/">Electric Noir .plan #1:</a>
-            </p>
-        
-    </div>
 
     </main>
     <footer>

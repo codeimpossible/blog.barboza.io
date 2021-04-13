@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     
-    <meta itemprop="name" content="Electric Noir .plan #2-3 | jaredbarboza.me">
+    <meta itemprop="name" content="Pipeline update: Normal maps and rim lighting masks for sprites | jaredbarboza.me">
     <meta itemprop="description" content="🍕 P I Z Z A is life">
 
     
-    <meta name="twitter:title" content="Electric Noir .plan #2-3 | jaredbarboza.me">
+    <meta name="twitter:title" content="Pipeline update: Normal maps and rim lighting masks for sprites | jaredbarboza.me">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="🍕 P I Z Z A is life">
     <meta name="twitter:site" content="@codeimpossible">
@@ -18,7 +18,7 @@
     <meta name="twitter:image:src" content="http://jaredbarboza.me/social-header.png">
 
     
-    <meta name="og:title" content="Electric Noir .plan #2-3 | jaredbarboza.me">
+    <meta name="og:title" content="Pipeline update: Normal maps and rim lighting masks for sprites | jaredbarboza.me">
     <meta name="og:description" content="🍕 P I Z Z A is life">
     <meta name="og:image" content="http://jaredbarboza.me/social-header-lg.png">
     <meta name="og:url" content="http://jaredbarboza.me/">
@@ -28,7 +28,7 @@
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    <title>Electric Noir .plan #2-3—jaredbarboza.me</title>
+    <title>Pipeline update: Normal maps and rim lighting masks for sprites—jaredbarboza.me</title>
 
     <link rel="stylesheet" href="/assets/main.bundle.css">
 
@@ -98,58 +98,36 @@
 </header>-->
       
     <div>
-        <h1>Electric Noir .plan #2-3</h1>
+        <h1>Pipeline update: Normal maps and rim lighting masks for sprites</h1>
 
         
 
         
             
                 <span class="text-sm">📆 <em>Created on
-                    <span datetime="Mon Jun 18 2018 16:00:57 GMT+0000 (Coordinated Universal Time)">June 18, 2018</span>.</em></span>
+                    <span datetime="Sat Apr 10 2021 00:00:00 GMT+0000 (Coordinated Universal Time)">April 10, 2021</span>.</em></span>
             
         
 
         
             <span class="pl-10 mb-2 tags">
                 <span>🔖</span>
-                <a class="tag tag-inline" href="/tag/Meta">Meta</a><a class="tag tag-inline" href="/tag/unity3d">unity3d</a>
+                <a class="tag tag-inline" href="/tag/aseprite">aseprite</a><a class="tag tag-inline" href="/tag/unity3d">unity3d</a>
             </span>
         
 
         <div class="content post">
-            <p><em>Electric Noir is a game that I am building in my spare time. It’s a classic turn-based RPG set in a post-apocalyptic, cyberpunk future with a focus on noir-style story telling. Think fallout meets blade runner.</em></p>
-<p><em>This set of posts is going to be a raw dump from my <a href="https://www.scribd.com/doc/14192/John-Carmack-Archive-plan-1998">plan file</a> for the game. I’m not going to edit these much, and they are going to mostly be for me to share some updates about the games progress to more than just myself, and also hopefully track how much stuff I actually get done (because some days it can feel like I haven’t done anything).</em></p>
-<p><em>Originally written on 5/20/18:</em> Alright, spent the afternoon and some of the night working on the game.</p>
-<h3>Stuff I Did</h3>
-<ul>
-<li>Merged the UIState with the GameState object. There will be only one state object from now on, which should make future work a lot easier.</li>
-<li>Refactored the event manager so that events are codified as an Enum, instead of just passing strings around. Makes it easier to have event-bound behaviours and i dont have to store strings in memory.</li>
-<li>updated the UI for the equipped items so that it's fixed, and not a normal inventory list</li>
-</ul>
-<p>Since this is a small entry, I'll post another entry as well.</p>
-<p><em>Originally written on 5/21/18:</em></p>
-<h3>Stuff I Did</h3>
-<ul>
-<li>Started work on codifying the new equipped items window</li>
-<li>uhhh, i finished the equipped items window - for the most part</li>
-<li>there's a weird bug where items are getting duplicated into the inventory after they get removed from the equipped items</li>
-<li>i started working on the equipped weapons toggle window, changing weapons works</li>
-</ul>
-<h3>Next Up</h3>
-<ul>
-<li>combat action chooser</li>
-</ul>
+            <p>I updated my aseprite import code to filter out &quot;special&quot; layers and import them differently. Currently it supports <code>@normal</code>, <code>@mask</code> and <code>@emission</code> layers and imports the data there as normal maps, light masks and emission maps respectively. These special layers are imported as secondary textures for the sprite sheet, so they work with the built-in Unity 2D lighting effects:</p>
+<p><img src="https://user-images.githubusercontent.com/176476/113903372-e8207400-979e-11eb-8e4b-6600431e5f76.gif" alt="o7Jlhwg"></p>
+<p>And here are the layers within aseprite, there's a gif below of me toggling each layer on/off.
+<img src="https://user-images.githubusercontent.com/176476/113903048-8b24be00-979e-11eb-8753-44b12790dcc9.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/176476/113903217-b7d8d580-979e-11eb-8f92-023935e1622e.gif" alt="OdeNormalsOnOff"></p>
 
         </div>
-            <p class="uppercase text-xs mt-6">Next</p>
-            <p class="font-bold mb-2">
-                <a href="/post/electric-noir-plan-4/">Electric Noir .plan #4</a>
-            </p>
-        
             <p class="uppercase text-xs mt-6">Previous</p>
 
             <p class="font-bold">
-                <a href="/post/electric-noir-plan-1/">Electric Noir .plan #1:</a>
+                <a href="/post/weird-inverted-image-data-in-unity/">Weird inverted image data in Unity</a>
             </p>
         
     </div>
