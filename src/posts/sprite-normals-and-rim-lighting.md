@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Pipeline update: Normal maps and rim lighting masks for sprites"
+title: "Pipeline update - Normal maps and rim lighting masks for sprites"
 excerpt: ""
 date: 2021-04-10 00:00:00
 updatedDate: 2021-04-10 00:00:00
