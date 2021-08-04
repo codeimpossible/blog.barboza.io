@@ -29,6 +29,7 @@ Now I just needed to create a shader that processes the map texture and performs
 ```cpp
 float4 frag(v2f IN) : SV_Target
 {
+    
     // sample the main texture... pretty standard stuff
     float4 mainTex = tex2D(_MainTex, IN.uv);
 
@@ -38,15 +39,15 @@ float4 frag(v2f IN) : SV_Target
     float4 mapTex = tex2D(_MapTex, IN.uv);
 
     // scale up the RED (x) and GREEN (y) values from the color
-    int x = floor(mapTex.x * 255);
-    int y = floor(mapTex.y * 255);
+    int x = round(mapTex.x * 255) / 8;
+    int y = round(mapTex.y * 255) / 8;
     
+    // convert the values to their respective index within the palette
+    x -= 1;
+    y -= 1;
 
-    // convert the color values into texture space coords by
-    // dividing by the WIDTH (z) of the palette texture. You'll
-    // want to change this to use the width/height for
-    // x, y if you are using a non-square palette size.
-    float2 uv = float2(x * (1 / _PaletteTex_TexelSize.z) , y * (1 / _PaletteTex_TexelSize.z));
+    // convert the color values into texture space coords
+    float2 uv = float2(x * _PaletteTex_TexelSize.x, y * _PaletteTex_TexelSize.y);
 
     // PaletteTex is a basic Texture2D you might
     // want to change this to a [PerRendererData] 
@@ -56,7 +57,7 @@ float4 frag(v2f IN) : SV_Target
     float4 c;
     c.rgb = palette.rgb;
     c.a = mainTex.a * palette.a; // palette alpha overrides the main texture alpha
-                                 // useful if you want to hide parts of your sprite
+                                    // useful if you want to hide parts of your sprite
 
     // PaletteEnabled is a [MaterialToggle] float
     // you might want to change this to a 
@@ -70,7 +71,7 @@ float4 frag(v2f IN) : SV_Target
     // ShowMap is a [MaterialToggle] float
     // if its set, then show the map data instead
     if (ShowMap == 1.0) {
-        c.rg = uv;
+        c.rg = mapTex.xy;
         c.b = 0;
         return c;
     }
@@ -78,6 +79,14 @@ float4 frag(v2f IN) : SV_Target
     return c;
 }
 ```
+
+## Gotchas
+
+Since the shader is expecting specific RGB values from the map, make sure your map image is configured to be in linear color space:
+
+- Select your texture asset and make sure *sRGB (Color Texture)* is **unchecked**. 
+
+This will make sure that colors sampled via the texture in your shader return the color values you are expecting. You can read more about [linear vs gamma color space on this Unity Forum thread](https://forum.unity.com/threads/confusion-about-gamma-vs-linear.496053/).
 
 The end result is that I can now swap out character styles by changing which palette they use!
 
