@@ -10,7 +10,7 @@ tags:
   - shaders
 ---
 
-So [previously](/post/enemies-assemble/) I mentioned that I wanted to build out a palette swap system to allow me to reuse enemy sprites to fill the game up with more enemies without having to create a ton of assets. I'm just one person after all and my time is better spent fixing bugs and making sure the game is fun vs. endlessly turning out color flips of sprites.
+So [previously](/post/enemies-assemble!/) I mentioned that I wanted to build out a palette swap system to allow me to reuse enemy sprites to fill the game up with more enemies without having to create a ton of assets. I'm just one person after all and my time is better spent fixing bugs and making sure the game is fun vs. endlessly turning out color flips of sprites.
 
 ## Palette Swapping Theory
 
