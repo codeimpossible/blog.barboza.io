@@ -7,8 +7,7 @@
 @import './intro.css';
 @import './type.css';
 @import './media.css';
-/* purgecss end ignore */
 
 @import 'tailwindcss/components';
-
 @import 'tailwindcss/utilities';
+/* purgecss end ignore */
