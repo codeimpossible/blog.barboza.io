@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     
-    <meta itemprop="name" content="Enemies Assemble! | jaredbarboza.me">
+    <meta itemprop="name" content="Getting child objects from assets in Unity | jaredbarboza.me">
     <meta itemprop="description" content="🍕 P I Z Z A is life">
 
     
-    <meta name="twitter:title" content="Enemies Assemble! | jaredbarboza.me">
+    <meta name="twitter:title" content="Getting child objects from assets in Unity | jaredbarboza.me">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="🍕 P I Z Z A is life">
     <meta name="twitter:site" content="@codeimpossible">
@@ -18,7 +18,7 @@
     <meta name="twitter:image:src" content="http://jaredbarboza.me/social-header.png">
 
     
-    <meta name="og:title" content="Enemies Assemble! | jaredbarboza.me">
+    <meta name="og:title" content="Getting child objects from assets in Unity | jaredbarboza.me">
     <meta name="og:description" content="🍕 P I Z Z A is life">
     <meta name="og:image" content="http://jaredbarboza.me/social-header-lg.png">
     <meta name="og:url" content="http://jaredbarboza.me/">
@@ -28,7 +28,7 @@
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    <title>Enemies Assemble!—jaredbarboza.me</title>
+    <title>Getting child objects from assets in Unity—jaredbarboza.me</title>
 
     <link rel="stylesheet" href="/assets/main.bundle.css">
 
@@ -98,47 +98,41 @@
 </header>-->
       
     <div>
-        <h1>Enemies Assemble!</h1>
+        <h1>Getting child objects from assets in Unity</h1>
 
         
 
         
             <span class="text-sm">📆 <em>Created on
-                    <span datetime="Thu Jul 15 2021 00:00:00 GMT+0000 (Coordinated Universal Time)">July 15, 2021</span>.</em></span>
+                    <span datetime="Thu Aug 05 2021 00:00:00 GMT+0000 (Coordinated Universal Time)">August 5, 2021</span>.</em></span>
         
 
         
             <span class="pl-10 mb-2 tags">
                 <span>🔖</span>
-                <a class="tag tag-inline" href="/tag/electric-noir">electric-noir</a><a class="tag tag-inline" href="/tag/unity3d">unity3d</a><a class="tag tag-inline" href="/tag/game-development">game-development</a>
+                <a class="tag tag-inline" href="/tag/unity3d">unity3d</a><a class="tag tag-inline" href="/tag/game-development">game-development</a>
             </span>
         
 
         <div class="content post">
-            <p>I've been working on more mockup-type stuff for different levels I want to include in the game and I figured I would take a minute to assemble all the enemies in one screenshot.</p>
-<img src="/electricnoir/enemies-assemble.png" />
-<p>This mockup includes two characters that I purchased off the itch.io store. I cleaned up a few of their animations and tweaked some of their art to fit the design of Electric Noir a bit better. I'm hopeful that this will work out well and save me some time later on (so far, it's two characters that I haven't had to do any design or animation work on).</p>
-<p>I also added a few more enemies of my own:</p>
-<img src="/electricnoir/Thug-Melee-32.gif" />
-<img src="/electricnoir/Henchbot-32.gif" />
-<p>My hope is that I'll be able to build out a palette swap system to get more mileage out of the basic enemies. We'll see if I'm able to come up with a working solution for that.</p>
-<p>I was also able to build out a character template for a larger melee enemy.</p>
-<img src="/electricnoir/BigCharacterTemplate-48.gif" />
-<p>I also created a chest that will contain useful upgrades/items.</p>
-<img src="/electricnoir/Tech-Chest-32.gif" />
-<p>What do you think about the characters? Shoot me your thoughts on <a href="https://www.twitter.com/codeimpossible">twitter.</a></p>
+            <p>As part of the development for <a href="http://electricnoirgame.com">Electric Noir</a> I've written a custom Asset Import pipeline for Aseprite files. You can read more about <a href="https://docs.unity3d.com/Manual/ScriptedImporters.html">scripted importers on unitys site</a>. Anyway, this pipeline handles things like</p>
+<ul>
+<li>Generating and importing all the sprites from a aseprite file</li>
+<li>Automatically creating animations</li>
+<li>Creating Emission, Normal and Rim lighting maps from specially named layers</li>
+<li>Creating a palette map and default palette for my <a href="/post/palette-swapping/">recently added palette swap solution</a></li>
+</ul>
+<p>As part of this import process there are a lot of objects added to the aseprite file. I chose to do this to keep the references intact from import to import as well as to keep my textures directory clean.</p>
+<p>The part of the code that handles adding these... child objects to the aseprite file looks like this:</p>
+<pre class="language-csharp"><code class="language-csharp"><span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">var</span></span> secondarySpriteTexture <span class="token keyword">in</span> secondaryTextures<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    ctx<span class="token punctuation">.</span><span class="token function">AddObjectToAsset</span><span class="token punctuation">(</span>secondarySpriteTexture<span class="token punctuation">.</span>name<span class="token punctuation">,</span> secondarySpriteTexture<span class="token punctuation">.</span>texture<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br>aseFileDescriptor<span class="token punctuation">.</span>Sprites <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">List<span class="token punctuation">&lt;</span>Sprite<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">var</span></span> sprite <span class="token keyword">in</span> textureOutput<span class="token punctuation">.</span>sprites<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    ctx<span class="token punctuation">.</span><span class="token function">AddObjectToAsset</span><span class="token punctuation">(</span>sprite<span class="token punctuation">.</span>name<span class="token punctuation">,</span> sprite<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    aseFileDescriptor<span class="token punctuation">.</span>Sprites<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>sprite<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token class-name"><span class="token keyword">var</span></span> animations <span class="token operator">=</span> aseFile<span class="token punctuation">.</span><span class="token function">GetAnimations</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>aseFileDescriptor<span class="token punctuation">.</span>Name <span class="token operator">=</span> name<span class="token punctuation">;</span><br>aseFileDescriptor<span class="token punctuation">.</span>FrameCount <span class="token operator">=</span> frameCount<span class="token punctuation">;</span><br>aseFileDescriptor<span class="token punctuation">.</span>AnimationCount <span class="token operator">=</span> animations<span class="token punctuation">.</span>Length<span class="token punctuation">;</span><br>aseFileDescriptor<span class="token punctuation">.</span>Atlas <span class="token operator">=</span> atlas<span class="token punctuation">;</span><br>ctx<span class="token punctuation">.</span><span class="token function">AddObjectToAsset</span><span class="token punctuation">(</span><span class="token string">"Asefile"</span><span class="token punctuation">,</span> aseFileDescriptor<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>ctx<span class="token punctuation">.</span><span class="token function">SetMainObject</span><span class="token punctuation">(</span>aseFileDescriptor<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The problem comes later, when I want to do something via editor code to one of the assets included in the aseprite file context. There isn't great documentation around this but you can use <code>AssetDatabase.LoadAllAssetsAtPath()</code> to pull all of the child assets for a given asset.</p>
+<pre class="language-csharp"><code class="language-csharp"><span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">var</span></span> obj <span class="token keyword">in</span> AssetDatabase<span class="token punctuation">.</span><span class="token function">LoadAllAssetsAtPath</span><span class="token punctuation">(</span>AssetDatabase<span class="token punctuation">.</span><span class="token function">GetAssetPath</span><span class="token punctuation">(</span>Selection<span class="token punctuation">.</span>activeObject<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token class-name"><span class="token keyword">string</span></span> guid<span class="token punctuation">;</span><br>    <span class="token class-name"><span class="token keyword">long</span></span> file<span class="token punctuation">;</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span>AssetDatabase<span class="token punctuation">.</span><span class="token function">TryGetGUIDAndLocalFileIdentifier</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token keyword">out</span> guid<span class="token punctuation">,</span> <span class="token keyword">out</span> file<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        <span class="token comment">// do something with your child asset</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>And there you have it.</p>
 
         </div>
             <span style="float: left">
                 <span class="uppercase text-xs mt-6">Previous</span>
                 <span class="font-bold">
-                    <a href="/post/making-enemies/">Making enemies</a>
-                </span>
-            </span>
-        
-            <span style="float: right">
-                <span class="uppercase text-xs mt-6">Next</span>
-                <span class="font-bold mb-2">
                     <a href="/post/palette-swapping/">Palette swapping</a>
                 </span>
             </span>
