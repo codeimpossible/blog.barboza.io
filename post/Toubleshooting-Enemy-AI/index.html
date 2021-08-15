@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+    <meta itemprop="name" content="Toubleshooting Enemy AI | jaredbarboza.me">
+    <meta itemprop="description" content="Spending time to get better debugging tools isn&#39;t usually wasted time.">
+
+    
+    <meta name="twitter:title" content="Toubleshooting Enemy AI | jaredbarboza.me">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="Spending time to get better debugging tools isn&#39;t usually wasted time.">
+    <meta name="twitter:site" content="@codeimpossible">
+    <meta name="twitter:creator" content="@codeimpossible">
+    <meta name="twitter:image:src" content="http://jaredbarboza.me/social-header.png">
+
+    
+    <meta name="og:title" content="Toubleshooting Enemy AI | jaredbarboza.me">
+    <meta name="og:description" content="Spending time to get better debugging tools isn&#39;t usually wasted time.">
+    <meta name="og:image" content="http://jaredbarboza.me/social-header-lg.png">
+    <meta name="og:url" content="http://jaredbarboza.me/">
+    <meta name="og:site_name" content="jaredbarboza.me">
+    <meta name="og:locale" content="en_US">
+    <meta name="og:type" content="website">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <title>Toubleshooting Enemy AI—jaredbarboza.me</title>
+
+    <link rel="stylesheet" href="/assets/main.bundle.css">
+
+    
+  </head>
+  <body class="flex flex-col min-h-screen is-post">
+    <!-- <p class="top-notice">
+    Include a notice here!
+</p> -->
+
+    <main class="container mx-auto max-w-3xl flex-grow">
+      <aside class="intro">
+  <a href="/">
+    <img src="/me.jpg" alt="Me. I mean Jared. I mean that's me, Jared." class="rounded-full" />
+  </a>
+  <div class="intro-greeting mb-5">
+    <h1>Hey there 👋, I'm Jared.</h1>
+    <h2>Future skeleton. 🐈 parent. Lover of all things 🍕. Dispenser of artisanal emoji, gifs and memes. They/Them.</h2>
+  </div>
+  <span class="social">
+      <a href="https://twitter.com/codeimpossible" class="social_icon icon-twitter" title="@codeimpossible on Twitter">
+          <svg width="28" height="28" viewBox="0 0 32 32" preserveAspectRatio="xMinYMin" aria-hidden="true" focusable="false">
+              <use xlink:href="#icon-twitter">
+                  <g id="icon-twitter"><path fill="#00c9ff" d="M 32,6.076c-1.177,0.522-2.443,0.875-3.771,1.034c 1.355-0.813, 2.396-2.099, 2.887-3.632 c-1.269,0.752-2.674,1.299-4.169,1.593c-1.198-1.276-2.904-2.073-4.792-2.073c-3.626,0-6.565,2.939-6.565,6.565 c0,0.515, 0.058,1.016, 0.17,1.496c-5.456-0.274-10.294-2.888-13.532-6.86c-0.565,0.97-0.889,2.097-0.889,3.301 c0,2.278, 1.159,4.287, 2.921,5.465c-1.076-0.034-2.088-0.329-2.974-0.821c-0.001,0.027-0.001,0.055-0.001,0.083 c0,3.181, 2.263,5.834, 5.266,6.438c-0.551,0.15-1.131,0.23-1.73,0.23c-0.423,0-0.834-0.041-1.235-0.118 c 0.836,2.608, 3.26,4.506, 6.133,4.559c-2.247,1.761-5.078,2.81-8.154,2.81c-0.53,0-1.052-0.031-1.566-0.092 c 2.905,1.863, 6.356,2.95, 10.064,2.95c 12.076,0, 18.679-10.004, 18.679-18.68c0-0.285-0.006-0.568-0.019-0.849 C 30.007,8.548, 31.12,7.392, 32,6.076z"></path></g>
+              </use>
+          </svg>
+          <span class="a11y-only">Twitter</span>
+      </a> 
+      <a href="https://github.com/codeimpossible/" class="social_icon icon-github" title="@codeimpossible on GitHub">
+          <svg width="28" height="28" viewBox="0 0 32 32" preserveAspectRatio="xMinYMin" aria-hidden="true" focusable="false">
+              <use xlink:href="#icon-github">
+                  <g id="icon-github"><path fill="#000000" d="M 16,0C 7.163,0,0,7.163,0,16s 7.163,16, 16,16s 16-7.163, 16-16S 24.837,0, 16,0z M 25.502,25.502 c-1.235,1.235-2.672,2.204-4.272,2.881c-0.406,0.172-0.819,0.323-1.238,0.453L 19.992,26.438 c0-1.26-0.432-2.188-1.297-2.781 c 0.542-0.052, 1.039-0.125, 1.492-0.219s 0.932-0.229, 1.438-0.406s 0.958-0.388, 1.359-0.633s 0.786-0.563, 1.156-0.953s 0.68-0.833, 0.93-1.328 s 0.448-1.089, 0.594-1.781s 0.219-1.456, 0.219-2.289c0-1.615-0.526-2.99-1.578-4.125c 0.479-1.25, 0.427-2.609-0.156-4.078l-0.391-0.047 c-0.271-0.031-0.758,0.083-1.461,0.344s-1.492,0.688-2.367,1.281c-1.24-0.344-2.526-0.516-3.859-0.516c-1.344,0-2.625,0.172-3.844,0.516 c-0.552-0.375-1.075-0.685-1.57-0.93c-0.495-0.245-0.891-0.411-1.188-0.5s-0.573-0.143-0.828-0.164s-0.419-0.026-0.492-0.016 s-0.125,0.021-0.156,0.031c-0.583,1.479-0.635,2.839-0.156,4.078c-1.052,1.135-1.578,2.51-1.578,4.125c0,0.833, 0.073,1.596, 0.219,2.289 s 0.344,1.286, 0.594,1.781s 0.56,0.938, 0.93,1.328s 0.755,0.708, 1.156,0.953s 0.854,0.456, 1.359,0.633s 0.984,0.313, 1.438,0.406 s 0.951,0.167, 1.492,0.219c-0.854,0.583-1.281,1.51-1.281,2.781l0,2.445 c-0.472-0.14-0.937-0.306-1.394-0.5 c-1.6-0.677-3.037-1.646-4.272-2.881c-1.235-1.235-2.204-2.672-2.881-4.272C 2.917,19.575, 2.563,17.815, 2.563,16 s 0.355-3.575, 1.055-5.23c 0.677-1.6, 1.646-3.037, 2.881-4.272s 2.672-2.204, 4.272-2.881 C 12.425,2.917, 14.185,2.563, 16,2.563s 3.575,0.355, 5.23,1.055c 1.6,0.677, 3.037,1.646, 4.272,2.881 c 1.235,1.235, 2.204,2.672, 2.881,4.272C 29.083,12.425, 29.438,14.185, 29.438,16s-0.355,3.575-1.055,5.23 C 27.706,22.829, 26.737,24.267, 25.502,25.502z"></path></g>
+              </use>
+          </svg>
+          <span class="a11y-only">GitHub</span>
+      </a> 
+      <a href="/feed/" class="social_icon icon-rss" title="Jared Barboza's RSS Feed">
+          <svg width="28" height="28" viewBox="0 0 32 32" preserveAspectRatio="xMinYMin" aria-hidden="true" focusable="false">
+              <use xlink:href="#icon-feed">
+                  <g id="icon-feed"><path fill="#ff9132" d="M 4.259,23.467c-2.35,0-4.259,1.917-4.259,4.252c0,2.349, 1.909,4.244, 4.259,4.244 c 2.358,0, 4.265-1.895, 4.265-4.244C 8.525,25.383, 6.618,23.467, 4.259,23.467zM 0.005,10.873l0,6.133 c 3.993,0, 7.749,1.562, 10.577,4.391c 2.825,2.822, 4.384,6.595, 4.384,10.603l 6.16,0 C 21.125,20.349, 11.648,10.873, 0.005,10.873zM 0.012,0l0,6.136 c 14.243,0, 25.836,11.604, 25.836,25.864L 32,32 C 32,14.36, 17.648,0, 0.012,0z"></path></g>
+              </use>
+          </svg>
+          <span class="a11y-only">RSS</span>
+      </a>
+  </span>
+</aside>
+
+
+<!--<header>
+  <nav class="container mx-auto max-w-3xl px-8 pt-2 flex flex-wrap justify-between">
+    <div>
+      <h1 class="header-title">
+        <a href="/">jaredbarboza.me</a>
+      </h1>
+      <p class="header-description">🍕 P I Z Z A is life</p>
+    </div>
+
+    <ul class="flex flex-wrap sm:w-32 w-full mt-6 md:justify-between justify-evenly">
+      <li>
+        <a href="/about">About</a>
+      </li>
+      <li>
+        <a href="https://github.com/@codeimpossible">GitHub</a>
+      </li>
+    </ul>
+  </nav>
+</header>-->
+      
+    <div>
+        <h1>Toubleshooting Enemy AI</h1>
+
+        
+            <p class="excerpt">Spending time to get better debugging tools isn&#39;t usually wasted time.</p>
+        
+
+        
+            <span class="text-sm">📆 <em>Last updated on
+                    <span datetime="Mon Sep 21 2020 19:45:00 GMT+0000 (Coordinated Universal Time)">September 21, 2020</span>. Created on
+                    <span datetime="Mon Sep 21 2020 19:45:00 GMT+0000 (Coordinated Universal Time)">September 21, 2020</span>.</em></span>
+        
+
+        
+            <span class="pl-10 mb-2 tags">
+                <span>🔖</span>
+                <a class="tag tag-inline" href="/tag/electric-noir">electric-noir</a><a class="tag tag-inline" href="/tag/programming">programming</a>
+            </span>
+        
+
+        <div class="content post">
+            <p>I've been having a lot of difficulty debugging enemy AI routines. The process sucks a lot currently, it basically requires me to toggle a few different compiler flags to enable/disable logging calls, play the game to try to produce the behavior(s) I'm looking for and then dig through logs that can be a few hundred lines per second of gameplay.</p>
+<p>It's not great. It's not even good.</p>
+<p>It's pretty bad actually.</p>
+<p>Jeesh.</p>
+<p>Anyway, just so we're on the same page about what I mean by &quot;AI routines&quot;, there's nothing extremely special under the hood, the enemy AI is made up of the following components:</p>
+<ul>
+<li>State Machines to perform specific actions: <code>Death</code>, <code>Walking</code>, <code>Attacking</code>, <code>Standing Idle</code>, etc.</li>
+<li>A Blackboard for enemies to share information about their environment: last player position, their next destination, etc.</li>
+<li>A lot of helper methods to check environment state: health of the player, collision, player location, etc.</li>
+</ul>
+<p>With so many moving pieces you can kinda see why it might be hard to answer questions like:</p>
+<ol>
+<li>How did the statemachine get there?</li>
+<li>Why is this object disabled?</li>
+<li>Why is that animation playing?</li>
+</ol>
+<p>Which is why I built a rough but pretty useful system to help me troubleshoot enemy AI. I sat down and quickly thought up a list of &quot;must-haves&quot; for what I wanted:</p>
+<ul>
+<li>Must be seperate from the logging system</li>
+<li>No disk i/o</li>
+<li>Available within the Unity UI, ideally related or linked to the enemy that the info comes from</li>
+<li>Represents the order of operations that the AI went through to reach its current state</li>
+</ul>
+<p>The last two points are the really critical ones. The first two are nice, but I'd still be ok with the system if it needed to write a log file.</p>
+<h2>Extending the Enemy Entity</h2>
+<p>First step was to update the <code>EnemyEntity</code> class with some helper functions and properties. This code displays a textbox in the inspector area and allow me to copy its contents to the clipboard with a button click! Note I'm using <a href="https://odininspector.com/">Odin Inspector</a> to make adding items to the inspector a lot easier here. If you don't have Odin Inspector, you can do the same here with a <a href="https://docs.unity3d.com/Manual/editor-CustomEditors.html">custom editor</a>.</p>
+<pre class="language-csharp"><code class="language-csharp"><span class="token preprocessor property">#<span class="token directive keyword">if</span> UNITY_EDITOR</span><br><span class="token punctuation">[</span>ShowInInspector<span class="token punctuation">]</span><br><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">MultiLineProperty</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span><br><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">HideLabel</span></span><span class="token punctuation">]</span><br><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">InfoBox</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token string">"This box displays diagnostic logs from the Enemy AI routines."</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span><br><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">PropertyOrder</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span><br><span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> EnemyDecisionLog <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">private</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><br><br><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Button</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token string">"Copy Decision Log"</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span><br><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">PropertyOrder</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span><br><span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">CopyDecisionLog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    UnityEditor<span class="token punctuation">.</span>EditorGUIUtility<span class="token punctuation">.</span>systemCopyBuffer <span class="token operator">=</span> EnemyDecisionLog<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">LogDecision</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span></span> decision<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    EnemyDecisionLog <span class="token operator">+=</span> <span class="token interpolation-string"><span class="token string">$"</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">decision</span><span class="token punctuation">}</span></span><span class="token string">\n"</span></span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token preprocessor property">#<span class="token directive keyword">endif</span></span></code></pre>
+<p>The statemachine states that run on the enemy will be able to call <code>LogDecision()</code> to add entries to the <code>EnemyDecisionLog</code> and since its a property and not a field Unity won't bother serializing it, which will save us a lot of grief later on.</p>
+<p>Copying the decision log to the clipboard is incredibly simple: <code>UnityEditor.EditorGUIUtility.systemCopyBuffer = EnemyDecisionLog;</code> is all you need!</p>
+<p>Also note I'm using the <code>UNITY_EDITOR</code> compiler directive to only add this code when the game is runing in Unity.</p>
+<h2>States of mind</h2>
+<p>Next up, I extended the state objects with some helper methods to wrap the <code>LogDecision()</code> function. I figured breaking out the entries into different types would help make the logs easier to read. A bit like how if you're looking through logs the log levels can help you separate <code>ERROR</code> logs from <code>INFO</code>, <code>DEBUG</code> etc.</p>
+<p>I had a few more types, but in the end I got rid of a few that weren't very helpful and landed on the following three types of entries:</p>
+<ul>
+<li>Question: Environmental checks to determine the next outcome: <em>Am I near my target?, Should I Run?</em></li>
+<li>Filter: Logging data values that can impact Question results.</li>
+<li>Decision: An outcome, usually a state change</li>
+</ul>
+<pre class="language-csharp"><code class="language-csharp"><span class="token keyword">protected</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">LogQuestion</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span></span> question<span class="token punctuation">,</span> <span class="token class-name"><span class="token keyword">bool</span></span> result<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    Enemy<span class="token punctuation">.</span><span class="token function">LogDecision</span><span class="token punctuation">(</span><span class="token interpolation-string"><span class="token string">$"QUESTION: </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">question</span><span class="token punctuation">}</span></span><span class="token string"> :: [</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">result<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToUpper</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">}</span></span><span class="token string">]"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token keyword">protected</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">LogFilter</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span></span> filter<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    Enemy<span class="token punctuation">.</span><span class="token function">LogDecision</span><span class="token punctuation">(</span><span class="token interpolation-string"><span class="token string">$"FILTER: </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">filter</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token keyword">protected</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">LogDecision</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span></span> decision<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    Enemy<span class="token punctuation">.</span><span class="token function">LogDecision</span><span class="token punctuation">(</span><span class="token interpolation-string"><span class="token string">$"DECISION: </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">decision</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">// ... and this is how they're used</span><br><br><span class="token keyword">protected</span> <span class="token return-type class-name"><span class="token keyword">bool</span></span> <span class="token function">IsNearTarget</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token class-name"><span class="token keyword">var</span></span> distance <span class="token operator">=</span> DistanceToTarget<span class="token punctuation">;</span><br>    <span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> distance <span class="token operator">&lt;=</span> Enemy<span class="token punctuation">.</span>AI<span class="token punctuation">.</span>TargetDistanceMax <span class="token operator">&amp;&amp;</span> distance <span class="token operator">>=</span> Enemy<span class="token punctuation">.</span>AI<span class="token punctuation">.</span>TargetDistanceMin<span class="token punctuation">;</span><br>    <span class="token function">LogQuestion</span><span class="token punctuation">(</span><span class="token string">"Am I near my target?"</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">return</span> result<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>All I needed to do at this point was add the relevant logging calls to the other helper methods within the state base classes with and the decision log would get filled out while I played the game. Then when an enemy AI gets into a state that it shouldn't be in I can pause the game and copy their AI log out to see the issue.</p>
+<p>Here's a real-world example: During one play-test last week I noticed that some enemies were playing their walk animation but not moving. There was no collision in their path so there must have been another issue at play.</p>
+<p>Using this system I was able to figure out that it only happened when they had been hit by an attack with only horizontal knockback. This led me to the bug: the object that is responsible for moving the enemy according to physics was being disabled for the knockback, but never re-enabled if the knockback had no vertical movement.</p>
+<p>Here's an example of one of the AI Decision Logs from that play-test:</p>
+<pre class="language-text"><code class="language-text">QUESTION: Do I have an attack slot already? :: [FALSE]<br>QUESTION: Is there an attack slot open? :: [FALSE]<br>DECISION: Changing to EnemyAggroIdle with a NoopTransition<br>DECISION: Idling for 7.057306 seconds.<br>HIT: attack=Animation_Player-PunchLeftJab, knockback=True<br>DECISION: Playing animation Animation_Human-Hurt2<br>HIT: attack=Animation_Player-PunchLeftJab, knockback=True<br>DECISION: Playing animation Animation_Human-Hurt1<br>HIT: attack=Animation_Player-PunchLeftJab, knockback=True<br>QUESTION: Do I have a valid target? :: [FALSE]<br>DECISION: Changing to EnemyAggroIdle with a NoopTransition<br>DECISION: Idling for 4.588106 seconds.<br>DECISION: Done idling.<br>QUESTION: Am I Aggressive? :: [TRUE]<br>QUESTION: Do I have an attack slot already? :: [FALSE]<br>QUESTION: Is there an attack slot open? :: [FALSE]<br>DECISION: Changing to EnemyWander with a NoopTransition<br>QUESTION: Should I be running? :: [FALSE]<br>DECISION: Playing animation Animation_Human-Walk<br>QUESTION: Am I near my destination? :: [FALSE]<br>QUESTION: Am I near my destination? :: [FALSE]<br>QUESTION: Am I near my destination? :: [FALSE]<br>QUESTION: Am I near my destination? :: [FALSE]<br>QUESTION: Am I near my destination? :: [FALSE]<br>QUESTION: Am I near my destination? :: [FALSE]<br>QUESTION: Am I near my destination? :: [FALSE]<br>QUESTION: Am I near my destination? :: [FALSE]<br>QUESTION: Am I near my destination? :: [FALSE]<br>QUESTION: Am I near my destination? :: [FALSE]<br>QUESTION: Am I near my destination? :: [FALSE]<br>QUESTION: Am I near my destination? :: [FALSE]<br>FILTER: stuckFrames=11, moverEnabled=False<br>QUESTION: Am I near my destination? :: [FALSE]</code></pre>
+<p>The log is lacking the knockback force (something I need to add later), but the <code>Animation_Player-PunchLeftJab</code> attack only includes horizontal knockback.</p>
+<p>Also you can see the <code>FILTER: stuckFrames=11, moverEnabled=False</code> filter log, which will be used later on to help the AI re-enable it's movement object if/when it gets stuck in the future.</p>
+<h2>Future Improvements</h2>
+<ul>
+<li>I'd like to trim the logs. Currently they retain every bit of data written to them, it'd be nice to trim them to maybe the last 200 or 300 entries?</li>
+<li>I know I said no writing to disk, but it might be a nice feature to write something out to disk if I click a button in the editor.</li>
+<li>Some way to see the AI logs during a debug build, when the game is running without the editor.</li>
+</ul>
+<p>Using this system has made figuring out what steps an AI is performing much easier which will hopefully help me track down more complicated bugs as I continue play testing and building Electric Noir.</p>
+
+        </div>
+            <span style="float: left">
+                <span class="uppercase text-xs mt-6">Previous</span>
+                <span class="font-bold">
+                    <a href="/post/spicy-fried-rice/">Spicy Fried Rice</a>
+                </span>
+            </span>
+        
+            <span style="float: right">
+                <span class="uppercase text-xs mt-6">Next</span>
+                <span class="font-bold mb-2">
+                    <a href="/post/Weird-inverted-image-data-in-Unity/">Weird inverted image data in Unity</a>
+                </span>
+            </span>
+        
+        
+    </div>
+
+    </main>
+    <footer>
+  <div class="container mx-auto max-w-3xl flex-grow">
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <p class="block text-center text-sm mb-6">
+        Release: <a href="https://github.com/codeimpossible/jaredbarboza.me/commit/839a45b55d8c24202c731bfc7fb2bc35d8d17f54">839a45b5</a>
+        &copy;
+        <a target="_blank" href="https://jaredbarboza.me">
+          Jared Barboza
+        </a> 2020.
+        </p>
+      </div>
+      <div style="text-align: right">
+        <ul>
+          <li><a href="/license/">License</a></li>
+          <li><a href="https://github.com/codeimpossible">GitHub</a></li>
+          <li><a href="https://twitter.com/codeimpossible">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+    <script src="/assets/main.bundle.js"></script>
+  </body>
+</html>
