@@ -9,13 +9,13 @@ tags:
   - localization
 ---
 
-In my [previous post](/post/localization) I explained what localization is and why it's such an important feature for Electric Noir. I showed how I had setup my translations in a Google Spreadsheet to give basic translations for testing and allow translators access in the future.
+In my [previous post](/post/localizations-in-unity-part-1) I explained what localization is and why it's such an important feature for Electric Noir. I showed how I had setup my translations in a Google Spreadsheet to give basic translations for testing and allow translators access in the future.
 
 In this post I'll cover how I wrote a custom importer to create Unity assets from the downloaded CSV files.
 
 ## Importing Localizations
 
-Having the localizations in CSV format is useful, but it's hard to do fast lookups of strings using just a CSV. I could build out a CSV parser and use that but as of Unity 2018.3 you can create custom [ScriptedImporter]() objects that can handle specific file types and import them into the Unity Asset Database.
+Having the localizations in CSV format is useful, but it's hard to do fast lookups of strings using just a CSV. I could build out a CSV parser and use that but as of Unity 2018.3 you can create custom [ScriptedImporter](https://docs.unity3d.com/Manual/ScriptedImporters.html) objects that can handle specific file types and import them into the Unity Asset Database.
 
 First let's start with a caveat. Custom importers can work on _almost_ any file type. Importers are bound to files by their file extension, so if another importer has reserved the extension you want to use, your out of luck. Unfortunately for us this is the case as `*.csv` is registered by a built-in Unity importer.
 
