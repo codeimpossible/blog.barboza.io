@@ -115,10 +115,10 @@
         
 
         <div class="content post">
-            <p>In my <a href="/post/localization">previous post</a> I explained what localization is and why it's such an important feature for Electric Noir. I showed how I had setup my translations in a Google Spreadsheet to give basic translations for testing and allow translators access in the future.</p>
+            <p>In my <a href="/post/localizations-in-unity-part-1">previous post</a> I explained what localization is and why it's such an important feature for Electric Noir. I showed how I had setup my translations in a Google Spreadsheet to give basic translations for testing and allow translators access in the future.</p>
 <p>In this post I'll cover how I wrote a custom importer to create Unity assets from the downloaded CSV files.</p>
 <h2>Importing Localizations</h2>
-<p>Having the localizations in CSV format is useful, but it's hard to do fast lookups of strings using just a CSV. I could build out a CSV parser and use that but as of Unity 2018.3 you can create custom <a href="">ScriptedImporter</a> objects that can handle specific file types and import them into the Unity Asset Database.</p>
+<p>Having the localizations in CSV format is useful, but it's hard to do fast lookups of strings using just a CSV. I could build out a CSV parser and use that but as of Unity 2018.3 you can create custom <a href="https://docs.unity3d.com/Manual/ScriptedImporters.html">ScriptedImporter</a> objects that can handle specific file types and import them into the Unity Asset Database.</p>
 <p>First let's start with a caveat. Custom importers can work on <em>almost</em> any file type. Importers are bound to files by their file extension, so if another importer has reserved the extension you want to use, your out of luck. Unfortunately for us this is the case as <code>*.csv</code> is registered by a built-in Unity importer.</p>
 <p>Fortunately for us though, we have full control over the files we downloaded, so we can just change their extension to something else that isn't in use. I decided on using <code>*.l10n</code> as my file extension (a common short code for localization), but you can use whatever you want, just be sure to update any of the code you pull out of this series to use the your extension.</p>
 <h2>Basic Importer Structure</h2>
@@ -172,7 +172,7 @@
     <div class="grid grid-cols-2 gap-4">
       <div>
         <p class="block text-center text-sm mb-6">
-        Release: <a href="https://github.com/codeimpossible/jaredbarboza.me/commit/89db75ec698ec619fd4a43fe0dd1ec17745ba0e5">89db75ec</a>
+        Release: <a href="https://github.com/codeimpossible/jaredbarboza.me/commit/dcf281f9de8bde0cb9a6f9eff95bc5ebf7600324">dcf281f9</a>
         &copy;
         <a target="_blank" href="https://jaredbarboza.me">
           Jared Barboza
