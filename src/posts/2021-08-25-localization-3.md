@@ -2,7 +2,6 @@
 layout: post
 title: "Localizations in Unity: Part 3"
 date: 2021-08-25 00:00:00
-draft: true
 tags:
   - post
   - unity3d
