@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Just one person"
+date: 2021-11-19 00:00:00
+tags:
+  - post
+  - game-development
+---
+
 I realized this week that I've been sort of going about building this game the wrong way. Being a one-person development shop really boils down to time. I don't have the same amount of time that a larger shop does, really.
 
 This probably seems obvious, and yeah, it **is**. But I hadn't contextualized that into how it would affect the actual day-to-day building of the game.
