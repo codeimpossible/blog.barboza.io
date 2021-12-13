@@ -17,14 +17,14 @@
         <div class="flex justify-between mx-auto w-full">
             {% if page.url !== pagination.href.first %}
                 <div class="mx-auto mb-4">
-                    <a class="first-page md:mb-2" href="{{ pagination.href.first | url }}">First Page</a>
+                    <a class="first-page md:mb-2" href="{{ pagination.href.first | url }}">Oldest Posts</a>
                 </div>
 
             {% endif %}
 
             {% if page.url !== pagination.href.last %}
                 <div class="mx-auto">
-                    <a class="last-page" href="{{ pagination.href.last | url }}">Last Page</a>
+                    <a class="last-page" href="{{ pagination.href.last | url }}">Newest Posts</a>
                 </div>
             {% endif %}
         </div>
