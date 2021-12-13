@@ -146,14 +146,6 @@ hr {
   content: "◄ ";
 }
 
-.first-page::before {
-  content: "| ";
-}
-
-.last-page::after {
-  content: " |";
-}
-
 .top-notice {
   @apply sticky top-0 flex justify-center bg-blue-600 py-1 text-sm;
 }
