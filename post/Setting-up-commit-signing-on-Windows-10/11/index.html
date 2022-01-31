@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     
-    <meta itemprop="name" content="👋 Hey there | jaredbarboza.me">
+    <meta itemprop="name" content="Setting up commit signing on Windows 10/11 | jaredbarboza.me">
     <meta itemprop="description" content="🍕 P I Z Z A is life">
 
     
-    <meta name="twitter:title" content="👋 Hey there | jaredbarboza.me">
+    <meta name="twitter:title" content="Setting up commit signing on Windows 10/11 | jaredbarboza.me">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="🍕 P I Z Z A is life">
     <meta name="twitter:site" content="@codeimpossible">
@@ -18,7 +18,7 @@
     <meta name="twitter:image:src" content="http://jaredbarboza.me/social-header.png">
 
     
-    <meta name="og:title" content="👋 Hey there | jaredbarboza.me">
+    <meta name="og:title" content="Setting up commit signing on Windows 10/11 | jaredbarboza.me">
     <meta name="og:description" content="🍕 P I Z Z A is life">
     <meta name="og:image" content="http://jaredbarboza.me/social-header-lg.png">
     <meta name="og:url" content="http://jaredbarboza.me/">
@@ -28,13 +28,13 @@
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    <title>👋 Hey there—jaredbarboza.me</title>
+    <title>Setting up commit signing on Windows 10/11—jaredbarboza.me</title>
 
     <link rel="stylesheet" href="/assets/main.bundle.css">
 
     
   </head>
-  <body class="flex flex-col min-h-screen ">
+  <body class="flex flex-col min-h-screen is-post">
     <!-- <p class="top-notice">
     Include a notice here!
 </p> -->
@@ -97,105 +97,50 @@
   </nav>
 </header>-->
       
-  <div>
-    <h2>Newest</h2>
-    <ol class="border-dotted border-t border-gray-800 pt-4 mt-4">
-        
-            
-                <li class="mb-4 text-2xl">
-                    <a href="/post/no-fuss-slow-cooker-sweet-sour-m/">No Fuss Slow Cooker Sweet &amp; Sour Meatballs</a>
-                    <span class="tags">
-                    <a class="tag" href="/tag/recipes">recipes</a>
-                    </span>
-                </li>
-            
-        
-            
-                <li class="mb-4 text-2xl">
-                    <a href="/post/electric-noir-plan-8-9/">Electric Noir .plan #8 &amp; #9</a>
-                    <span class="tags">
-                    <a class="tag" href="/tag/electric-noir">electric-noir</a>
-                    </span>
-                </li>
-            
-        
-            
-                <li class="mb-4 text-2xl">
-                    <a href="/post/electric-noir-plan-6-7/">Electric Noir .plan #6 &amp; #7</a>
-                    <span class="tags">
-                    <a class="tag" href="/tag/unity3d">unity3d</a>
-                    </span>
-                </li>
-            
-        
-            
-                <li class="mb-4 text-2xl">
-                    <a href="/post/electric-noir-plan-5/">Electric Noir .plan #5</a>
-                    <span class="tags">
-                    <a class="tag" href="/tag/unity3d">unity3d</a>
-                    </span>
-                </li>
-            
-        
-            
-                <li class="mb-4 text-2xl">
-                    <a href="/post/electric-noir-plan-4/">Electric Noir .plan #4</a>
-                    <span class="tags">
-                    <a class="tag" href="/tag/Meta">Meta</a><a class="tag" href="/tag/unity3d">unity3d</a>
-                    </span>
-                </li>
-            
-        
-            
-                <li class="mb-4 text-2xl">
-                    <a href="/post/electric-noir-plan-2-3/">Electric Noir .plan #2-3</a>
-                    <span class="tags">
-                    <a class="tag" href="/tag/Meta">Meta</a><a class="tag" href="/tag/unity3d">unity3d</a>
-                    </span>
-                </li>
-            
-        
-    </ol>
-</div>
+    <div>
+        <h1>Setting up commit signing on Windows 10/11</h1>
 
-  <div class="mt-4 pt-4">
-    <div class="md:flex justify-evenly mb-6">
-        <div class="flex justify-between mx-auto w-full">
-            
-                <div class="mx-auto mb-4">
-                    <a class="previous-page" href="/page/4/">Next Page</a>
-                </div>
-            
+        
 
-            
-                <div class="mx-auto mb-4">
-                    <a class="next-page md:mb-2" href="/page/6/">Previous Page</a>
-                </div>
-            
+        
+            <span class="text-sm">📆 <em>Created on
+                    <span datetime="Tue Dec 21 2021 00:00:00 GMT+0000 (Coordinated Universal Time)">December 21, 2021</span>.</em></span>
+        
+
+        
+            <span class="pl-10 mb-2 tags">
+                <span>🔖</span>
+                <a class="tag tag-inline" href="/tag/programming">programming</a><a class="tag tag-inline" href="/tag/git">git</a><a class="tag tag-inline" href="/tag/gpg">gpg</a>
+            </span>
+        
+
+        <div class="content post">
+            <h2>Install prerequisites</h2>
+<ol>
+<li>Install <a href="https://desktop.github.com/">GitHub Desktop</a></li>
+<li>Install <a href="https://git-scm.com/download/win">Git for Windows</a></li>
+<li>Install <a href="https://gpg4win.org/get-gpg4win.html">GPG for Windows</a></li>
+</ol>
+<h2>Setup your gpg key</h2>
+<p>Follow the steps in <a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key">GitHubs GPG creation guide</a> and make note of your GPG key ID, you'll need that later on.</p>
+<h2>Tell git about your new key</h2>
+<pre><code>$ git config --global user.signingkey &lt;Your GPG key ID&gt;
+$ git config --global commit.gpgsign true
+$ where.exe gpg
+$ git config --global gpg.program &quot;&lt;Path from above command&gt;&quot;
+</code></pre>
+<p>💥you are now setup to use commit signing in both <code>git</code> and GitHub Desktop.</p>
+
         </div>
-
-        <div class="flex justify-between mx-auto w-full">
-            
-                <div class="mx-auto mb-4">
-                    <a class="first-page md:mb-2" href="/">Oldest Posts</a>
-                </div>
-
-            
-
-            
-                <div class="mx-auto">
-                    <a class="last-page" href="/page/7/">Newest Posts</a>
-                </div>
-            
-        </div>
+            <span style="float: left">
+                <span class="uppercase text-xs mt-6">Previous</span>
+                <span class="font-bold">
+                    <a href="/post/Adding-automated-tests-to-Electric-Noir/">Adding automated tests to Electric Noir</a>
+                </span>
+            </span>
+        
+        
     </div>
-
-    <p class="text-center text-sm italic mb-10">(On page
-        5
-        of
-        7.)</p>
-</div>
-
 
     </main>
     <footer>
