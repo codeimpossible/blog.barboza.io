@@ -19,6 +19,7 @@ Living in Texas for the past two years has taught me that people take BBQ food v
 I've always loved BBQ food, pulled pork, smoked ribs and brisket are some of my all-time favorite foods. But you don't need a fancy smoker (or even a smoker at all) if you want to craft these delicious dishes at home. In most cases a slow cooker and your oven are all you need.
 
 To illustrate this point todays recipe is all about making delicious, smokey, saucey BBQ Ribs in your kitchen oven.
+
 ## The Trick
 
 The secret to perfect BBQ at home is the same as if you were making it in a smoker: the bark. Bark is what the outer shell of the cooked protein is called. Its the part where the sauce caramelizes and hardens, creating a wonderfully sweet, salty, crunchy bit of goodness on the outside of the meat.
@@ -30,11 +31,11 @@ So how will we ensure we get a proper bark? Well, we'll be mixing our BBQ sauce 
  
 ## Perfect Oven-Baked Ribs
 
-Ingredients
+### Ingredients
 
 - 1 rack Baby Back Ribs (membrane removed if you intend to de-bone the ribs later)
-- For the Dry Rub
 
+### For the Dry Rub
 - 2 tablespoons paprika
 - 1 tablespoon black pepper
 - 2 tablespoons brown sugar
@@ -45,14 +46,12 @@ Ingredients
 - 1 teaspoon chili powder
 
 
-- For the Glaze
-
+### For the Glaze
 - 1 cup BBQ sauce (Pick something that is smokey and not sweet)
 - 1/4 cup Honey
 
 
-- For the Sandwich
-
+### For the Sandwich
 - Bread & Butter Pickles
 - White Onion (sliced)
 - Mustard
@@ -61,7 +60,7 @@ Ingredients
 
 
 
-Directions
+### Directions
 
 Preheat your oven to 300 degrees. Take a baking sheet and lay out some aluminum foil. Combine the dry rub ingredients, make sure to work out any lumps (you can microwave the brown sugar to loosen it up).
 
@@ -73,7 +72,7 @@ Unwrap the ribs carefully, it's at this point you'll want to de-bone the ribs (p
 
 Broil the glazed ribs for 5-7 minutes until the glaze starts to bubble and brown a bit. Take the ribs out and set them aside. Now you can serve them as they are or as part of a BBQ Rib Sandwich.
 
-For the Sandwich
+### Making the Sandwich
 
 Toast the buns in the oven on broil for a few minutes, just until they brown up a bit. Cover the bottom of the bun with a little mayo (not a lot, we don't want the sandwich to be too fatty). Then place the white onion and cover it with a piece of the de-boned Ribs.
 
