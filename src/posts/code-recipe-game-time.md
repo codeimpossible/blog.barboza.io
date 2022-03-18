@@ -8,6 +8,7 @@ tags:
   - unity3d
   - game-development
   - programming
+  - code-recipe
 ---
 
 Dealing with time in Unity isn't really painful, there is a convenient `Time` static object that unity provides which has a bunch of properties that track the passage of time in your game.
