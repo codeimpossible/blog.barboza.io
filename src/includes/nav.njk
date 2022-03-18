@@ -3,13 +3,13 @@
         <div class="flex justify-between mx-auto w-full">
             {% if pagination.href.previous %}
                 <div class="mx-auto mb-4">
-                    <a class="previous-page" href="{{ pagination.href.previous | url }}">Next Page</a>
+                    <a class="previous-page" href="{{ pagination.href.previous | url }}">Towards the present</a>
                 </div>
             {% endif %}
 
             {% if pagination.href.next %}
                 <div class="mx-auto mb-4">
-                    <a class="next-page md:mb-2" href="{{ pagination.href.next | url }}">Previous Page</a>
+                    <a class="next-page md:mb-2" href="{{ pagination.href.next | url }}">Back in time...</a>
                 </div>
             {% endif %}
         </div>
@@ -17,14 +17,14 @@
         <div class="flex justify-between mx-auto w-full">
             {% if page.url !== pagination.href.first %}
                 <div class="mx-auto mb-4">
-                    <a class="first-page md:mb-2" href="{{ pagination.href.first | url }}">Oldest Posts</a>
+                    <a class="first-page md:mb-2" href="{{ pagination.href.first | url }}">Newest Posts</a>
                 </div>
 
             {% endif %}
 
             {% if page.url !== pagination.href.last %}
                 <div class="mx-auto">
-                    <a class="last-page" href="{{ pagination.href.last | url }}">Newest Posts</a>
+                    <a class="last-page" href="{{ pagination.href.last | url }}">Oldest Posts</a>
                 </div>
             {% endif %}
         </div>
