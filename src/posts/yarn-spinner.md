@@ -19,7 +19,7 @@ I chose YarnSpinner because the project is super light weight and incredibly eas
 
 Here's a basic yarn dialogue script as an example:
 
-```plaintext
+```yaml
 title: Start
 ---
 Companion: Hi {$playerName}! What do you feel like doing today?
@@ -118,7 +118,7 @@ Moving an actor to a mark is equally easy: `<< move_to_mark Actors/Branford NewM
 
 When designing Electric Noir I knew I wanted to have characters that could emote more than a 32x32 pixel character would allow. Each actor can have a set of portraits assigned to them that can be shown during the execution of dialogue lines.
 
-```plaintext
+```yaml
 @Beck(happy): Oh, hey you. You're up! Well, I'm done in the shower if you're ready.
 
 -> (happy) Yeah, sure. I'll hop in.
