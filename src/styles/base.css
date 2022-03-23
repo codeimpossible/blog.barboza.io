@@ -24,9 +24,21 @@ code {
   }
 }
 
-@media(max-width: 120em) {
+@media(max-width: 90em) {
   pre {
     @apply tracking-wider break-words;
+    position: relative;
+    width: 60em;
+    left: -6em;
+  }
+}
+
+@media(max-width: 70em) {
+  pre {
+    @apply tracking-wider break-words;
+    position: inherit!important;
+    width: inherit!important;
+    left: inherit!important;
   }
 }
 
@@ -40,7 +52,7 @@ code {
   }
 }
 
-@media(min-width: 120em) {
+@media(min-width: 90em) {
   pre {
     @apply text-lg;
     position: relative;
