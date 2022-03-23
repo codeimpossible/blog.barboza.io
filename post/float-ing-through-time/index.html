@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     
-    <meta itemprop="name" content="Electric Noir .plan #5 | jaredbarboza.me">
+    <meta itemprop="name" content="float-ing through time | jaredbarboza.me">
     <meta itemprop="description" content="🍕 P I Z Z A is life">
 
     
-    <meta name="twitter:title" content="Electric Noir .plan #5 | jaredbarboza.me">
+    <meta name="twitter:title" content="float-ing through time | jaredbarboza.me">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="🍕 P I Z Z A is life">
     <meta name="twitter:site" content="@codeimpossible">
@@ -18,7 +18,7 @@
     <meta name="twitter:image:src" content="http://jaredbarboza.me/social-header.png">
 
     
-    <meta name="og:title" content="Electric Noir .plan #5 | jaredbarboza.me">
+    <meta name="og:title" content="float-ing through time | jaredbarboza.me">
     <meta name="og:description" content="🍕 P I Z Z A is life">
     <meta name="og:image" content="http://jaredbarboza.me/social-header-lg.png">
     <meta name="og:url" content="http://jaredbarboza.me/">
@@ -28,7 +28,7 @@
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    <title>Electric Noir .plan #5—jaredbarboza.me</title>
+    <title>float-ing through time—jaredbarboza.me</title>
 
     <link rel="stylesheet" href="/assets/main.bundle.css">
 
@@ -98,61 +98,56 @@
 </header>-->
       
     <div>
-        <h1>Electric Noir .plan #5</h1>
+        <h1>float-ing through time</h1>
 
         
 
         
-            <span class="text-sm">📆 <em>Last updated on
-                    <span datetime="Mon Jul 02 2018 16:00:12 GMT+0000 (Coordinated Universal Time)">July 2, 2018</span>. Created on
-                    <span datetime="Mon Jul 02 2018 16:00:12 GMT+0000 (Coordinated Universal Time)">July 2, 2018</span>.</em></span>
+            <span class="text-sm">📆 <em>Created on
+                    <span datetime="Wed Mar 23 2022 10:53:34 GMT+0000 (Coordinated Universal Time)">March 23, 2022</span>.</em></span>
         
 
         
             <span class="pl-10 mb-2 tags">
                 <span>🔖</span>
-                <a class="tag tag-inline" href="/tag/unity3d">unity3d</a>
+                <a class="tag tag-inline" href="/tag/programming">programming</a><a class="tag tag-inline" href="/tag/unity3d">unity3d</a>
             </span>
         
 
         <div class="content post">
-            <p>*Originally written 5/23/2018: *</p>
-<p>After building out the combat action chooser i am thinking that the interface doesn't seem to work very well. After choosing a combat action the player will have to click another button (or click the same button, but maybe in a different area) in order to start using the action. Fallout gets around this by having you change combat actions with a right-click but using the action with a left-click. I don't think i need to do this, but something like it would be better than what i have now.</p>
-<p>perhaps if the combat actions displayed right next to the selected weapon? just before the &quot;spells&quot; area? they could display there and since there are max 5 that means I could still allow 5 spells to be equipped. Yeah this seems like the best option to continue forward with. I should be able to get that done in about an evening or so.</p>
-<p>so what about after that? quests? redressing the conversation ui?</p>
-<h3>Quests</h3>
-<p>Quests are complicated because they need to be accessible programmatically (so they can be triggered/updated via conversations and events) and they need to persist (so that their state can be saved).</p>
-<ul>
-<li>How do we know when a quest is complete (other than an NPC or event telling us it is)</li>
-<li>Exploration quests?</li>
-<li>Character Development Quests? (Learn your first spell, get your first gun, etc)</li>
-<li>UI for reviewing quest progress. Something like the journal entries in DOS would be cool. Fallout just had a basic &quot;you need to go here now&quot; kind of quest log (minimal information).</li>
-<li>Should you be able to abandon quests?</li>
-</ul>
-<h3>Conversation UI</h3>
-<p>This isn't really complicated. It's more just really not exciting. I mean there is some modification work to Yarn that is involved - because I want to have the previous line(s) of text be available as you read over your responses. But other than that it's pretty straight forward. Still though, it's straight up UI work which should be fast. Another item I should be able to get done in an evening.</p>
-<h3>Spells</h3>
-<p>More like &quot;hacks&quot; than spells (tho internally I might just call them spells). This is more discovery and thinking (like quests but more so).</p>
-<ul>
-<li>How are spells recharged? Straight up cooldown? Based on some other in-game resource (power? computer memory? CPU?).</li>
-<li>How likely is it that a Spell could have multiple combat actions?</li>
-<li>How do you learn/unlearn spells? (essentially how do you equip/unequip them). Should they be in a separate UI from the wearable items?</li>
-<li>What skill(s) govern spells? Multiple skills? A single skill?</li>
-</ul>
-<p>Could be fun to start thinking through those items and sketching the idea out more in here.</p>
+            <p>I was curious this morning about Unitys <a href="https://docs.unity3d.com/ScriptReference/Time-realtimeSinceStartup.html">Time.realTimeSinceStartup</a>, specifically how much time it would take to overflow the value. Reading the Unity docs says:</p>
+<blockquote>
+<p>The real time in seconds since the game started (Read Only).</p>
+</blockquote>
+<p>Ok. Well that's not very helpful. It's a <code>float</code> so I guess first, I'll check what the max value for a float is in c#. <a href="https://docs.microsoft.com/en-us/dotnet/api/system.single.maxvalue?view=net-6.0">Microsoft docs</a> say its <code>3.40282347E+38</code> ... that seems incredibly big. But, how big?</p>
+<p>Well, let's start doing some quick and dirty math. <code>$maxValue / 60</code> will get us the minutes.</p>
+<div style="text-align: center">
+  <code>3.40282347E+38 / 60 = 5.6713724e+36</code>
+</div>
+<p>Oh. Uhm, well shit, ok that's still huge. Fine, how about days?</p>
+<div style="text-align: center">
+  <code>3.40282347E+38 / 60 / 60 / 24 = 3.9384531e+33</code>
+</div>
+<p>Uhmmmm ok. I'm getting scared. How about centuries?</p>
+<div style="text-align: center">
+  <code>3.40282347E+38 / 60 / 60 / 24 / 365 / 100 = 1.0790282e+29</code>
+</div>
+<p>Oh, ok well that's 107,902,820,000,000,000,000,000,000,000 <strong>CENTURIES</strong>...in seconds...
+So yeah, that value would overflow if someone left the game running for one hundred seven octillion, nine hundred two septillion, eight hundred twenty sextillion centuries.</p>
+<div style="width:100%;height:0;padding-bottom:53%;position:relative;"><iframe src="https://giphy.com/embed/ToMjGpKniGqRNLGBrhu" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/jim-carrey-dumb-and-dumber-so-youre-telling-me-theres-a-chance-ToMjGpKniGqRNLGBrhu">via GIPHY</a></p>
 
         </div>
             <span style="float: left">
                 <span class="uppercase text-xs mt-6">Previous</span>
                 <span class="font-bold">
-                    <a href="/post/electric-noir-plan-4/">Electric Noir .plan #4</a>
+                    <a href="/post/Code-Recipe-CustomAssertions/">Code Recipe: CustomAssertions</a>
                 </span>
             </span>
         
             <span style="float: right">
                 <span class="uppercase text-xs mt-6">Next</span>
                 <span class="font-bold mb-2">
-                    <a href="/post/electric-noir-plan-6-7/">Electric Noir .plan #6 &amp; #7</a>
+                    <a href="/post/Level-preview-issues/">Level preview issues</a>
                 </span>
             </span>
         
