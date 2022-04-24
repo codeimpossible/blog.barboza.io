@@ -6,7 +6,8 @@ tags:
   - programming
 ---
 
-Im changing my opinion on test structuring in C#. I've always thought that structuring tests using a class hierarchy made sense because it provided a lot of benefits:
+I'm changing my opinion on test structuring in C#. I've always thought that structuring tests using a class hierarchy made sense because it provided a lot of benefits:
+
 
 - Easy to share private objects between parent and child tests
 - Setups can be inherited, extended
