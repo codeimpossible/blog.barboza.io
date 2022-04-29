@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     
-    <meta itemprop="name" content="float-ing through time | jaredbarboza.me">
+    <meta itemprop="name" content="unity-editor | jaredbarboza.me">
     <meta itemprop="description" content="🍕 P I Z Z A is life">
 
     
-    <meta name="twitter:title" content="float-ing through time | jaredbarboza.me">
+    <meta name="twitter:title" content="unity-editor | jaredbarboza.me">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="🍕 P I Z Z A is life">
     <meta name="twitter:site" content="@codeimpossible">
@@ -18,7 +18,7 @@
     <meta name="twitter:image:src" content="http://jaredbarboza.me/social-header.png">
 
     
-    <meta name="og:title" content="float-ing through time | jaredbarboza.me">
+    <meta name="og:title" content="unity-editor | jaredbarboza.me">
     <meta name="og:description" content="🍕 P I Z Z A is life">
     <meta name="og:image" content="http://jaredbarboza.me/social-header-lg.png">
     <meta name="og:url" content="http://jaredbarboza.me/">
@@ -28,13 +28,13 @@
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    <title>float-ing through time—jaredbarboza.me</title>
+    <title>unity-editor—jaredbarboza.me</title>
 
     <link rel="stylesheet" href="/assets/main.bundle.css">
 
     
   </head>
-  <body class="flex flex-col min-h-screen is-post">
+  <body class="flex flex-col min-h-screen ">
     <!-- <p class="top-notice">
     Include a notice here!
 </p> -->
@@ -97,62 +97,64 @@
   </nav>
 </header>-->
       
-    <div>
-        <h1>float-ing through time</h1>
+  <p class="text-center text-sm italic mb-6">(Posts filtered by <strong>unity-editor</strong>.)</p>
 
-        
+  
 
+  <div>
+    <h2>Newest</h2>
+    <ol class="border-dotted border-t border-gray-800 pt-4 mt-4">
         
-            <span class="text-sm">📆 <em>Created on
-                    <span datetime="Fri Apr 29 2022 11:56:57 GMT+0000 (Coordinated Universal Time)">April 29, 2022</span>.</em></span>
+            
+                <li class="mb-4 text-2xl">
+                    <a href="/post/Code-Recipe-AssetDatabaseUtility/">Code Recipe: AssetDatabaseUtility</a>
+                    <span class="tags">
+                    <a class="tag" href="/tag/programming">programming</a><a class="tag" href="/tag/unity3d">unity3d</a><a class="tag" href="/tag/unity-editor">unity-editor</a>
+                    </span>
+                </li>
+            
         
-
-        
-            <span class="pl-10 mb-2 tags">
-                <span>🔖</span>
-                <a class="tag tag-inline" href="/tag/programming">programming</a><a class="tag tag-inline" href="/tag/unity3d">unity3d</a>
-            </span>
-        
-
-        <div class="content post">
-            <p>I was curious this morning about Unitys <a href="https://docs.unity3d.com/ScriptReference/Time-realtimeSinceStartup.html">Time.realTimeSinceStartup</a>, specifically how much time it would take to overflow the value. Reading the Unity docs says:</p>
-<blockquote>
-<p>The real time in seconds since the game started (Read Only).</p>
-</blockquote>
-<p>Ok. Well that's not very helpful. It's a <code>float</code> so I guess first, I'll check what the max value for a float is in c#. <a href="https://docs.microsoft.com/en-us/dotnet/api/system.single.maxvalue?view=net-6.0">Microsoft docs</a> say its <code>3.40282347E+38</code> ... that seems incredibly big. But, how big?</p>
-<p>Well, let's start doing some quick and dirty math. <code>$maxValue / 60</code> will get us the minutes.</p>
-<div style="text-align: center">
-  <code>3.40282347E+38 / 60 = 5.6713724e+36</code>
+    </ol>
 </div>
-<p>Oh. Uhm, well shit, ok that's still huge. Fine, how about days?</p>
-<div style="text-align: center">
-  <code>3.40282347E+38 / 60 / 60 / 24 = 3.9384531e+33</code>
-</div>
-<p>Uhmmmm ok. I'm getting scared. How about centuries?</p>
-<div style="text-align: center">
-  <code>3.40282347E+38 / 60 / 60 / 24 / 365 / 100 = 1.0790282e+29</code>
-</div>
-<p>Oh, ok well that's 107,902,820,000,000,000,000,000,000,000 <strong>CENTURIES</strong>...in seconds...
-So yeah, that value would overflow if someone left the game running for one hundred seven octillion, nine hundred two septillion, eight hundred twenty sextillion centuries.</p>
-<div style="width:100%;height:0;padding-bottom:53%;position:relative;"><iframe src="https://giphy.com/embed/ToMjGpKniGqRNLGBrhu" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/jim-carrey-dumb-and-dumber-so-youre-telling-me-theres-a-chance-ToMjGpKniGqRNLGBrhu">via GIPHY</a></p>
 
-        </div>
-            <span style="float: left">
-                <span class="uppercase text-xs mt-6">Previous</span>
-                <span class="font-bold">
-                    <a href="/post/Code-Recipe-CustomAssertions/">Code Recipe: CustomAssertions</a>
-                </span>
-            </span>
-        
-            <span style="float: right">
-                <span class="uppercase text-xs mt-6">Next</span>
-                <span class="font-bold mb-2">
-                    <a href="/post/Level-preview-issues/">Level preview issues</a>
-                </span>
-            </span>
-        
-        
-    </div>
+  <div class="grid grid-flow-row grid-cols-3 gap-4 mb-10 mt-10">
+        <a class="tag Meta mx-auto" href="/tag/Meta">Meta</a>
+        <a class="tag aseprite mx-auto" href="/tag/aseprite">aseprite</a>
+        <a class="tag batman mx-auto" href="/tag/batman">batman</a>
+        <a class="tag bbq mx-auto" href="/tag/bbq">bbq</a>
+        <a class="tag behind-the-scenes mx-auto" href="/tag/behind-the-scenes">behind-the-scenes</a>
+        <a class="tag breakfast mx-auto" href="/tag/breakfast">breakfast</a>
+        <a class="tag c# mx-auto" href="/tag/c#">c#</a>
+        <a class="tag code-recipe mx-auto" href="/tag/code-recipe">code-recipe</a>
+        <a class="tag cooking mx-auto" href="/tag/cooking">cooking</a>
+        <a class="tag csharp mx-auto" href="/tag/csharp">csharp</a>
+        <a class="tag dotnet mx-auto" href="/tag/dotnet">dotnet</a>
+        <a class="tag eggs mx-auto" href="/tag/eggs">eggs</a>
+        <a class="tag electric-noir mx-auto" href="/tag/electric-noir">electric-noir</a>
+        <a class="tag fiction mx-auto" href="/tag/fiction">fiction</a>
+        <a class="tag fish mx-auto" href="/tag/fish">fish</a>
+        <a class="tag fonts mx-auto" href="/tag/fonts">fonts</a>
+        <a class="tag game-development mx-auto" href="/tag/game-development">game-development</a>
+        <a class="tag git mx-auto" href="/tag/git">git</a>
+        <a class="tag gpg mx-auto" href="/tag/gpg">gpg</a>
+        <a class="tag localization mx-auto" href="/tag/localization">localization</a>
+        <a class="tag mcu mx-auto" href="/tag/mcu">mcu</a>
+        <a class="tag pixel-art mx-auto" href="/tag/pixel-art">pixel-art</a>
+        <a class="tag pro-tips mx-auto" href="/tag/pro-tips">pro-tips</a>
+        <a class="tag programming mx-auto" href="/tag/programming">programming</a>
+        <a class="tag recipes mx-auto" href="/tag/recipes">recipes</a>
+        <a class="tag reviews mx-auto" href="/tag/reviews">reviews</a>
+        <a class="tag shaders mx-auto" href="/tag/shaders">shaders</a>
+        <a class="tag soups mx-auto" href="/tag/soups">soups</a>
+        <a class="tag spider-man mx-auto" href="/tag/spider-man">spider-man</a>
+        <a class="tag steak mx-auto" href="/tag/steak">steak</a>
+        <a class="tag stocks mx-auto" href="/tag/stocks">stocks</a>
+        <a class="tag unity-editor mx-auto" href="/tag/unity-editor">unity-editor</a>
+        <a class="tag unity3d mx-auto" href="/tag/unity3d">unity3d</a>
+        <a class="tag writing mx-auto" href="/tag/writing">writing</a>
+        <a class="tag yarn-spinner mx-auto" href="/tag/yarn-spinner">yarn-spinner</a>
+</div>
+
 
     </main>
     <footer>
