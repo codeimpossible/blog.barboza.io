@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Level preview issues"
+title: 'Level preview issues'
 tags:
   - post
   - programming
@@ -22,13 +22,13 @@ This process runs inside the unity editor and is pretty simple, it loads each le
 
 Here's an example:
 
-<img src="/level-previews/__preview_2_4.png" />
+<img src="/level-previews/preview_2_4.png" />
 
 I've been debugging this for a while, thinking that the camera was just taking a picture of the wrong part of the scene, or maybe it's z-position was wrong so it was behind the tilemaps in the scene or something
 
 nope, turns out i just need to wait a little bit. I ran the snapshot on an existing scene and the preview came out as I would expect
 
-<img src="/level-previews/__preview_2_4_2.png" />
+<img src="/level-previews/preview_2_4_2.png" />
 
 So basically, the tilemaps haven't fully loaded when the process starts but they've loaded part way through
 
