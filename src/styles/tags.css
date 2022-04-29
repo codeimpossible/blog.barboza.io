@@ -1,13 +1,13 @@
-.tag-inline, .tags .tag {
-    
-    display: inline-block;
-    text-decoration: none;
+.tag-inline,
+.tags .tag {
+  display: inline-block;
+  text-decoration: none;
 }
 
 .tag {
-  border: 1px solid rgba(0,0,0,.08);
-  font-size: 10.5px;
-  line-height: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 9.5px;
+  line-height: 12px;
   height: auto;
   text-transform: uppercase;
   padding: 4px 6px;
@@ -15,8 +15,10 @@
   vertical-align: middle;
   background-color: rgba(30, 30, 54, 0.753);
   color: #fff;
+  font-weight: 100;
+  border-radius: 15px;
 }
 
 .tag:before {
-  content: "#";
+  content: '#';
 }

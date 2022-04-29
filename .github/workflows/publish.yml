@@ -1,53 +1,55 @@
 name: Publish Website
 on:
-    workflow_dispatch:
-    push:
-      branches:
-        - stable
-      paths-ignore:
+  workflow_dispatch:
+  push:
+    branches:
+      - stable
+    paths-ignore:
       - '.github/**'
       - '.vscode/**'
       - 'data/**'
       - '.gitignore'
 
 jobs:
-    publish:
-        runs-on: ubuntu-latest
-        steps:
-        - name: Prep
-          uses: actions/setup-node@v1
-          with:
-            node-version: '14'
-        - name: Checkout
-          uses: actions/checkout@v2
-          with:
-            token: ${{ secrets.PAT }}
-        - name: Build
-          run: |
-            npm install
-            npm run build
-        - name: Checkout gh-pages branch
-          id: stage
-          uses: actions/checkout@v2
-          with:
-            token: ${{ secrets.PAT }}
-            path: 'gh-pages'
-            ref: 'refs/heads/gh-pages'
-            fetch-depth: 0
-            persist-credentials: false
-        - name: Stage changes
-          run: |
-            cp -R ./dist/. ./gh-pages/
-            cd gh-pages
-            git config user.name github-actions
-            git config user.email github-actions@github.com
-            git add -A
-            count=$(git diff --cached --numstat | wc -l | xargs)
-            echo "$count changes."
-            git commit -m "automated site deploy. $count changes." || true
-        - name: Push changes
-          uses: ad-m/github-push-action@master
-          with:
-            github_token: ${{ secrets.PAT }}
-            branch: 'gh-pages'
-            directory: './gh-pages'
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prep
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT }}
+      - name: Build
+        env:
+          NODE_ENV: production
+        run: |
+          npm install
+          npm run build
+      - name: Checkout gh-pages branch
+        id: stage
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT }}
+          path: 'gh-pages'
+          ref: 'refs/heads/gh-pages'
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Stage changes
+        run: |
+          cp -R ./dist/. ./gh-pages/
+          cd gh-pages
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -A
+          count=$(git diff --cached --numstat | wc -l | xargs)
+          echo "$count changes."
+          git commit -m "automated site deploy. $count changes." || true
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.PAT }}
+          branch: 'gh-pages'
+          directory: './gh-pages'
