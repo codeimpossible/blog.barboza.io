@@ -104,7 +104,7 @@
 
         
             <span class="text-sm">📆 <em>Created on
-                    <span datetime="Fri Apr 29 2022 11:56:57 GMT+0000 (Coordinated Universal Time)">April 29, 2022</span>.</em></span>
+                    <span datetime="Fri Apr 29 2022 11:59:26 GMT+0000 (Coordinated Universal Time)">April 29, 2022</span>.</em></span>
         
 
         
@@ -121,10 +121,10 @@
 <p>I noticed this today as I was working on my level editing pipeline. I'm creating more and more levels that are bigger than the target camera resolution (320x180), so my in-editor level previews need to be able to stitch together multiple images to represent the level correctly in the editor (for when I'm connecting doorways and moving levels around in the game world).</p>
 <p>This process runs inside the unity editor and is pretty simple, it loads each level in a new scene and then moves a camera taking snapshots of the level and pushes those pieces to a larger texture that I save at the end. However I noticed that the level previews were mostly &quot;black&quot; (no data) except the lower right-hand corner (which is taken later in the process as it runs from left to right, top to bottom).</p>
 <p>Here's an example:</p>
-<img src="/level-previews/__preview_2_4.png" />
+<img src="/level-previews/preview_2_4.png" />
 <p>I've been debugging this for a while, thinking that the camera was just taking a picture of the wrong part of the scene, or maybe it's z-position was wrong so it was behind the tilemaps in the scene or something</p>
 <p>nope, turns out i just need to wait a little bit. I ran the snapshot on an existing scene and the preview came out as I would expect</p>
-<img src="/level-previews/__preview_2_4_2.png" />
+<img src="/level-previews/preview_2_4_2.png" />
 <p>So basically, the tilemaps haven't fully loaded when the process starts but they've loaded part way through</p>
 <p>there's no way to check to see if the tilemaps are ready as far as I can tell, so it looks like i'm going to be changing how this process runs a bit.</p>
 <p>I changed all the screen capture code so that it uses EditorCoroutines which let's me return control back to the editor so it can load the levels fully before I start taking screenshots and I'm really happy with the results.</p>
@@ -160,7 +160,7 @@
     <div class="grid grid-cols-2 gap-4">
       <div>
         <p class="block text-center text-sm mb-6">
-        Release: <a href="https://github.com/codeimpossible/jaredbarboza.me/commit/a1ffcc0e6d74b07c60d4e3ef0758ee7af085a436">a1ffcc0e</a>
+        Release: <a href="https://github.com/codeimpossible/jaredbarboza.me/commit/bddec6bd2e95ddf268e63880f38ad374e810acaf">bddec6bd</a>
         &copy;
         <a target="_blank" href="https://jaredbarboza.me">
           Jared Barboza
