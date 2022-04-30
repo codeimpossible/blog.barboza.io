@@ -23,8 +23,6 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
       - name: Build
-        env:
-          NODE_ENV: production
         run: |
           yarn install
           yarn run build
