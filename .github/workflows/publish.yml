@@ -17,7 +17,7 @@ jobs:
       - name: Prep
         uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '16'
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -26,8 +26,8 @@ jobs:
         env:
           NODE_ENV: production
         run: |
-          npm install
-          npm run build
+          yarn install
+          yarn run build
       - name: Checkout gh-pages branch
         id: stage
         uses: actions/checkout@v2
