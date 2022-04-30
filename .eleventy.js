@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const siteSettings = require('./src/globals/site.json');
 const { getExecOutput } = require('@actions/exec');
+const { inspect } = require('util');
 
 module.exports = (config) => {
   config.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'), {
@@ -33,7 +34,7 @@ module.exports = (config) => {
     )
   );
 
-  config.addCollection('postsByCreatedDate', async (collection) => {
+  config.addCollection('posts', async (collection) => {
     let posts = [...collection.getFilteredByGlob('src/posts/*.md')].filter(
       (post) => !post.data.draft
     );
@@ -41,27 +42,32 @@ module.exports = (config) => {
       let postsWithDate = [];
       for (let p of posts) {
         let file = p.inputPath;
-        let cmd = `git log --follow --format=%ad --date default -- ${file}`;
-        console.log(cmd);
-        let { stdout } = await getExecOutput('git', [
-          'log',
-          '--follow',
-          '--format=%ad',
-          '--date',
-          'default',
-          '--',
-          file,
-        ]);
-        let e = Date.parse(stdout.trim());
-        let date = new Date(e);
-        console.log(p.date, date);
+        if (p.data && !p.data.date) {
+          let { stdout } = await getExecOutput('git', [
+            '--no-pager',
+            'log',
+            '--follow',
+            '--format=%ad',
+            '--date',
+            'default',
+            '--',
+            file,
+          ]);
+          if (stdout) {
+            let dates = (stdout || '').split('\n');
+            let e = Date.parse(dates[dates.length - 2].trim());
+            let date = new Date(e);
+            p.date = date;
+          }
+        }
         postsWithDate.push(p);
       }
       posts = postsWithDate;
     }
-    return posts.sort((a, b) => {
+    posts = posts.sort((a, b) => {
       return b.date - a.date;
     });
+    return posts;
   });
 
   return {
