@@ -38,32 +38,30 @@ module.exports = (config) => {
     let posts = [...collection.getFilteredByGlob('src/posts/*.md')].filter(
       (post) => !post.data.draft
     );
-    if (true || process.env.NODE_ENV === 'production') {
-      let postsWithDate = [];
-      for (let p of posts) {
-        let file = p.inputPath;
-        if (p.data && !p.data.date) {
-          let { stdout } = await getExecOutput('git', [
-            '--no-pager',
-            'log',
-            '--follow',
-            '--format=%ad',
-            '--date',
-            'default',
-            '--',
-            file,
-          ]);
-          if (stdout) {
-            let dates = (stdout || '').split('\n');
-            let e = Date.parse(dates[dates.length - 2].trim());
-            let date = new Date(e);
-            p.date = date;
-          }
+    let postsWithDate = [];
+    for (let p of posts) {
+      let file = p.inputPath;
+      if (p.data && !p.data.date) {
+        let { stdout } = await getExecOutput('git', [
+          '--no-pager',
+          'log',
+          '--follow',
+          '--format=%ad',
+          '--date',
+          'default',
+          '--',
+          file,
+        ]);
+        if (stdout) {
+          let dates = (stdout || '').split('\n');
+          let e = Date.parse(dates[dates.length - 2].trim());
+          let date = new Date(e);
+          p.date = date;
         }
-        postsWithDate.push(p);
       }
-      posts = postsWithDate;
+      postsWithDate.push(p);
     }
+    posts = postsWithDate;
     posts = posts.sort((a, b) => {
       return b.date - a.date;
     });

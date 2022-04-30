@@ -3,7 +3,7 @@
   "author": "Jared Barboza",
   "license": "MIT",
   "scripts": {
-    "build": "cross-env NODE_ENV=production npm-run-all clean -p build:*",
+    "build": "npm-run-all clean -p build:*",
     "build:11ty": "eleventy --quiet",
     "build:rollup": "rollup -c",
     "clean": "rimraf dist",
