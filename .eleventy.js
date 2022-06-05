@@ -56,9 +56,10 @@ module.exports = (config) => {
           let dates = (stdout || '').split('\n');
           let e = Date.parse(dates[dates.length - 2].trim());
           let date = new Date(e);
-          p.date = date;
+          p.data.date = date;
         }
       }
+      console.log(`${p.data.date} - ${p.data.title} - ${p.inputPath}`);
       postsWithDate.push(p);
     }
     posts = postsWithDate;
