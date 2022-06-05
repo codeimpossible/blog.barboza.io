@@ -19,8 +19,9 @@ jobs:
         with:
           node-version: '16'
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
+          fetch-depth: 0
           token: ${{ secrets.PAT }}
       - name: Build
         run: |
@@ -28,7 +29,7 @@ jobs:
           yarn run build
       - name: Checkout gh-pages branch
         id: stage
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets.PAT }}
           path: 'gh-pages'
