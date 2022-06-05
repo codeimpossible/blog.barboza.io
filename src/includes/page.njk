@@ -35,7 +35,6 @@
     {% block head %}{% endblock %}
   </head>
   <body class="flex flex-col min-h-screen {%block bodyClass %}{% endblock %}">
-    {% include 'top-notice.njk' %}
     <main class="container mx-auto max-w-3xl flex-grow">
       {% include "header.njk" %}
       {% block body %}{% endblock %}

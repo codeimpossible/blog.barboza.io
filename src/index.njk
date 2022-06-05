@@ -10,6 +10,9 @@ title: '👋 Hey there'
 {% extends 'page.njk' %}
 
 {% block body %}
+  {% if pagination.pageNumber == 0 %}
+    {% include "welcome.njk" %}
+  {% endif %}
   {% include "posts.njk" %}
 
   {% include "nav.njk" %}
