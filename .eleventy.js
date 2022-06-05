@@ -62,10 +62,13 @@ module.exports = (config) => {
       console.log(`${p.data.date} - ${p.data.title} - ${p.inputPath}`);
       postsWithDate.push(p);
     }
-    posts = postsWithDate;
-    posts = posts.sort((a, b) => {
-      return b.date - a.date;
+    posts = postsWithDate.sort((a, b) => {
+      return b.data.date - a.data.date;
     });
+    console.log('sorted:');
+    for (let p of posts) {
+      console.log(`${p.data.date} - ${p.data.title} - ${p.inputPath}`);
+    }
     return posts;
   });
 
