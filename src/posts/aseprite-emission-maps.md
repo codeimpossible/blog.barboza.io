@@ -12,6 +12,8 @@ tags:
 
 I was sharing some of the work I've done on my artwork pipeline and I realized it would be a good bit of work to share here.
 
+_Actually before reading this, if you haven't already, check out my other posts on how my art pipeline enables features like [Palette Swapping](/post/Palette-swapping/) and [Normal maps with Rim Lighting](/post/Pipeline-update-Normal-maps-and-rim-lighting-masks-for-sprites/)._
+
 First, what do I mean by "artwork pipeline"? Well, generally a pipeline is a process or set of tools that allow an asset or assets to be created within one program and imported into another for use. In this case all the pixel art is created in [Aseprite](https://www.aseprite.org/) and need to be imported into Unity3D. So the pipeline is all the editor code i've created in unity to automate as much of the importing process as possible.
 
 Thanks to the amount of extension points within Unity and the openess of [Aseprites file format documentation](https://github.com/aseprite/aseprite/blob/main/docs/ase-file-specs.md), creating a custom [AssetImporter](https://docs.unity3d.com/ScriptReference/AssetPostprocessor.html) for Aseprite files was pretty straightforward. I'm in the process of open sourcing both my C# Aseprite file parser and my custom Aseprite AssetImporter for Unity, those should be ready for release soon.'
