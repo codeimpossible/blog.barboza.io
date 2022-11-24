@@ -71,27 +71,6 @@
       </a>
   </span>
 </aside>
-
-
-<!--<header>
-  <nav class="container mx-auto max-w-3xl px-8 pt-2 flex flex-wrap justify-between">
-    <div>
-      <h1 class="header-title">
-        <a href="/">jaredbarboza.me</a>
-      </h1>
-      <p class="header-description">🍕 P I Z Z A is life</p>
-    </div>
-
-    <ul class="flex flex-wrap sm:w-32 w-full mt-6 md:justify-between justify-evenly">
-      <li>
-        <a href="/about">About</a>
-      </li>
-      <li>
-        <a href="https://github.com/@codeimpossible">GitHub</a>
-      </li>
-    </ul>
-  </nav>
-</header>-->
       
     <div>
         <h1>Test Structuring in C#</h1>
@@ -100,7 +79,7 @@
 
         
             <span class="text-sm">📆 <em>Created on
-                    <span datetime="Thu Nov 24 2022 12:30:36 GMT+0000 (Coordinated Universal Time)">November 24, 2022</span>.</em></span>
+                    <span datetime="Thu Nov 24 2022 12:57:34 GMT+0000 (Coordinated Universal Time)">November 24, 2022</span>.</em></span>
         
 
         
@@ -149,7 +128,7 @@ Let's assume we have a Contact state action and we have a test to make sure that
     <div class="grid grid-cols-2 gap-4">
       <div>
         <p class="block text-center text-sm mb-6">
-        Release: <a href="https://github.com/codeimpossible/jaredbarboza.me/commit/fe5eb816ff024eca1b8a1fa0c0119aeb924131ff">fe5eb816</a>
+        Release: <a href="https://github.com/codeimpossible/jaredbarboza.me/commit/3ca515ebb0e0a3c427c3698782b93a4d8cd45950">3ca515eb</a>
         &copy;
         <a target="_blank" href="https://jaredbarboza.me">
           Jared Barboza
@@ -178,11 +157,11 @@ Let's assume we have a Contact state action and we have a test to make sure that
       // Enabling the debug mode flag is useful during implementation,
       // but it's recommended you remove it for production
       mixpanel.init('2d56400048ed4cc12effac63a51e4b4d'); 
-      mixpanel.track('Content View'. {
-        "uri": "http://jaredbarboza.me/"
-      });
       mixpanel.track_links("#nav a", "click nav link", {
         "referrer": document.referrer
+      });
+      mixpanel.track('Content View', {
+        "uri": "http://jaredbarboza.me/post/Test-Structuring-in-C#/"
       });
     </script>
   </body>
