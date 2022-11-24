@@ -53,9 +53,22 @@
       mixpanel.track_links("#nav a", "click nav link", {
         "referrer": document.referrer
       });
-      mixpanel.track('Content View', {
+      mixpanel.register({
         "uri": "{{ site.url }}{{ page.url }}"
       });
+      
+      var engagement_time = 0;
+      var logged_view = false;
+      setInterval(function() {
+        if (!logged_view) {
+          mixpanel.track('Content View');
+          logged_view = true;
+        }
+        engagement_time += 10;
+        mixpanel.track('Engagement', {
+          "time": engagement_time
+        });
+      }, 10000);
     </script>
   </body>
 </html>
