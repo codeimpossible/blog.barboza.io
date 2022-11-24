@@ -79,7 +79,7 @@
 
         
             <span class="text-sm">📆 <em>Created on
-                    <span datetime="Thu Nov 24 2022 12:57:34 GMT+0000 (Coordinated Universal Time)">November 24, 2022</span>.</em></span>
+                    <span datetime="Thu Nov 24 2022 13:59:20 GMT+0000 (Coordinated Universal Time)">November 24, 2022</span>.</em></span>
         
 
         
@@ -180,7 +180,7 @@
     <div class="grid grid-cols-2 gap-4">
       <div>
         <p class="block text-center text-sm mb-6">
-        Release: <a href="https://github.com/codeimpossible/jaredbarboza.me/commit/3ca515ebb0e0a3c427c3698782b93a4d8cd45950">3ca515eb</a>
+        Release: <a href="https://github.com/codeimpossible/jaredbarboza.me/commit/3faf7102c061499510e51fc6358038e330501a08">3faf7102</a>
         &copy;
         <a target="_blank" href="https://jaredbarboza.me">
           Jared Barboza
@@ -212,9 +212,22 @@
       mixpanel.track_links("#nav a", "click nav link", {
         "referrer": document.referrer
       });
-      mixpanel.track('Content View', {
+      mixpanel.register({
         "uri": "http://jaredbarboza.me/manny/"
       });
+      
+      var engagement_time = 0;
+      var logged_view = false;
+      setInterval(function() {
+        if (!logged_view) {
+          mixpanel.track('Content View');
+          logged_view = true;
+        }
+        engagement_time += 10;
+        mixpanel.track('Engagement', {
+          "time": engagement_time
+        });
+      }, 10000);
     </script>
   </body>
 </html>
