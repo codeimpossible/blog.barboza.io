@@ -1,28 +1,35 @@
 /* Font (see https://fonts.google.com) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&family=Nunito+Sans&family=Space+Mono&family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&family=Neucha&family=Nunito+Sans&family=Space+Mono&family=Work+Sans&display=swap');
 
-html, body {
-    font-family: 'Work Sans', sans-serif;
+html,
+body {
+  font-family: 'Neucha', sans-serif;
 }
 
-code, pre {
-    font-family: 'Space Mono', Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace !important;
+code,
+pre {
+  font-family: 'Space Mono', Consolas, Monaco, 'Andale Mono', 'Lucida Console',
+    monospace !important;
+}
+
+.post code {
+  font-size: 0.8em;
 }
 
 .intro-greeting h1 {
-    font-family: 'Nunito Sans', 'Nunito', sans-serif;
+  font-family: 'Neucha', 'Nunito', sans-serif;
 }
 
 .intro-greeting h2 {
-    font-family: 'Nunito Sans', 'Nunito', sans-serif;
+  font-family: 'Neucha', 'Nunito', sans-serif;
 }
 
 .is-post p.excerpt {
-    font-family: 'Montserrat', sans-serif;
-    font-style: italic;
-    @apply text-sm;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  @apply text-sm;
 }
 
 h2 {
-  font-family: 'Nunito Sans', 'Nunito', sans-serif;
+  font-family: 'Neucha', 'Nunito', sans-serif;
 }
