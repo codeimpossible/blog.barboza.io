@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Practical ScriptableObjects Part 1: Variables'
+title: 'Practical ScriptableObjects: Variables'
 excerpt: ''
 tags:
   - post
@@ -9,16 +9,19 @@ tags:
   - programming
 ---
 
-- Why is this useful?
-  - Games need lots of data, some data is constant, it isn't supposed to change but a lot of the data games need is related to the players progress and needs to change with the experience.
-  - Creates a separation between the game logic and the data values that alter that logic.
-  - ScriptableObjects can be referenced easily in the editor, drag and drop into MonoBehaviour fields
-  - Changing a scriptable object doesn't cause a recompile, can be done during runtime within the editor/player
+## Why use ScriptableObjects?
+
+- Create a separation between the game logic and the data driving that behavior.
+- ScriptableObjects can be referenced easily in the editor and changing their values doesn't cause a recompile.
+- ScriptableObjects are just another asset so they can be easily discovered, looped over within editor code for easy automation.
+
+* Why is this useful?
   - ScriptableObjects can be put into asset bundles, changing game behaviour doesn't require shipping new code
-  - ScriptableObjects are just assets, can be easily discovered, looped over within editor for easy automation
   - ScriptableObjects have built-in support for serialization
   - include link to unity talk on scriptable objects: https://www.youtube.com/watch?v=raQ3iHhE_Kk
-- Very basic example
+* Very basic example
+
+## A very basic example
 
 ```csharp
 public abstract class DataVariable : ScriptableObject {
