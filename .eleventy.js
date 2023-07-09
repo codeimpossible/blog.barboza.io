@@ -4,6 +4,49 @@ const siteSettings = require('./src/globals/site.json');
 const { getExecOutput } = require('@actions/exec');
 const { inspect } = require('util');
 
+async function getAllPosts(collection, filterFn) {
+  let posts = [...collection.getFilteredByGlob('src/posts/*.md')].filter(
+    (post) => !post.data.draft
+  );
+  let postsWithDate = [];
+  for (let p of posts) {
+    let file = p.inputPath;
+    if (p.data && !p.data.date) {
+      let { stdout } = await getExecOutput('git', [
+        '--no-pager',
+        'log',
+        '--follow',
+        '--format=%ad',
+        '--date',
+        'default',
+        '--',
+        file,
+      ]);
+      if (stdout) {
+        let dates = (stdout || '').split('\n');
+        let e = Date.parse(dates[dates.length - 2].trim());
+        let date = new Date(e);
+        p.data.date = date;
+      }
+    }
+    // console.log(`${p.data.date} - ${p.data.title} - ${p.inputPath}`);
+    postsWithDate.push(p);
+  }
+  posts = postsWithDate.sort((a, b) => {
+    return b.data.date - a.data.date;
+  });
+  // console.log('sorted:');
+  // for (let p of posts) {
+  //   console.log(`${p.data.date} - ${p.data.title} - ${p.inputPath}`);
+  // }
+
+  if (filterFn) {
+    posts = posts.filter(filterFn);
+  }
+
+  return posts;
+}
+
 module.exports = (config) => {
   config.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'), {
     templateFormats: ['md'],
@@ -27,50 +70,7 @@ module.exports = (config) => {
   });
 
   config.setDataDeepMerge(true);
-
-  config.addCollection('postsWithoutDrafts', (collection) =>
-    [...collection.getFilteredByGlob('src/posts/*.md')].filter(
-      (post) => !post.data.draft
-    )
-  );
-
-  config.addCollection('posts', async (collection) => {
-    let posts = [...collection.getFilteredByGlob('src/posts/*.md')].filter(
-      (post) => !post.data.draft
-    );
-    let postsWithDate = [];
-    for (let p of posts) {
-      let file = p.inputPath;
-      if (p.data && !p.data.date) {
-        let { stdout } = await getExecOutput('git', [
-          '--no-pager',
-          'log',
-          '--follow',
-          '--format=%ad',
-          '--date',
-          'default',
-          '--',
-          file,
-        ]);
-        if (stdout) {
-          let dates = (stdout || '').split('\n');
-          let e = Date.parse(dates[dates.length - 2].trim());
-          let date = new Date(e);
-          p.data.date = date;
-        }
-      }
-      console.log(`${p.data.date} - ${p.data.title} - ${p.inputPath}`);
-      postsWithDate.push(p);
-    }
-    posts = postsWithDate.sort((a, b) => {
-      return b.data.date - a.data.date;
-    });
-    console.log('sorted:');
-    for (let p of posts) {
-      console.log(`${p.data.date} - ${p.data.title} - ${p.inputPath}`);
-    }
-    return posts;
-  });
+  config.addCollection('posts', async (collection) => getAllPosts(collection));
 
   return {
     pathPrefix: siteSettings.baseUrl,

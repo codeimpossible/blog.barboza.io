@@ -38,7 +38,7 @@ permalink: "{% if path_prefix %}{{ path_prefix }}{% endif %}{% if path %}{{ path
             {{ content | safe }}
         </div>
 
-        {%- set previousPost = collections['postsWithoutDrafts'] | getPreviousCollectionItem(page) %}
+        {%- set previousPost = collections.posts | getNextCollectionItem(page) %}
         {%- if previousPost %}
             <span style="float: left">
                 <span class="uppercase text-xs mt-6">Previous</span>
@@ -48,7 +48,7 @@ permalink: "{% if path_prefix %}{{ path_prefix }}{% endif %}{% if path %}{{ path
             </span>
         {% endif %}
 
-        {%- set nextPost = collections['postsWithoutDrafts'] | getNextCollectionItem(page) %}
+        {%- set nextPost = collections.posts | getPreviousCollectionItem(page) %}
         {%- if nextPost %}
             <span style="float: right">
                 <span class="uppercase text-xs mt-6">Next</span>
@@ -57,6 +57,6 @@ permalink: "{% if path_prefix %}{{ path_prefix }}{% endif %}{% if path %}{{ path
                 </span>
             </span>
         {% endif %}
-        
+
     </div>
 {% endblock %}
