@@ -2,6 +2,7 @@
 layout: post
 title: 'Practical ScriptableObjects: Data Library'
 excerpt: ''
+date: 2023-07-10
 tags:
   - post
   - unity3d

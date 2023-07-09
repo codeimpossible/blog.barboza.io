@@ -1,7 +1,8 @@
 ---
 layout: post
-title: 'Practical ScriptableObjects'
+title: 'Practical ScriptableObjects: Intro'
 excerpt: ''
+date: 2023-07-09
 tags:
   - post
   - unity3d

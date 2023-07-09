@@ -2,6 +2,7 @@
 layout: post
 title: 'Practical ScriptableObjects: Variables'
 excerpt: ''
+draft: true
 tags:
   - post
   - unity3d
