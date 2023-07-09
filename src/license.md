@@ -4,9 +4,9 @@ title: Licenses
 path: license
 ---
 
-The content on this site is under a dual license.
+The content on this site is under a dual license. All source code posted here is licensed under the [MIT License](https://choosealicense.com/licenses/mit/). The text for each blog post is licensed under the [Creative-Commons Attribution Share Alike (cc-by-sa) License](https://choosealicense.com/licenses/cc-by-sa-4.0/).
 
-All source code posted here is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
+Both Licenses are included in full below.
 
 ```text
 MIT License
@@ -31,8 +31,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
-The text for each blog post is licensed under the [Creative-Commons Attribution Share Alike (cc-by-sa) License](https://choosealicense.com/licenses/cc-by-sa-4.0/).
 
 ```text
 Attribution-ShareAlike 4.0 International
