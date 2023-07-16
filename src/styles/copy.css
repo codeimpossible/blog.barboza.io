@@ -1,110 +1,113 @@
 .copy {
-    @apply text-xs p-1 cursor-pointer absolute top-0 right-0 opacity-25 bg-red-700 text-white;
-    font-family: Consolas, monaco, monospace;
-    content: "copy";
-    transition: all 200ms ease;
+  @apply text-xs p-1 cursor-pointer absolute top-0 right-0 opacity-25 bg-red-700 text-white;
+  font-family: Consolas, monaco, monospace;
+  content: 'copy';
+  transition: all 200ms ease;
 }
 
 .copy:hover {
-    @apply p-4 opacity-100;
+  @apply p-4 opacity-100;
 }
 
 pre {
-    @apply relative;
+  @apply relative;
 }
 
+.post {
+  margin-bottom: 40px;
+}
 
 .post .pic {
-    border: 5px solid #fff;
-    cursor: pointer;
-    height: 182px;
-    float: left;
-    margin: 5px;
-    position: relative;
-    overflow: hidden;
-    width: 200px;
-    -webkit-box-shadow: 1px 1px 1px 1px #ccc;
-    -moz-box-shadow: 1px 1px 1px 1px #ccc;
-    box-shadow: 1px 1px 1px 1px #ccc;
+  border: 5px solid #fff;
+  cursor: pointer;
+  height: 182px;
+  float: left;
+  margin: 5px;
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  -webkit-box-shadow: 1px 1px 1px 1px #ccc;
+  -moz-box-shadow: 1px 1px 1px 1px #ccc;
+  box-shadow: 1px 1px 1px 1px #ccc;
 }
 
 .post .pic-xl {
-    width: 900px;
-    height: 660px;
+  width: 900px;
+  height: 660px;
 }
- 
+
 .post .pic img {
-    position: absolute;
-    left: 0;
-    -webkit-transition: all 300ms ease-out;
-    -moz-transition: all 300ms ease-out;
-    -o-transition: all 300ms ease-out;
-    -ms-transition: all 300ms ease-out;
-    transition: all 300ms ease-out;
+  position: absolute;
+  left: 0;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
 }
 
 .post .pic .caption {
-    background-color: rgba(0,0,0,0.8);
-    position: absolute;
-    color: #fff;
-    z-index: 100;
-    opacity: 0;
-    -webkit-transition: all 300ms ease-out;
-    -moz-transition: all 300ms ease-out;
-    -o-transition: all 300ms ease-out;
-    -ms-transition: all 300ms ease-out;
-    transition: all 300ms ease-out;
-    left: 0;
-    font: 10pt normal Arial, sans-serif!important;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  color: #fff;
+  z-index: 100;
+  opacity: 0;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  left: 0;
+  font: 10pt normal Arial, sans-serif !important;
 }
 
 .post .pic .scale-caption p {
-    font-size: 12px !important;
+  font-size: 12px !important;
 }
 
-.post .pic .scale-caption h4, 
+.post .pic .scale-caption h4,
 .post .pic .scale-caption p {
-    position: relative;
-    left: -190px;
-    width: 170px;
-    -webkit-transition: all 300ms ease-out;
-    -moz-transition: all 300ms ease-out;
-    -o-transition: all 300ms ease-out;
-    -ms-transition: all 300ms ease-out;
-    transition: all 300ms ease-out;
+  position: relative;
+  left: -190px;
+  width: 170px;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
 }
- 
+
 .post .pic .scale-caption h4 {
-    -webkit-transition-delay: 300ms;
-    -moz-transition-delay: 300ms;
-    -o-transition-delay: 300ms;
-    -ms-transition-delay: 300ms;
-    transition-delay: 300ms;
+  -webkit-transition-delay: 300ms;
+  -moz-transition-delay: 300ms;
+  -o-transition-delay: 300ms;
+  -ms-transition-delay: 300ms;
+  transition-delay: 300ms;
 }
- 
+
 .post .pic .scale-caption p {
-    -webkit-transition-delay: 500ms;
-    -moz-transition-delay: 500ms;
-    -o-transition-delay: 500ms;
-    -ms-transition-delay: 500ms;
-    transition-delay: 500ms;
+  -webkit-transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -o-transition-delay: 500ms;
+  -ms-transition-delay: 500ms;
+  transition-delay: 500ms;
 }
 
 .post .pic:hover img {
-    -moz-transform: scale(1.4);
-    -o-transform: scale(1.4);
-    -webkit-transform: scale(1.4);
-    transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  -o-transform: scale(1.4);
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
 }
 
 .post .pic:hover .scale-caption {
-    opacity: 1;
+  opacity: 1;
 }
 
 .post .pic:hover .scale-caption h4,
 .post .pic:hover .scale-caption p {
-    -moz-transform: translateX(200px);
-    -o-transform: translateX(200px);
-    -webkit-transform: translateX(200px);
-    transform: translateX(200px);
+  -moz-transform: translateX(200px);
+  -o-transform: translateX(200px);
+  -webkit-transform: translateX(200px);
+  transform: translateX(200px);
 }

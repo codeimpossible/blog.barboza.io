@@ -10,6 +10,8 @@ tags:
   - programming
 ---
 
+If you haven't checked out the intro to this series yet, you [should give it a read now](/post/practical-scriptableobjects). It has an overview of what I'm setting out to do with this series as well as links to my other posts and excellent resources on ScriptableObjects.
+
 ## Why use ScriptableObjects?
 
 - Create a separation between the game logic and the data driving that behavior.

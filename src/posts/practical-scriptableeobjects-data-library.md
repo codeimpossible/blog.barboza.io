@@ -75,10 +75,12 @@ public class DataLibrary : ScriptableObject {
     private string CreateKey(string name, Type objectType) => $"{name}_{objectType.ToString()}";
 
     // The actual library asset reference properties
+    // This is where you can add extend the library with your own List<T> properties
     public List<Material> Materials;
     public List<Sprite> Sprites;
     public List<AudioClip> AudioClips;
 
+    // our helper methods that will make finding objects within the library easier
     public Sprite GetSpriteByName(string spriteName) => GetCachedObject(spriteName, Sprites);
     public Sprite GetMaterialByName(string materialName) => GetCachedObject(materialName, Materials);
     public Sprite GetAudioClipByName(string clipName) => GetCachedObject(clipName, AudioClips);
@@ -106,6 +108,9 @@ public class RebuildDataLibrary {
         UpdateDataLibrary(library);
     }
 
+    // this is where the library is actually filled with items from your
+    // project. Any time you add a property to the DataLibrary.cs make sure
+    // to come here and add a line to populate it with assets
     public static void UpdateDataLibrary(DataLibrary library) {
         library.Materials = AssetDatabaseUtility.Load<Material>();
         library.Sprites = AssetDatabaseUtility.Load<Sprite>();
@@ -157,3 +162,8 @@ public class UpdateDataLibraryPreprocessor : IPreprocessBuildWithReport {
 ## Summary
 
 There's not much code to this solution, which (I hope) makes it really easy to extend and customize. Imagine having different player abilities, loot items, spells, hit effects defined in ScriptableObjects and adding them to this DataLibrary. You could easily spawn hit effects or enable abilities from within your MonoBehaviours without them needing their own copy of the data.
+
+Also extending the data library with new features should be fairly straight forward, like
+
+- Updating the `UpdateDataLibraryPreprocessor` to run whenever "Play" is clicked in the editor
+- Modify `RebuildDataLibrary.UpdateDataLibrary()` so that it uses reflection to detect the types within each `List<T>` property and call the `AssetDatabaseUtility` to populate them. This would make adding properties in the future much simpler.
