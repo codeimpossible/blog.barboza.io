@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+    <meta itemprop="name" content="Practical ScriptableObjects: Variables | blog.barboza.io">
+    <meta itemprop="description" content="🍕 P I Z Z A is life">
+
+    
+    <meta name="twitter:title" content="Practical ScriptableObjects: Variables | blog.barboza.io">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="🍕 P I Z Z A is life">
+    <meta name="twitter:site" content="@codeimpossible">
+    <meta name="twitter:creator" content="@codeimpossible">
+    <meta name="twitter:image:src" content="http://blog.barboza.io/social-header.png">
+
+    
+    <meta name="og:title" content="Practical ScriptableObjects: Variables | blog.barboza.io">
+    <meta name="og:description" content="🍕 P I Z Z A is life">
+    <meta name="og:image" content="http://blog.barboza.io/social-header-lg.png">
+    <meta name="og:url" content="http://blog.barboza.io/">
+    <meta name="og:site_name" content="blog.barboza.io">
+    <meta name="og:locale" content="en_US">
+    <meta name="og:type" content="website">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <title>Practical ScriptableObjects: Variables—blog.barboza.io</title>
+
+    <link rel="stylesheet" href="/assets/main.bundle.css">
+
+    
+  </head>
+  <body class="flex flex-col min-h-screen is-post">
+    <main class="container mx-auto max-w-3xl flex-grow">
+      <aside class="intro">
+  <a href="/">
+    <img src="/me.jpg" alt="Me. I mean Jared. I mean that's me, Jared." class="rounded-full" />
+  </a>
+  <div class="intro-greeting mb-5">
+    <h1>Hey there 👋, I'm Jared.</h1>
+    <h2>Future skeleton. 🐈 parent. Lover of all things 🍕. Dispenser of artisanal emoji, gifs and memes. They/Them.</h2>
+  </div>
+  <span class="social">
+      <a href="https://twitter.com/codeimpossible" class="social_icon icon-twitter" title="@codeimpossible on Twitter">
+          <svg width="28" height="28" viewBox="0 0 32 32" preserveAspectRatio="xMinYMin" aria-hidden="true" focusable="false">
+              <use xlink:href="#icon-twitter">
+                  <g id="icon-twitter"><path fill="#00c9ff" d="M 32,6.076c-1.177,0.522-2.443,0.875-3.771,1.034c 1.355-0.813, 2.396-2.099, 2.887-3.632 c-1.269,0.752-2.674,1.299-4.169,1.593c-1.198-1.276-2.904-2.073-4.792-2.073c-3.626,0-6.565,2.939-6.565,6.565 c0,0.515, 0.058,1.016, 0.17,1.496c-5.456-0.274-10.294-2.888-13.532-6.86c-0.565,0.97-0.889,2.097-0.889,3.301 c0,2.278, 1.159,4.287, 2.921,5.465c-1.076-0.034-2.088-0.329-2.974-0.821c-0.001,0.027-0.001,0.055-0.001,0.083 c0,3.181, 2.263,5.834, 5.266,6.438c-0.551,0.15-1.131,0.23-1.73,0.23c-0.423,0-0.834-0.041-1.235-0.118 c 0.836,2.608, 3.26,4.506, 6.133,4.559c-2.247,1.761-5.078,2.81-8.154,2.81c-0.53,0-1.052-0.031-1.566-0.092 c 2.905,1.863, 6.356,2.95, 10.064,2.95c 12.076,0, 18.679-10.004, 18.679-18.68c0-0.285-0.006-0.568-0.019-0.849 C 30.007,8.548, 31.12,7.392, 32,6.076z"></path></g>
+              </use>
+          </svg>
+          <span class="a11y-only">Twitter</span>
+      </a> 
+      <a href="https://github.com/codeimpossible/" class="social_icon icon-github" title="@codeimpossible on GitHub">
+          <svg width="28" height="28" viewBox="0 0 32 32" preserveAspectRatio="xMinYMin" aria-hidden="true" focusable="false">
+              <use xlink:href="#icon-github">
+                  <g id="icon-github"><path fill="#000000" d="M 16,0C 7.163,0,0,7.163,0,16s 7.163,16, 16,16s 16-7.163, 16-16S 24.837,0, 16,0z M 25.502,25.502 c-1.235,1.235-2.672,2.204-4.272,2.881c-0.406,0.172-0.819,0.323-1.238,0.453L 19.992,26.438 c0-1.26-0.432-2.188-1.297-2.781 c 0.542-0.052, 1.039-0.125, 1.492-0.219s 0.932-0.229, 1.438-0.406s 0.958-0.388, 1.359-0.633s 0.786-0.563, 1.156-0.953s 0.68-0.833, 0.93-1.328 s 0.448-1.089, 0.594-1.781s 0.219-1.456, 0.219-2.289c0-1.615-0.526-2.99-1.578-4.125c 0.479-1.25, 0.427-2.609-0.156-4.078l-0.391-0.047 c-0.271-0.031-0.758,0.083-1.461,0.344s-1.492,0.688-2.367,1.281c-1.24-0.344-2.526-0.516-3.859-0.516c-1.344,0-2.625,0.172-3.844,0.516 c-0.552-0.375-1.075-0.685-1.57-0.93c-0.495-0.245-0.891-0.411-1.188-0.5s-0.573-0.143-0.828-0.164s-0.419-0.026-0.492-0.016 s-0.125,0.021-0.156,0.031c-0.583,1.479-0.635,2.839-0.156,4.078c-1.052,1.135-1.578,2.51-1.578,4.125c0,0.833, 0.073,1.596, 0.219,2.289 s 0.344,1.286, 0.594,1.781s 0.56,0.938, 0.93,1.328s 0.755,0.708, 1.156,0.953s 0.854,0.456, 1.359,0.633s 0.984,0.313, 1.438,0.406 s 0.951,0.167, 1.492,0.219c-0.854,0.583-1.281,1.51-1.281,2.781l0,2.445 c-0.472-0.14-0.937-0.306-1.394-0.5 c-1.6-0.677-3.037-1.646-4.272-2.881c-1.235-1.235-2.204-2.672-2.881-4.272C 2.917,19.575, 2.563,17.815, 2.563,16 s 0.355-3.575, 1.055-5.23c 0.677-1.6, 1.646-3.037, 2.881-4.272s 2.672-2.204, 4.272-2.881 C 12.425,2.917, 14.185,2.563, 16,2.563s 3.575,0.355, 5.23,1.055c 1.6,0.677, 3.037,1.646, 4.272,2.881 c 1.235,1.235, 2.204,2.672, 2.881,4.272C 29.083,12.425, 29.438,14.185, 29.438,16s-0.355,3.575-1.055,5.23 C 27.706,22.829, 26.737,24.267, 25.502,25.502z"></path></g>
+              </use>
+          </svg>
+          <span class="a11y-only">GitHub</span>
+      </a> 
+      <a href="/feed/" class="social_icon icon-rss" title="Jared Barboza's RSS Feed">
+          <svg width="28" height="28" viewBox="0 0 32 32" preserveAspectRatio="xMinYMin" aria-hidden="true" focusable="false">
+              <use xlink:href="#icon-feed">
+                  <g id="icon-feed"><path fill="#ff9132" d="M 4.259,23.467c-2.35,0-4.259,1.917-4.259,4.252c0,2.349, 1.909,4.244, 4.259,4.244 c 2.358,0, 4.265-1.895, 4.265-4.244C 8.525,25.383, 6.618,23.467, 4.259,23.467zM 0.005,10.873l0,6.133 c 3.993,0, 7.749,1.562, 10.577,4.391c 2.825,2.822, 4.384,6.595, 4.384,10.603l 6.16,0 C 21.125,20.349, 11.648,10.873, 0.005,10.873zM 0.012,0l0,6.136 c 14.243,0, 25.836,11.604, 25.836,25.864L 32,32 C 32,14.36, 17.648,0, 0.012,0z"></path></g>
+              </use>
+          </svg>
+          <span class="a11y-only">RSS</span>
+      </a>
+  </span>
+</aside>
+      
+    <div>
+        <h1>Practical ScriptableObjects: Variables</h1>
+
+        
+
+        
+            <span class="text-sm">📆 <em>Created on
+                    <span datetime="Sun Jul 16 2023 11:36:17 GMT+0000 (Coordinated Universal Time)">July 16, 2023</span>.</em></span>
+        
+
+        
+            <span class="pl-10 mb-2 tags">
+                <span>🔖</span>
+                <a class="tag tag-inline" href="/tag/unity3d">unity3d</a><a class="tag tag-inline" href="/tag/game-development">game-development</a><a class="tag tag-inline" href="/tag/programming">programming</a>
+            </span>
+        
+
+        <div class="content post">
+            <p>If you haven't checked out the intro to this series yet, you <a href="/post/practical-scriptableobjects">should give it a read now</a>. It has an overview of what I'm setting out to do with this series as well as links to my other posts and excellent resources on ScriptableObjects.</p>
+<h2>Why use ScriptableObjects?</h2>
+<ul>
+<li>Create a separation between the game logic and the data driving that behavior.</li>
+<li>ScriptableObjects can be referenced easily in the editor and changing their values doesn't cause a recompile.</li>
+<li>ScriptableObjects are just another asset so they can be easily discovered, looped over within editor code for easy automation.</li>
+</ul>
+<ul>
+<li>Why is this useful?
+<ul>
+<li>ScriptableObjects can be put into asset bundles, changing game behaviour doesn't require shipping new code</li>
+<li>ScriptableObjects have built-in support for serialization</li>
+<li>include link to unity talk on scriptable objects: https://www.youtube.com/watch?v=raQ3iHhE_Kk</li>
+</ul>
+</li>
+<li>Very basic example</li>
+</ul>
+<h2>A very basic example</h2>
+<pre class="language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">DataVariable</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">ScriptableObject</span></span> <span class="token punctuation">{</span><br>  <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">ShowInInspector</span></span><span class="token punctuation">]</span><br>  <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">PropertyOrder</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span><br>  <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Name <span class="token operator">=></span> name<span class="token punctuation">;</span><br><br>  <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token return-type class-name"><span class="token keyword">object</span></span> <span class="token function">ToObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token return-type class-name"><span class="token keyword">bool</span></span> <span class="token function">SetValue</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> <span class="token keyword">value</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DataVariable<span class="token punctuation">&lt;</span>T<span class="token punctuation">></span></span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">DataVariable</span></span> <span class="token punctuation">{</span><br>  <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">HideInInspector</span></span><span class="token punctuation">]</span><br>  <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">SerializeField</span></span><span class="token punctuation">]</span> <span class="token keyword">private</span> <span class="token class-name">T</span> _savedValue<span class="token punctuation">;</span><br><br>  <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">ShowInInspector</span></span><span class="token punctuation">]</span><br>  <span class="token keyword">public</span> <span class="token return-type class-name">T</span> Value <span class="token punctuation">{</span><br>    <span class="token keyword">get</span> <span class="token operator">=></span> _savedValue<span class="token punctuation">;</span><br>    <span class="token keyword">set</span> <span class="token operator">=></span> _savedValue <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><br>  <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">bool</span></span> <span class="token function">SetValue</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> <span class="token keyword">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">value</span> <span class="token keyword">is</span> <span class="token class-name">T</span> tValue<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      Value <span class="token operator">=</span> tValue<span class="token punctuation">;</span><br>      <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><br>  <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> <span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> Value<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">object</span></span> <span class="token function">ToObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> Value<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<ul>
+<li>Add complexity: on change event</li>
+</ul>
+<pre class="language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">delegate</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token generic-method"><span class="token function">DataVariableChanged</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>T<span class="token punctuation">></span></span></span><span class="token punctuation">(</span><span class="token class-name">T</span> oldValue<span class="token punctuation">,</span> <span class="token class-name">T</span> newValue<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DataVariable<span class="token punctuation">&lt;</span>T<span class="token punctuation">></span></span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">DataVariable</span></span> <span class="token punctuation">{</span><br>  <span class="token comment">// snip... brevity</span><br>  <span class="token keyword">public</span> <span class="token keyword">event</span> <span class="token class-name">DataVariableChanged<span class="token punctuation">&lt;</span>T<span class="token punctuation">></span></span> OnDataVariableChanged<span class="token punctuation">;</span><br>  <span class="token comment">// snip... brevity</span><br><br>  <span class="token punctuation">[</span>ShowInInspector<span class="token punctuation">]</span><br>  <span class="token keyword">public</span> <span class="token return-type class-name">T</span> Value <span class="token punctuation">{</span><br>    <span class="token keyword">get</span> <span class="token operator">=></span> _savedValue<span class="token punctuation">;</span><br>    <span class="token keyword">set</span> <span class="token punctuation">{</span><br>      <span class="token class-name"><span class="token keyword">var</span></span> shouldFireChangeEvent <span class="token operator">=</span> <span class="token operator">!</span>_savedValue<span class="token punctuation">?.</span><span class="token function">Equals</span><span class="token punctuation">(</span><span class="token keyword">value</span><span class="token punctuation">)</span> <span class="token operator">??</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br>      <span class="token keyword">if</span> <span class="token punctuation">(</span>shouldFireChangeEvent<span class="token punctuation">)</span> OnDataVariableChanged<span class="token punctuation">?.</span><span class="token function">Invoke</span><span class="token punctuation">(</span>_savedValue<span class="token punctuation">,</span> <span class="token keyword">value</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>      _savedValue <span class="token operator">=</span> <span class="token keyword">value</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br></code></pre>
+<ul>
+<li>Add complexity: casting</li>
+<li>Add complexity: editor property drawer</li>
+<li>wrap-up: gif of it all working in editor</li>
+<li>wrap-up: link to example project in github</li>
+</ul>
+
+        </div>
+
+    </div>
+
+    </main>
+    <footer>
+  <div class="container mx-auto max-w-3xl flex-grow">
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <p class="block text-center text-sm mb-6">
+        Release: <a href="https://github.com/codeimpossible/jaredbarboza.me/commit/8258568e6295c1816267e92566bc75847a5a68dc">8258568e</a>
+        &copy;
+        <a target="_blank" href="https://jaredbarboza.me">
+          Jared Barboza
+        </a> 2022.
+        </p>
+      </div>
+      <div style="text-align: right">
+        <ul>
+          <li><a href="/license/">License</a></li>
+          <li><a href="https://github.com/codeimpossible">GitHub</a></li>
+          <li><a href="https://twitter.com/codeimpossible">Twitter</a></li>
+          <li><a rel="me" href="https://mastodon.gamedev.place/@Literallyacat">Mastodon</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+    <script src="/assets/main.bundle.js"></script>
+    <script type="text/javascript">
+      (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+      for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+      MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+
+      // Enabling the debug mode flag is useful during implementation,
+      // but it's recommended you remove it for production
+      mixpanel.init('2d56400048ed4cc12effac63a51e4b4d'); 
+      mixpanel.track_links("#nav a", "click nav link", {
+        "referrer": document.referrer
+      });
+      mixpanel.register({
+        "uri": "http://blog.barboza.io/post/practical-scriptableobjects-variables/"
+      });
+      
+      var engagement_time = 0;
+      var logged_view = false;
+      setInterval(function() {
+        if (!logged_view) {
+          mixpanel.track('Content View');
+          logged_view = true;
+        }
+        engagement_time += 10;
+        mixpanel.track('Engagement', {
+          "engagement_duration": engagement_time
+        });
+      }, 10000);
+    </script>
+  </body>
+</html>
