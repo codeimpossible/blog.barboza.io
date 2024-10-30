@@ -53,7 +53,7 @@ const replaceImg = () => {
 };
 
 ((win, doc) => {
-    doc.addEventListener('onload', (e) => {
+    doc.addEventListener('DOMContentLoaded', (e) => {
         replaceImg();
     });
 })(window, document);
