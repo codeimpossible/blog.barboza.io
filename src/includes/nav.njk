@@ -1,25 +1,27 @@
 <div class="mt-4 pt-4">
     <div class="md:flex justify-evenly mb-6">
         <div class="flex justify-between mx-auto w-full">
+            {% if page.url !== pagination.href.first %}
+                <div class="mx-auto mb-4">
+                    <a class="first-page md:mb-2" href="{{ pagination.href.first | url }}">Newest Posts</a>
+                </div>
+
+            {% endif %}
+
             {% if pagination.href.previous %}
                 <div class="mx-auto mb-4">
                     <a class="previous-page" href="{{ pagination.href.previous | url }}">Towards the present</a>
                 </div>
             {% endif %}
 
+
+        </div>
+
+        <div class="flex justify-between mx-auto w-full">
             {% if pagination.href.next %}
                 <div class="mx-auto mb-4">
                     <a class="next-page md:mb-2" href="{{ pagination.href.next | url }}">Back in time...</a>
                 </div>
-            {% endif %}
-        </div>
-
-        <div class="flex justify-between mx-auto w-full">
-            {% if page.url !== pagination.href.first %}
-                <div class="mx-auto mb-4">
-                    <a class="first-page md:mb-2" href="{{ pagination.href.first | url }}">Newest Posts</a>
-                </div>
-
             {% endif %}
 
             {% if page.url !== pagination.href.last %}

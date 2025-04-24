@@ -20,3 +20,7 @@
 .tag:before {
   content: '#';
 }
+
+.post-list .tags {
+    float: right;
+}

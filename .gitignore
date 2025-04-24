@@ -1,5 +1,7 @@
 # Adapted from https://github.com/github/gitignore/blob/master/Node.gitignore
 
+.npmrc
+
 # Logs
 logs
 *.log

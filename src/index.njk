@@ -1,7 +1,7 @@
 ---
 pagination:
   data: collections.posts
-  size: 6
+  size: 10
   alias: posts
 permalink: "/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
 title: '👋 Hey there'
@@ -11,8 +11,9 @@ title: '👋 Hey there'
 
 {% block body %}
   {% if pagination.pageNumber == 0 %}
-    {% include "welcome.njk" %}
+
   {% endif %}
+  {% include "welcome.njk" %}
   {% include "posts.njk" %}
 
   {% include "nav.njk" %}
