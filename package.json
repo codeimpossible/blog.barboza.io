@@ -12,7 +12,6 @@
         "dev:rollup": "rollup -c -w"
     },
     "dependencies": {
-        "@codeimpossible/my-tweets": "^0.84.0",
         "@sindresorhus/slugify": "^2.1.0",
         "slugify": "^1.6.0"
     },
