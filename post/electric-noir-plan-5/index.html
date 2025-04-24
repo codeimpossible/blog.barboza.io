@@ -26,6 +26,8 @@
     <meta name="og:locale" content="en_US">
     <meta name="og:type" content="website">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <title>Electric Noir .plan #5—blog.barboza.io</title>
@@ -35,7 +37,7 @@
     
   </head>
   <body class="flex flex-col min-h-screen is-post">
-    <main class="container mx-auto max-w-3xl flex-grow">
+    <main class="container mx-auto min-w-md max-w-3xl flex-grow">
       <aside class="intro">
   <a href="/">
     <img src="/me.jpg" alt="Me. I mean Jared. I mean that's me, Jared." class="rounded-full" />
@@ -118,16 +120,16 @@
 
         </div>
             <span style="float: left">
-                <span class="uppercase text-xs mt-6">Previous</span>
-                <span class="font-bold">
-                    <a href="/post/electric-noir-plan-4/">Electric Noir .plan #4</a>
+                <span class="uppercase text-xs mt-6">Next</span>
+                <span class="font-bold mb-2">
+                    <a href="/post/electric-noir-plan-6-7/">Electric Noir .plan #6 &amp; #7</a>
                 </span>
             </span>
         
             <span style="float: right">
-                <span class="uppercase text-xs mt-6">Next</span>
-                <span class="font-bold mb-2">
-                    <a href="/post/electric-noir-plan-6-7/">Electric Noir .plan #6 &amp; #7</a>
+                <span class="uppercase text-xs mt-6">Previous</span>
+                <span class="font-bold">
+                    <a href="/post/electric-noir-plan-4/">Electric Noir .plan #4</a>
                 </span>
             </span>
         
@@ -140,7 +142,7 @@
     <div class="grid grid-cols-2 gap-4">
       <div>
         <p class="block text-center text-sm mb-6">
-        Release: <a href="https://github.com/codeimpossible/jaredbarboza.me/commit/4cee4793409088965ef049fa2d90df82674d0cb7">4cee4793</a>
+        Release: <a href="https://github.com/codeimpossible/jaredbarboza.me/commit/cc5d94934b98be8700d03aa3ddfae27ef88a0fa7">cc5d9493</a>
         &copy;
         <a target="_blank" href="https://jaredbarboza.me">
           Jared Barboza
@@ -149,10 +151,10 @@
       </div>
       <div style="text-align: right">
         <ul>
-          <li><a href="/license/">License</a></li>
-          <li><a href="https://github.com/codeimpossible">GitHub</a></li>
-          <li><a href="https://twitter.com/codeimpossible">Twitter</a></li>
-          <li><a rel="me" href="https://mastodon.gamedev.place/@Literallyacat">Mastodon</a></li>
+          <li><i class="fa-solid fa-book"></i>&nbsp;<a href="/license/">License</a></li>
+          <li><i class="fa-brands fa-github"></i>&nbsp;<a href="https://github.com/codeimpossible">GitHub</a></li>
+          <li><i class="fa-brands fa-twitter"></i>&nbsp;<a href="https://twitter.com/codeimpossible">Twitter</a></li>
+          <li><i class="fa-brands fa-mastodon"></i>&nbsp;<a rel="me" href="https://mastodon.gamedev.place/@Literallyacat">Mastodon</a></li>
         </ul>
       </div>
     </div>
@@ -168,14 +170,14 @@
 
       // Enabling the debug mode flag is useful during implementation,
       // but it's recommended you remove it for production
-      mixpanel.init('2d56400048ed4cc12effac63a51e4b4d'); 
+      mixpanel.init('2d56400048ed4cc12effac63a51e4b4d');
       mixpanel.track_links("#nav a", "click nav link", {
         "referrer": document.referrer
       });
       mixpanel.register({
         "uri": "http://blog.barboza.io/post/electric-noir-plan-5/"
       });
-      
+
       var engagement_time = 0;
       var logged_view = false;
       setInterval(function() {
