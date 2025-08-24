@@ -19,7 +19,7 @@ export default {
     }),
     svg(),
     postcss({
-      extract: 'dist/assets/main.bundle.css',
+      extract: 'main.bundle.css',
       minimize: !dev,
     }),
     !dev && terser(),
