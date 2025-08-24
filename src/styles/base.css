@@ -99,6 +99,12 @@ h4 {
 }
 
 p {
+  @apply text-xl pt-5 pb-2;
+  line-height: 1em;
+  word-spacing: 0.1em;
+}
+
+.content p {
   @apply text-2xl pt-10 pb-5;
   line-height: 1.5em;
   word-spacing: 0.1em;
