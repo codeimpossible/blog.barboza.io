@@ -14,7 +14,7 @@ tags:
 
 This is another one of our favorite recipes because you can add almost anything to it. It's useful when you want to use all the random ingredients in your fridge, or when you want to warm up on a cold night.
 
-## Ingredients
+### Ingredients
 
 - 3 tsp Red pepper flakes
 - Fresh Garlic Cloves, diced (2-3 should be good)
@@ -31,12 +31,12 @@ This is another one of our favorite recipes because you can add almost anything 
 - Jalapenos, serranos, habeneros (optional)
 - 1-1 1/2 cups of Rice, cooked  according to directions (I've used Basmati, Jasmine, even Sushi rice for this recipe successfully)
 
-## Tools
+### Tools
 
 - Mortar and Pestle
 - Large saute pan
 
-## Directions
+### Directions
 
 
 In the mortar and pestle put the Salt, Red Pepper Flakes, diced Garlic and 1/2 of the Sesame Oil. Work it around until it's well mixed and is fragrant.

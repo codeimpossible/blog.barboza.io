@@ -30,7 +30,7 @@ This recipe may actually have been *the* recipe that got me interested in cooki
 So, here it is, a dish that reminds me of all the seafood of New England and was likely the catalyst for my interest in cooking.
 ## The Perfect Pan Seared Atlantic Salmon
 
-Ingredients
+### Ingredients
 
 - 3/4 - 1lb of atlantic salmon, cut into individual portions
 - Kosher Salt
@@ -39,12 +39,11 @@ Ingredients
 - 2-3 tbsp grape seed oil
 - 3-4 sprigs of thyme
 
-Equipment
+### Equipment
 
 - A saute pan
-- yer mitts
 
-Directions
+### Directions
 
 Pat the salmon dry and then season both sides of the fish with the salt and pepper. Heat the oil in the saute pan on medium-high heat until it is almost smoking.
 

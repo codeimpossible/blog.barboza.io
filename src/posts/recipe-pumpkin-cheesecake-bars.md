@@ -9,32 +9,42 @@ tags:
   - recipes
 ---
 
-Crust:
-
-- graham cracker crumbs, or gingersnap crumbs, or both!
-- granulated sugar
-- melted butter
-
-Pumpkin Layer:
-
-- canned pumpkin (pure pumpkin – not pumpkin pie mix)
-- heavy cream
-- eggs
-- granulated sugar
-- vanilla extract
-- pumpkin pie spice
-
-Cheesecake Swirl:
-
-- cream cheese
-- egg + an extra egg yolk
-- granulated sugar
-- vanilla extract
-
-Directions:
-
 These pumpkin cheesecake bars may look very impressive, but they are surprisingly easy to whip together.
-First we start with the crust: crushed graham crackers (or gingersnaps), butter and sugar pressed into the bottom of a 9×13 casserole dish.
-Whip together the pumpkin pie layer, seasoned with pumpkin spice, and pour it on top of the graham cracker layer.
-Then we beat together the cream cheese, eggs, sugar and vanilla until smooth. Pour it on top of the pumpkin layer and then drag a knife through the cheesecake and pumpkin layers to create a marbled look. 
-Bake for about 40 minutes, cool and refrigerate. Serve chilled!
+
+### Ingredients
+
+#### Graham cracker crust
+
+- 3 cups graham cracker crumbs
+- 6 tablespoons granulated sugar
+- 10 tablespoons melted butter
+
+#### Pumpkin layer
+
+- 1 can (15 oz) pumpkin puree (not pumpkin pie mix)
+- 3/4 cup heavy cream
+- 2 large eggs
+- 3/4 cup granulated sugar
+- 1 teaspoon vanilla extract
+- 2 teaspoons pumpkin pie spice
+
+#### Cheesecake swirl
+- 8 oz cream cheese, softened
+- 1 large egg
+- 1 egg yolk
+- 1/2 cup granulated sugar
+- 1 teaspoon vanilla extract
+
+### Directions
+
+Preheat oven to 350°F. Line a 9x13 baking pan with parchment paper or foil.
+
+Graham Cracker Crust: In a medium sized bowl, combine graham cracker crumbs, sugar and melted butter until crumbly. Press into the prepared baking pan.
+
+Pumpkin Layer: In a medium bowl, whisk together all ingredients (pumpkin puree, heavy cream, eggs, sugar, vanilla and pumpkin pie spice). Pour on top of graham cracker layer.
+
+Cheesecake Swirl: In a medium bowl, beat all ingredients (cream cheese, egg, egg yolk, sugar and vanilla extract) with electric mixer on medium speed until well mixed.
+
+Spoon tablespoonfuls of cheesecake filling on top of pumpkin layer. With a knife, carefully swirl cheesecake filling into pumpkin mixture to create marbled look. Be careful to not disturb the bottom graham cracker layer while swirling the top two layers. Bake for 37 to 42 minutes or until center is set. Cool for 30 minutes and then refrigerate for 2 hours, until chilled.
+
+Slice into squares and serve.

@@ -23,7 +23,7 @@ I'll also recommend using a cast iron skillet like David says to in his recipe t
 And finally, you don't need the bone-in ribeyes (especially if you are making this for multiple people). Just sear all the edges of the steak when the recipe calls for searing the side away from the bone.
 ## The Perfect Ribeye - adapted from Momofoku
 
-Ingredients
+### Ingredients
 
 - 1 1-2lb ribeye (bone-in preferred), at least 1-inch thick
 - 2 tablespoons unsalted butter
@@ -32,13 +32,12 @@ Ingredients
 - 2 crushed (smashed) garlic cloves, or a few pinches of garlic powder
 - 1tbsp Grape seed oil
 
-Equipment
+### Equipment
 
 - 10-12 inch cast iron skillet
 - oven
-- yer mitts
 
-Directions
+### Directions
 
 Heat your oven to 400 degrees. Get your cast iron skillet heated up, we want it to be so hot that it is just about to start smoking. While the skillet is heating up rub both sides of the ribeye(s) with the oil and season liberally with salt and pepper. How much salt and pepper? David Chang said it best:
 <blockquote>"season the steak liberally with salt--like you'd salt a sidewalk in New York in the winter--and then with pepper."</blockquote>

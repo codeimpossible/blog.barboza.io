@@ -17,7 +17,8 @@ The holidays are always stressful. Getting the house ready for family, entertain
 This recipe was passed over to me by my dad who created it as a way to get an appetizer out for hungry guests with as little involvement on his end as possible - so that he could focus on whatever else was going on in the kitchen that day, rather than one more app.
 
 These won't be the made from scratch meatballs your grandmother lovingly toiled over by hand in the kitchen, working breadcrumbs and eggs into ground meat and onions. Instead, this recipe uses frozen meatballs, some jarred pasta sauce and another... unconventional ingredient to make something delicious, fast and easy for you to serve during your next gathering without having to spend a lot of time on it.
-## Ingredients
+
+### Ingredients
 
 
 - Frozen meatballs, usually "homestyle" of whatever brand you prefer
@@ -27,7 +28,7 @@ These won't be the made from scratch meatballs your grandmother lovingly toiled 
 - Sriracha (optional)
 - A slow cooker (instant pot, crock pot)
 
-## Directions
+### Directions
 
 Set your slow cooker to low (or if you're really in a hurry you can set it to high, just make sure to check on it more often) and add the meatballs. Come back when the crock pot has warmed up.
 
