@@ -88,7 +88,7 @@ I hope this has shown what a truly special and extraordinary part of our lives S
 
 <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4">
     <div>
-        <iframe class="inset-0 w-full h-full" src="https://youtube.com/shorts/EqoyLcN2X0I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="inset-0 w-full h-full" src="https://www.youtube.com/watch?v=EqoyLcN2X0I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </div>
 
