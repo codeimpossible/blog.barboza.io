@@ -1,9 +1,6 @@
 /* Prism Code Highlighting Theme (see https://prismjs.com) */
 
 @import url('https://cdn.jsdelivr.net/npm/prism-themes@1.4.0/themes/prism-dracula.css');
-html, body {
-  @apply antialiased text-gray-800 bg-gray-300;
-}
 
 pre {
   border-radius: 25px;
@@ -217,4 +214,29 @@ footer {
 
 footer a {
   color: #ddd;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  h1, h2, h3, h4, h5, h6, h1>a, h2>a, h3>a, h4>a, h5>a, h6>a, a {
+    @apply text-white-700;
+  }
+
+  code {
+    background-color: #eee;
+    color: #333;
+  }
+
+  hr {
+    @apply border-white-600;
+  }
+
+  footer {
+    background-color: #eee;
+    color: #333;
+  }
+
+  footer a {
+    color: #555;
+  }
 }
