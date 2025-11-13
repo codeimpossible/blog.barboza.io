@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
   @apply font-bold leading-tight mt-3;
 }
 
-h1, h2, h3, h4, h5, h6, h1>a, h2>a, h3>a, h4>a, h5>a, h6>a, a {
+body {
   @apply text-gray-700;
 }
 
