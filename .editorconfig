@@ -3,7 +3,7 @@
 # top-most EditorConfig file
 root = true
 
-[**.{js,css,mjs}]
+[**.{js,css,mjs,njk}]
 indent_style = space
 indent_size = 2
 end_of_line = crlf

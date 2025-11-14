@@ -229,6 +229,10 @@ footer a {
   color: #ddd;
 }
 
+.is-post .intro__content-license {
+  display: inline!important;
+}
+
 @media (prefers-color-scheme: dark) {
   code {
     @apply bg-slate-800 text-stone-400;
