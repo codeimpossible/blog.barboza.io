@@ -17,8 +17,16 @@
   border-radius: 15px;
 }
 
+.is-tagindex .tag {
+  @apply !text-lg;
+}
+
+.is-tagindex .tags_header {
+  @apply hidden;
+}
+
 .tag:before {
-  content: '#';
+  content: '';
 }
 
 .post-list .tags {

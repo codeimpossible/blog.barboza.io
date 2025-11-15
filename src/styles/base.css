@@ -64,22 +64,6 @@ h6 {
   @apply font-bold leading-tight mt-3;
 }
 
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-h1 > a,
-h2 > a,
-h3 > a,
-h4 > a,
-h5 > a,
-h6 > a,
-a {
-  @apply text-gray-700;
-} */
-
 a {
   @apply font-bold;
 }
@@ -113,6 +97,10 @@ p {
   @apply text-xl pt-5 pb-2;
   line-height: 1em;
   word-spacing: 0.1em;
+}
+
+.is-home .posts_header {
+  display: inline!important;
 }
 
 .content p {

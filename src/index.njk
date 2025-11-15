@@ -9,6 +9,8 @@ title: '👋 Hey there'
 
 {% extends 'page.njk' %}
 
+{%block bodyClass %} is-home {% endblock %}
+
 {% block body %}
   {% if pagination.pageNumber == 0 %}
 
