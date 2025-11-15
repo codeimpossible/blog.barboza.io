@@ -69,6 +69,15 @@ module.exports = (config) => {
     open: true,
   });
 
+  config.addShortcode('include_file', function (relativePath) {
+    const filePath = path.resolve(__dirname, relativePath);
+    if (!fs.existsSync(filePath)) {
+      return `FILE_NOT_FOUND`;
+    }
+    const contents = fs.readFileSync(filePath).toString();
+    return contents;
+  });
+
   config.setDataDeepMerge(true);
   config.addCollection('posts', async (collection) => getAllPosts(collection));
 
