@@ -1,8 +1,8 @@
-<div class="pt-2 border-t-2 border-stone-400 dark:border-sky-500/50">
+<div class="pt-2 border-t-2 border-stone-400 dark:border-stone-500/50">
   <h4 class="tags_header">Browse other tags</h4>
   <div class="grid grid-flow-row grid-cols-3 gap-4 mb-10 mt-10">
     {%- for tag in collections | keys | except("all", "post", "postsWithoutDrafts") %}
-      <a class="tag {{ tag }} mx-auto" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
+      <a class="tag {{ tag }} mx-auto text-slate-750 transition-padding duration-300 ease-in-out hover:bg-slate-500/10 hover:!pl-4 dark:hover:bg-sky-200/10 dark:text-stone-300" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
     {%- endfor %}
   </div>
 </div>

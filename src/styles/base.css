@@ -9,8 +9,7 @@ pre {
 }
 
 code {
-  @apply bg-slate-800 text-stone-400 p-1;
-  border-radius: 5px;
+  @apply bg-slate-800 text-stone-400 p-1 rounded-md;
 }
 
 @media (max-width: 90em) {
@@ -221,9 +220,21 @@ footer a {
   display: inline!important;
 }
 
-@media (prefers-color-scheme: dark) {
-  code {
-    @apply bg-slate-800 text-stone-400;
+.post pre > code {
+  @apply border-l-4 border-emerald-800 block;
+}
+
+.post pre code {
+  @apply rounded-none;
+}
+
+html[data-theme="dark"] {
+  pre, code {
+    @apply bg-slate-800 text-orange-200;
+  }
+
+  .post pre > code {
+    @apply border-sky-400;
   }
 
   hr {
