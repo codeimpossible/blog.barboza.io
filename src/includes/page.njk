@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="antialiased text-gray-800 bg-gray-300 dark:text-slate-400/90 dark:bg-gray-950 border-16 border-slate-400 dark:border-indigo-300/10 transition-colors duration-300">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,7 @@
 
     {% block head %}{% endblock %}
   </head>
-  <body class="flex flex-col min-h-screen {%block bodyClass %}{% endblock %}">
+  <body class="flex flex-col min-h-screen antialiased {%block bodyClass %}{% endblock %}">
     <main class="container mx-auto min-w-md max-w-3xl flex-grow">
       {% include "header.njk" %}
       {% block body %}{% endblock %}

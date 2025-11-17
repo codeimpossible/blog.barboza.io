@@ -1,0 +1,17 @@
+---
+title: 'Tag index'
+permalink: /tags.html
+---
+
+{% extends 'page.njk' %}
+
+{%block bodyClass %} is-tagindex {% endblock %}
+
+{% block body %}
+
+  <p>Below are all the tags used to categorize the blog posts I've written.</p>
+
+  <div class="*:text-xl">
+    {% include "tags.njk" %}
+  </div>
+{% endblock %}

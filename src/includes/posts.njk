@@ -1,19 +1,18 @@
-<div>
-    <h2>Things I've written</h2>
-    <ol class="border-dotted border-t border-gray-800 pt-4 mt-4 post-list">
-        {% for post in posts %}
-            {% if not post.data.draft %}
-                <li class="mb-4 text-2xl">
-                    <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-                    <span class="tags">
-                    {% for tag in post.data.tags %}
-                        {%- if tag !== "post" -%}
-                            <a class="tag" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
-                        {%- endif -%}
-                    {% endfor %}
-                    </span>
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ol>
+<div class="pt-2">
+  <ol class="border-dotted border-t border-gray-800 pt-4 mt-4 post-list">
+    {% for post in posts %}
+      {% if not post.data.draft %}
+        <li class="mb-4 text-2xl">
+          <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+          <span class="tags">
+          {% for tag in post.data.tags %}
+            {%- if tag !== "post" -%}
+              <a class="tag" href="{{ site.baseUrl }}tag/{{ tag }}">{{ tag }}</a>
+            {%- endif -%}
+          {% endfor %}
+          </span>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ol>
 </div>

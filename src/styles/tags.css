@@ -12,13 +12,20 @@
   padding: 4px 6px;
   margin: 0 5px;
   vertical-align: middle;
-  color: #4a5568;
   font-weight: 100;
   border-radius: 15px;
 }
 
+.is-tagindex .tag {
+  @apply !text-lg;
+}
+
+.is-tagindex .tags_header {
+  @apply hidden;
+}
+
 .tag:before {
-  content: '#';
+  content: '';
 }
 
 .post-list .tags {

@@ -1,10 +1,13 @@
 /* purgecss start ignore */
-@import 'tailwindcss';
-@import './base.css';
-@import './copy.css';
-@import './tags.css';
-@import './rail.css';
-@import './intro.css';
-@import './type.css';
-@import './media.css';
+@import "tailwindcss";
+
+@import "./base.css";
+@import "./copy.css";
+@import "./tags.css";
+@import "./rail.css";
+@import "./intro.css";
+@import "./type.css";
+@import "./media.css";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 /* purgecss end ignore */
