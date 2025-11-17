@@ -6,7 +6,7 @@ const { inspect } = require('util');
 
 async function getAllPosts(collection, filterFn) {
   let posts = [...collection.getFilteredByGlob('src/posts/*.md')].filter(
-    (post) => !post.data.draft
+    (post) => !post.data.draft && !(post.data.ignore || false)
   );
   let postsWithDate = [];
   for (let p of posts) {
@@ -52,6 +52,14 @@ module.exports = (config) => {
     templateFormats: ['md'],
   });
 
+  // configure markdown
+  const markdownIt = require("markdown-it");
+  const options = {
+    html: true,
+  };
+
+  config.setLibrary("md", markdownIt(options).disable('code'));
+
   const filters = fs
     .readdirSync(path.resolve(__dirname, './filters'))
     .filter((f) => f.endsWith('.js'))
@@ -80,6 +88,9 @@ module.exports = (config) => {
 
   config.setDataDeepMerge(true);
   config.addCollection('posts', async (collection) => getAllPosts(collection));
+  config.addCollection('dnd_reward_cards', async (collection) => {
+    return collection.getFilteredByGlob('src/posts/reward-cards/*.md');
+  });
 
   return {
     pathPrefix: siteSettings.baseUrl,

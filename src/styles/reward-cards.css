@@ -1,0 +1,21 @@
+
+
+.cards .reward-card h5 {
+  @apply text-xl;
+}
+
+.cards .reward-card p {
+  @apply text-base;
+}
+
+@media (prefers-color-scheme: dark) {
+    .reward-card img.dark\:inverted {
+      filter: invert(1);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .reward-card img.inverted {
+      filter: invert(1);
+    }
+}
