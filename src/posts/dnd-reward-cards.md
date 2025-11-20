@@ -8,73 +8,37 @@ tags:
   - table-top
 ---
 
+I’ve been DMing my first-ever D&D campaign for a small group of my closest friends, and it’s been way more fun—and chaotic—than I expected. I wanted to lean into the idea of the players and I crafting a story together, putting the characters into harrowing scenarios and have them overcome great challenges.
+
+I also wanted to keep player engagement high, and so I naturally thought about creating some kind of reward that I could present to players for good engagement with the game: doing solid roleplay, helping each other out with good teamwork, and even stepping out of the game a bit to take useful notes or give a recap when everyone else forgot what happened last session.
+
+I knew I wanted something _more_ than giving out inspiration, although that is still a good reward but I knew I wanted to give players something that could genuinely alter the course of the game if used well.
+
+So I drafted up a set of eight reward cards that gave players useful, powerful, and sometimes down-right ridiculous abilities or one-time effects. Since the campaign is full of really good friends, and none of us are taking this campaign too seriously, it didn’t matter if some of the cards were a little broken or wildly overpowered. If anything, those cards just made things more memorable.
+
+I've included each of the cards below, feel free to use or remix them as you like if you think they'd be a good addition to your campaign.
+
 {% set cards = collections['dnd_reward_cards'] %}
 
-<div class="grid grid-cols-2 gap-4 cards">
+<div id="cards-carousel" class="relative w-full" data-carousel="static">
+<div class="relative h-128 overflow-hidden rounded-base">
 {% for card in cards %}
-<div class="reward-card max-w-sm m-5 bg-gray-100 border border-gray-300 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-100">
-    <div class="flex flex-col items-center p-2 m-5 dark:border-grey-300">
-        <img class="w-32 h-32 mb-3 {{ card.data.icon_class }}" src="{{ card.data.icon }}" alt="Reward card icon"/>
-        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{{ card.data.title }}</h5>
-        <div class="flex pl-2 pr-2 text-gray-700 text-md dark:text-gray-300">
-            {{ card.templateContent | safe }}</div>
-        <span class="text-sm text-gray-400 dark:text-gray-600">
-            {{ card.data.icon_attribution | safe }}</span></div></div>
+<div class="hidden items-center duration-700" data-carousel-item>
+  <div class="absolute reward-card bg-gray-100 border border-gray-300 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-100">
+    <div class="flex flex-col p-2 dark:border-grey-300">
+    <img class="w-32 h-32 mb-3 {{ card.data.icon_class }} m-auto relative" src="{{ card.data.icon }}" alt="{{ card.data.alternate }}" title="{{ card.data.title }}" />
+    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white text-center">{{ card.data.title }}</h5>
+    <div class="flex pl-2 pr-2 text-gray-700 text-md dark:text-gray-300 text-center">{{ card.templateContent | safe }}</div>
+    <span class="text-sm text-gray-400 dark:text-gray-500 text-center">{{ card.data.icon_attribution | safe }}</span></div></div></div>
 {% endfor %}</div>
+<button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev><span class="inline-flex items-center justify-center w-10 h-10 rounded-base bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"><svg class="w-5 h-5 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/></svg><span class="sr-only">Previous</span></span></button><button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next><span class="inline-flex items-center justify-center w-10 h-10 rounded-base bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"><svg class="w-5 h-5 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/></svg><span class="sr-only">Next</span></span></button></div>
 
-"I will have my vengeance..."
-In battle, if they have less than 10 HP, the player of the card gains 10 HP and their next attack is a natural 20.
+<noscript>
+{% for card in cards %}
+* "{{ card.data.title }}" - {{ card.templateContent | safe }}
+{% endfor %}
+</noscript>
 
-"Fight in the shade..."
-You get an additional ranged attack.
+In the end, the cards did exactly what I wanted: they encouraged players to show up, dive in, help each other, and make the game as fun as possible for everyone. If you do use any of these or if you have your own "reward cards" system, shoot me a message on [mastodon][mastodon]!
 
-"I'll be back"
-You are immediately transported to another plane. While there you cannot be targeted or detected by another creature or character. If done during combat, you can stay for up to 1d6 combat turns, and when you return you can rematerialize in any non-occupied space on the battle map. Otherwise you can stay for up to 5 minutes of non-combat time and may rematerialize at any location within eyesight of your location before you left.
-
-"Yeah I saw that going differently in my head"
-A character or creature does something downright dumb, dangerous or both.
-
-"I can do this all day"
-You immediately regain all your HP and the [Resilient][feat_resilient] feat.
-
-"Say 'Hello' to my little friend"
-For the remainder of the encounter, your melee weapon does 1d20 additional damage per round and you gain the same in temporary HP.
-
-"That's not a knife, this is knife"
-For the remainder of the encounter, one dagger is magically transformed into a Dagger +5.
-
-"The space between breath..."
-For the remainder of the encounter, the max distance of your ranged attacks is increased by 200ft.
-
-"I'm your huckleberry"
-Combat ends for all other characters and creatures. You and the opposing "leader" settle the fight one-on-one.
-
-"I love the smell of napalm in the morning"
-The next five evocation spells cast by the player will have maximum damage.
-
-"There is no place like home"
-You are able to immediately teleport yourself and up to 4 medium sized characters or creatures within 15ft of you to any location you have visted within the last three days.
-
-"Like a box of chocolates"
-You stumble upon a small, rectangular wooden box. It is 10"x12"x6" in size and is covered in markings of a forgotten language. The box has a hinged lid and only a latch keeping it shut, now what could be inside?
-
-"A martini. Shaken, not stirred."
-Your reputation precedes you. The local innkeeper is excited about your visit and invites you to eat, drink and stay at their establishment for free. You gain a +10 on charisma checks when talking to the innkeeper.
-
-"I have always depended on the kindness of strangers."
-You can add +5 to one charisma check while in town.
-
-"It was Beauty killed the Beast"
-For the remainder of the encounter, all female characters and creatures add 1d8 to their damage.
-
-"Hasta la vista, baby."
-When the hero speaks this line, their next attack roll is a natural 20.
-
-"THIS. IS. SPARTA!"
-For the remainder of the encounter, the hero gains +3 to all attack rolls and damage. If they are attacking the enemy leader, or the enemy has an opposite alignment, the hero gains +6 to all attack rolls and damage.
-
-"Somebody get that kid a sandwich"
-For the remainder of the encounter, the hero gains 15 temporary hit points and +3 to strength and dexterity modifiers.
-
-
-[feat_resilient]: https://www.aidedd.org/feat/resilient
+[mastodon]: https://mastodon.gamedev.place/@Literallyacat
