@@ -1,8 +1,6 @@
 import '../styles/tailwind.css';
 import { handleCodeCopying } from './copy.js';
 
-import 'flowbite';
-
 if (DEV_MODE) console.log('Dev mode is currently enabled.');
 
 const updateTheme = () => {
