@@ -63,10 +63,6 @@ h6 {
   @apply font-bold leading-tight mt-3;
 }
 
-body {
-  @apply text-gray-700;
-}
-
 a {
   @apply font-bold;
 }

@@ -8,14 +8,17 @@
   @apply text-base;
 }
 
-@media (prefers-color-scheme: dark) {
-    .reward-card img.dark\:inverted {
-      filter: invert(1);
-    }
+.reward-card {
+  height: 510px;
+  width: 382px;
+  left: 191px;
 }
 
-@media (prefers-color-scheme: light) {
-    .reward-card img.inverted {
-      filter: invert(1);
-    }
+html[data-theme="dark"] .reward-card img.dark\:inverted {
+  filter: invert(1);
 }
+
+html[data-theme="light"] .reward-card img.inverted {
+  filter: invert(1);
+}
+
