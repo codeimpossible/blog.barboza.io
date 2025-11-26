@@ -1,5 +1,6 @@
 import '../styles/tailwind.css';
 import { handleCodeCopying } from './copy.js';
+import { replaceImg } from './random-me.js';
 
 if (DEV_MODE) console.log('Dev mode is currently enabled.');
 
@@ -12,20 +13,22 @@ const updateTheme = () => {
 };
 
 const lightMode = () => {
+  if (DEV_MODE) console.log(`setting theme to: light`);
   localStorage.theme = 'light';
 };
 
 const darkMode = () => {
+  if (DEV_MODE) console.log(`setting theme to: dark`);
   localStorage.theme = 'dark';
 };
 
 const resetTheme = () => {
+  if (DEV_MODE) console.log(`clearing set theme.`);
   localStorage.removeItem('theme');
 };
 
 const toggleTheme = () => {
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  console.log(prefersDark, localStorage.theme);
   if (!localStorage.theme) {
     (prefersDark ? lightMode : darkMode)();
     updateTheme();
@@ -41,7 +44,9 @@ const toggleTheme = () => {
 
 updateTheme();
 handleCodeCopying();
+
 document.addEventListener('DOMContentLoaded', () => {
+  replaceImg();
   const toggle = document.getElementById('theme-toggle');
   toggle.addEventListener('click', () => {
     toggleTheme();
