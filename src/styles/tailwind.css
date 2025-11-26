@@ -8,6 +8,7 @@
 @import "./intro.css";
 @import "./type.css";
 @import "./media.css";
+@import './reward-cards.css';
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 /* purgecss end ignore */

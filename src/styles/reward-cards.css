@@ -1,0 +1,24 @@
+
+
+.cards .reward-card h5 {
+  @apply text-xl;
+}
+
+.cards .reward-card p {
+  @apply text-base;
+}
+
+.reward-card {
+  height: 510px;
+  width: 382px;
+  left: 191px;
+}
+
+html[data-theme="dark"] .reward-card img.dark\:inverted {
+  filter: invert(1);
+}
+
+html[data-theme="light"] .reward-card img.inverted {
+  filter: invert(1);
+}
+
