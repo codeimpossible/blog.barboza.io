@@ -8,9 +8,11 @@ tags:
   - table-top
 ---
 
-I’ve been DMing my first-ever D&D campaign for a small group of my closest friends, and it’s been way more fun—and chaotic—than I expected. I wanted to lean into the idea of the players and I crafting a story together, putting the characters into harrowing scenarios and have them overcome great challenges.
+Six months ago I started DMing my first ever D&D campaign. It's a short campaign - in fact we just had the finale session and are taking a break before our next adventure - but it was a really great experience. I think the thing I enjoyed most was how much I able to empower the players in the campaign to change and impact the story in unpredictable ways.
 
-I also wanted to keep player engagement high, and so I naturally thought about creating some kind of reward that I could present to players for good engagement with the game: doing solid roleplay, helping each other out with good teamwork, and even stepping out of the game a bit to take useful notes or give a recap when everyone else forgot what happened last session.
+From the start I wanted to really lean into the idea of the players and I crafting a story together, putting the characters into harrowing scenarios and have them overcome seemingly impossible challenges.
+
+These goals, along with wanting to keep player engagement high throughout the campaign lead me to including a reward that I could present to players for good engagement with the game: doing solid roleplay, helping each other out with good teamwork, and even stepping out of the game a bit to take useful notes or give a recap when everyone else forgot what happened last session.
 
 I knew I wanted something _more_ than giving out inspiration, although that is still a good reward but I knew I wanted to give players something that could genuinely alter the course of the game if used well.
 
@@ -39,6 +41,6 @@ I've included each of the cards below, feel free to use or remix them as you lik
 {% endfor %}
 </noscript>
 
-In the end, the cards did exactly what I wanted: they encouraged players to show up, dive in, help each other, and make the game as fun as possible for everyone. If you do use any of these or if you have your own "reward cards" system, shoot me a message on [mastodon][mastodon]!
+In the end, the cards did exactly what I wanted: they encouraged players to show up, be involved in the story, help each other, and make the game as fun as possible for everyone. If you do use any of these or if you have your own "reward cards" system, shoot me a message on [mastodon][mastodon]!
 
 [mastodon]: https://mastodon.gamedev.place/@Literallyacat
