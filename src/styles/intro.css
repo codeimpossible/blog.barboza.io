@@ -1,74 +1,94 @@
-.intro {}
-
-.is-fourohfour .intro-greeting {
-    display: none;
+.is-fourohfour .intro__greeting {
+  display: none;
 }
 
 @media(max-width: 90em) {
-    .is-post .intro-greeting h1 {
-        @apply text-2xl pt-2;
-    }
-    .is-fourohfour .intro {
-        display: none;
-    }
-    .is-post .intro-greeting h2 {
-        @apply text-xl;
-    }
-    .intro img {
-        position: relative;
-        top: 5px;
-        left: 0px;
-        margin-right: 6px;
-        height: 4em;
-        width: 4em;
-        float: left;
-    }
+  .is-post .intro__greeting h1 {
+    @apply text-2xl pt-2;
+  }
+
+  .is-fourohfour .intro {
+    display: none;
+  }
+
+  .is-post .intro__greeting h2 {
+    @apply text-xl;
+  }
+
+  .intro img {
+    position: relative;
+    top: 5px;
+    left: 0px;
+    margin-right: 6px;
+    height: 4em;
+    width: 4em;
+    float: left;
+    @apply border-2;
+  }
+
+  .intro .intro__social-links {
+    @apply absolute top-5 right-5;
+  }
 }
 
 @media(min-width: 90em) {
-    .intro-greeting h1 {
-        @apply text-5xl;
-    }
-    .intro-greeting h2 {
-        @apply text-3xl;
-    }
-    .is-post .intro-greeting {
-        position: absolute;
-        top: 260px;
-        left: 36px;
-        width: 300px;
-        padding-top: 10px;
-    }
-    .is-post .intro-greeting h1 {
-        @apply text-2xl;
-    }
-    .is-post .intro-greeting h2 {
-        @apply text-xl;
-    }
-    .intro img {
-        position: absolute;
-        height: 300px;
-        width: 300px;
-        top: -48px;
-        left: -48px;
-    }
-    .social_icon {
-        background-color: #fff;
-        border: 6px solid #1e1e33;
-        border-radius: 50px;
-        padding: 10px;
-        position: absolute;
-    }
-    .social .icon-github {
-        top: 126px;
-        left: 215px;
-    }
-    .social .icon-twitter {
-        top: 174px;
-        left: 184px;
-    }
-    .social .icon-rss {
-        top: 206px;
-        left: 135px;
-    }
+  .intro .intro__social-links {
+    @apply fixed top-10 right-10;
+  }
+
+  .intro__greeting h1 {
+    @apply text-5xl;
+  }
+
+  .intro__greeting h2 {
+    @apply text-3xl;
+  }
+
+  .is-post .intro__greeting {
+    position: absolute;
+    top: 260px;
+    left: 36px;
+    width: 300px;
+    padding-top: 10px;
+  }
+
+  .is-post .intro__greeting h1 {
+    @apply text-2xl;
+  }
+
+  .is-post .intro__greeting h2 {
+    @apply text-xl;
+  }
+
+  .intro img {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    top: -48px;
+    left: -48px;
+    @apply border-16;
+  }
+
+  .social_icon {
+    background-color: #fff;
+    border: 6px solid #1e1e33;
+    border-radius: 50px;
+    padding: 10px;
+    position: absolute;
+  }
+
+  .social .icon-github {
+    top: 126px;
+    left: 215px;
+  }
+
+  .social .icon-twitter {
+    top: 174px;
+    left: 184px;
+  }
+
+  .social .icon-rss {
+    top: 206px;
+    left: 135px;
+  }
 }

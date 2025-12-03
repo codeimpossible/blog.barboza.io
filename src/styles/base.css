@@ -37,9 +37,6 @@ code {
 }
 
 @media (min-width: 90em) {
-  html {
-    padding: -16px;
-  }
   .container {
     @apply p-8;
   }
