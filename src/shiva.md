@@ -86,9 +86,11 @@ I hope this has shown what a truly special and extraordinary part of our lives S
     Below are a collection of videos that we've taken over the years that show a bit more of how terrific Shiva was.
 </p>
 
+
+
 <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4">
     <div>
-        <iframe class="inset-0 w-full h-full" src="https://www.youtube.com/watch?v=EqoyLcN2X0I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="inset-0 w-full h-full" src="https://www.youtube.com/embed/EqoyLcN2X0I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </div>
 
